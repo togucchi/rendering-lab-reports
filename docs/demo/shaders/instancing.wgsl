@@ -1,4 +1,4 @@
-// Experiment 02: indexed courtyard mesh, depth testing, Lambert diffuse lighting.
+// Experiment 04: same cube and immutable instance data; individual draws versus batching.
 // Linear vertex colors + ambient fill; no textures, glTF, PBR, or shadow maps.
 // First 16 bytes match the fullscreen experiments. The matrix is column-major.
 struct Globals {
@@ -13,6 +13,9 @@ struct VertexInput {
     @location(0) position: vec3f,
     @location(1) normal: vec3f,
     @location(2) color: vec3f,
+    @location(3) translation: vec4f,
+    @location(4) scale: vec4f,
+    @location(5) instance_color: vec4f,
 }
 struct VertexOutput {
     @invariant @builtin(position) position: vec4f,
@@ -22,10 +25,11 @@ struct VertexOutput {
 }
 @vertex fn vs_main(in: VertexInput) -> VertexOutput {
     var out: VertexOutput;
-    out.position = globals.view_projection * vec4f(in.position, 1.);
-    out.world_position = in.position;
-    out.normal = in.normal;
-    out.color = in.color;
+    let world = in.position * in.scale.xyz + in.translation.xyz;
+    out.position = globals.view_projection * vec4f(world, 1.);
+    out.world_position = world;
+    out.normal = normalize(in.normal / in.scale.xyz);
+    out.color = in.color * in.instance_color.rgb;
     return out;
 }
 @fragment fn fs_main(in: VertexOutput) -> @location(0) vec4f {

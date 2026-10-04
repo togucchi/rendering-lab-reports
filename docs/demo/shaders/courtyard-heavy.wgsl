@@ -1,3 +1,5 @@
+// Controlled heavy fragment variant: 64 dependent procedural iterations.
+// Same visible output across draw-order modes; differs from light workload.
 // Experiment 02: indexed courtyard mesh, depth testing, Lambert diffuse lighting.
 // Linear vertex colors + ambient fill; no textures, glTF, PBR, or shadow maps.
 // First 16 bytes match the fullscreen experiments. The matrix is column-major.
@@ -39,6 +41,13 @@ struct VertexOutput {
         let checker = tile - 2. * floor(tile * .5);
         base_color *= .90 + .10 * checker;
     }
+    // Depends on interpolated position and uniform time; contributes to output.
+    // This is synthetic ALU work, not a count of executed fragments.
+    var signal = dot(in.world_position, vec3f(.73, .41, .29)) + globals.time;
+    for (var i = 0u; i < 64u; i += 1u) {
+        signal = sin(signal * 1.37 + f32(i) * .17) + cos(signal * .71);
+    }
+    base_color *= .96 + .04 * (signal * .25 + .5);
     let ambient = .19;
     return vec4f(base_color * (ambient + .81 * diffuse), 1.);
 }
