@@ -1,14 +1,11 @@
 {
-  "base_source_commit": "fcbd6ec4a70e9a1022894d4bc673bea6e4cdaffc",
-  "source_commit": "f3068bf8f4c4255030db5038953d5141f7dfa276",
-  "source_changes": false,
-  "publication_status": "Built from tested source files verified byte-for-byte against private commit archive",
+  "source_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
   "rust": "1.99.0",
   "wasm_bindgen": "0.2.129",
   "profile": "release",
   "base_path": "/rendering-lab-reports/demo/",
+  "source_changes": false,
   "browser_gpu_runtime_verified": false,
   "native_offscreen_verified": true,
-  "native_adapter_class": "Mesa llvmpipe software CPU OpenGL",
-  "source_snapshot_sha256": "31059740aea3e2ba736ac59536b354a4d301f2e1b53f4a035f156acca883a706"
+  "native_adapter_class": "software CPU llvmpipe; not hardware performance evidence"
 }

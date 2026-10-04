@@ -1,5 +1,18 @@
 // CPU observations and rAF cadence are not GPU execution time.
 export const METRICS = ['frame_interval_ms', 'cpu_acquire_ms', 'cpu_encode_ms', 'cpu_submit_ms', 'cpu_present_ms', 'cpu_render_call_ms'];
+/** Each slot has scene passes, but both upscale draws share one final render pass. */
+export function frameWork(slots) {
+  const sum = key => slots.reduce((total, slot) => total + slot[key], 0);
+  const scenes = sum('scene_render_passes');
+  return {
+    frame_scene_passes: scenes,
+    frame_composite_passes: 1,
+    frame_total_passes: scenes + 1,
+    frame_scene_draw_calls: sum('scene_draw_calls'),
+    frame_composite_draw_calls: sum('composite_draw_calls'),
+    frame_total_draw_calls: sum('total_draw_calls'),
+  };
+}
 export function settings(input, maxDimension = 8192) {
   const integer = (key, min, max) => {
     const value = Number(input[key]);

@@ -1,5 +1,5 @@
-import { settings, MeasurementRun, reportCsv } from './metrics.mjs';
-import { DEFAULT_EXPERIMENT, EXPERIMENTS, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
+import { settings, MeasurementRun, reportCsv, frameWork } from './metrics.mjs';
+import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('viewport');
@@ -7,6 +7,14 @@ const editor = $('shader-source');
 const experimentInputs = [$('experiment-a'), $('experiment-b')];
 const scaleInputs = [$('scale-a'), $('scale-b')];
 const scales = [100, 100];
+const modeInputs = [$('overdraw-a'), $('overdraw-b')];
+const cameraInputs = [$('camera-a'), $('camera-b')];
+const modes = [1, 1];
+const cameras = [0, 0];
+const instancingInputs = [$('instancing-a'), $('instancing-b')];
+const objectCountInputs = [$('object-count-a'), $('object-count-b')];
+const instancingModes = [0, 0];
+const objectCounts = [DEFAULT_OBJECT_COUNT, DEFAULT_OBJECT_COUNT];
 const experiments = EXPERIMENTS;
 const slots = [0, 1].map(() => createExperimentSlot());
 const sources = new Map();
@@ -48,6 +56,21 @@ function syncControls() {
   $('measure-csv').disabled = !lastReport || gate.busy;
   $('measure-json').disabled = !lastReport || gate.busy;
   scaleInputs.forEach((input, index) => { input.value = String(scales[index]); });
+  slots.forEach((slot, index) => {
+    const courtyard = isCourtyard(slot.experiment);
+    const repeated = isInstancing(slot.experiment);
+    modeInputs[index].value = String(modes[index]);
+    cameraInputs[index].value = String(cameras[index]);
+    instancingInputs[index].value = String(instancingModes[index]);
+    objectCountInputs[index].value = String(objectCounts[index]);
+    modeInputs[index].disabled = !ready || gate.busy || !courtyard;
+    cameraInputs[index].disabled = !ready || gate.busy || !isMesh(slot.experiment);
+    instancingInputs[index].disabled = objectCountInputs[index].disabled = !ready || gate.busy || !repeated;
+    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index]);
+    $(index === 0 ? 'draw-count-a' : 'draw-count-b').textContent = isMesh(slot.experiment)
+      ? `${work.fragment_workload}${repeated ? ` · ${work.instancing_mode}` : ''} · ${work.scene_object_count} objects · scene ${work.scene_draw_calls} + upsample 1 draws`
+      : 'fullscreen 1 + upsample 1 draws';
+  });
   syncDirty();
 }
 
@@ -114,11 +137,54 @@ async function changeScale(slotIndex, value) {
   });
 }
 
+async function changeMode(slotIndex, value) {
+  if (!ready || gate.busy || !isCourtyard(slots[slotIndex].experiment)) { modeInputs[slotIndex].value = String(modes[slotIndex]); return; }
+  await runLocked(async () => {
+    try {
+      const mode = overdrawMode(value);
+      lab.set_overdraw(slotIndex, mode);
+      modes[slotIndex] = mode;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${OVERDRAW_MODES[mode].name} · ソースを保持`);
+    } catch (error) { setCompile('描画方式の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function changeCamera(slotIndex, value) {
+  if (!ready || gate.busy || !isMesh(slots[slotIndex].experiment)) { cameraInputs[slotIndex].value = String(cameras[slotIndex]); return; }
+  await runLocked(async () => {
+    try {
+      const camera = courtyardCamera(value);
+      lab.set_camera(slotIndex, camera);
+      cameras[slotIndex] = camera;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${COURTYARD_CAMERAS[camera].name} · ソースを保持`);
+    } catch (error) { setCompile('カメラの変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function changeInstancing(slotIndex, modeValue, countValue) {
+  if (!ready || gate.busy || !isInstancing(slots[slotIndex].experiment)) {
+    instancingInputs[slotIndex].value = String(instancingModes[slotIndex]);
+    objectCountInputs[slotIndex].value = String(objectCounts[slotIndex]);
+    return;
+  }
+  await runLocked(async () => {
+    try {
+      const mode = instancingMode(modeValue);
+      const count = objectCount(countValue);
+      // Apply mode and count atomically; publish only after the core accepts both.
+      lab.set_instancing(slotIndex, mode, count);
+      instancingModes[slotIndex] = mode;
+      objectCounts[slotIndex] = count;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${INSTANCING_MODES[mode].name} · ${count} objects · ソースを保持`);
+    } catch (error) { setCompile('Instancing の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
 async function scalePreset(percent) {
   if (!ready || gate.busy) return;
   // Never overwrite either applied WGSL or an editor draft to make a preset.
-  if (slots.some(slot => slot.experiment !== DEFAULT_EXPERIMENT) || slots[0].applied !== slots[1].applied) {
-    setCompile('プリセットには A/B 同じ中庭 WGSL が必要です', 'error', 'ソースは変更していません。A/B に同じ中庭 WGSL を適用してから再試行してください。');
+  if (!slots.every(slot => isCourtyard(slot.experiment)) || comparisonKind(slots, [100, 100], modes, cameras) !== 'A/A') {
+    setCompile('プリセットには A/B 同じ中庭条件が必要です', 'error', 'ソースは変更していません。A/B の実験・適用済み WGSL・描画方式・カメラを同じにして再試行してください。');
     return;
   }
   await runLocked(async () => {
@@ -288,7 +354,7 @@ async function exportPng() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-scale${scales[0]}-${scales[1]}.png`;
+      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}-scale${scales[0]}-${scales[1]}.png`;
       document.body.append(link);
       link.click();
       link.remove();
@@ -328,8 +394,10 @@ async function measure() {
     config = settings(Object.fromEntries(['width','height','warmup','samples','repeats'].map(key => [key,$(`measure-${key}`).value])), Math.min(8192,lab.max_texture_dimension()));
   } catch (error) { $('measure-status').textContent = errorText(error); return; }
   // Snapshot only applied shaders, never unapplied editor drafts.
+  const measurementSlots = slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied,
+    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
   const context = {started_at: new Date().toISOString(), time_seconds: time, split,
-    comparison: comparisonKind(slots, scales),
+    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts),
     display_canvas_physical_pixels: {width: config.width, height: config.height},
     render_scale_percent: [...scales],
     upsampling: 'linear filtering; offscreen targets composited into fixed display viewports',
@@ -337,14 +405,17 @@ async function measure() {
     viewport_order: 'A left, B right; same command buffer; order not randomized',
     vsync: 'browser presentation policy; not controlled', thermal_state: 'unavailable: not measured',
     environment_notes: $('measure-notes').value.trim() || 'unavailable: no operator notes',
-    camera: 'fixed courtyard camera v1', scene_seed: 'deterministic procedural geometry; no RNG',
-    slots: slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied, ...renderGeometry(config.width, config.height, split, scales)[index]})),
+    camera: 'per-slot fixed camera; see slots[].camera and camera_id', scene_seed: 'deterministic procedural geometry; no RNG',
+    draw_call_counts_source: 'deterministic encoded draw calls; not measured fragment invocations or GPU work',
+    ...frameWork(measurementSlots),
+    shared_instance_buffer: sharedInstanceBufferWork(measurementSlots),
+    slots: measurementSlots,
     browser: navigator.userAgent, platform: navigator.platform || 'unavailable',
     device_pixel_ratio: window.devicePixelRatio || 1, hardware: 'unavailable: not inferred from browser',
     adapter: lab.adapter_description(), timestamp_supported: lab.timestamp_supported(), timestamp_enabled: false,
     clock: 'performance.now; precision depends on browser privacy policy',
     pacing: 'requestAnimationFrame; foreground only; no GPU completion wait',
-    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark',
+    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded',
     build_revision: $('measure-commit').value.trim() || 'unavailable: operator must record tested commit',
     build_revision_source: 'operator supplied; not automatically verified'};
   const run = new MeasurementRun(config, context);
@@ -392,6 +463,10 @@ async function measure() {
   });
 }
 scaleInputs.forEach((select, index) => select.addEventListener('change', () => changeScale(index, select.value)));
+modeInputs.forEach((select, index) => select.addEventListener('change', () => changeMode(index, select.value)));
+cameraInputs.forEach((select, index) => select.addEventListener('change', () => changeCamera(index, select.value)));
+instancingInputs.forEach((select, index) => select.addEventListener('change', () => changeInstancing(index, select.value, objectCounts[index])));
+objectCountInputs.forEach((input, index) => input.addEventListener('change', () => changeInstancing(index, instancingModes[index], input.value)));
 for (const percent of [100, 75, 50]) $(`scale-preset-${percent}`).addEventListener('click', () => scalePreset(percent));
 $('measure-start').addEventListener('click', measure);
 $('measure-cancel').addEventListener('click', () => measurement?.abort('ユーザーが中止しました'));

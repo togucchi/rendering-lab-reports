@@ -23,8 +23,8 @@
       <div class="preview-column">
         <div class="panel-header"><h2><span class="section-number">01</span> VIEWPORT</h2><span class="quiet">同じ時間、ふたつのパイプライン</span></div>
         <div class="experiments">
-          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
-          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
         <section class="render-scale-panel" aria-label="内部描画解像度">
           <div class="render-scale-fields">
@@ -33,7 +33,32 @@
           </div>
           <p>内部サイズ → 表示 viewport。表示サイズとカメラは固定し、linear 補間で拡大します。</p>
           <div class="measurement-actions"><button id="scale-preset-100" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B100</button><button id="scale-preset-75" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B75</button><button id="scale-preset-50" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B50</button></div>
-          <p>プリセットは同じ中庭 WGSL の A/B 用。50:50・停止 t=0 に戻します。ソースや編集中の変更は保持します。</p>
+          <p>プリセットは同じ中庭実験・WGSL・描画方式・カメラの A/B 用。50:50・停止 t=0 に戻します。ソースや編集中の変更は保持します。</p>
+        </section>
+        <section class="overdraw-panel" aria-labelledby="overdraw-heading">
+          <h2 id="overdraw-heading">メッシュ · Overdraw / Instancing を比較</h2>
+          <div class="overdraw-slots">
+            <div class="overdraw-slot">
+              <label>A 描画方式 <select id="overdraw-a" data-lock disabled><option value="1" selected>奥 → 手前（基準）</option><option value="0">手前 → 奥</option><option value="2">Depth prepass</option></select></label>
+              <label>A 固定カメラ <select id="camera-a" data-lock disabled><option value="0" selected>斜め · 重なり多</option><option value="1">俯瞰 · 重なり少</option></select></label>
+              <label>A Instancing <select id="instancing-a" data-lock disabled><option value="0" selected>個別 draw（基準）</option><option value="1">Instanced draw</option></select></label>
+              <label>A オブジェクト数 <input id="object-count-a" type="number" min="1" max="4096" step="1" value="256" list="object-count-presets" data-lock disabled></label>
+              <output id="draw-count-a">light · 10 objects · scene 10 + upsample 1 draws</output>
+            </div>
+            <div class="overdraw-slot">
+              <label>B 描画方式 <select id="overdraw-b" data-lock disabled><option value="1" selected>奥 → 手前（基準）</option><option value="0">手前 → 奥</option><option value="2">Depth prepass</option></select></label>
+              <label>B 固定カメラ <select id="camera-b" data-lock disabled><option value="0" selected>斜め · 重なり多</option><option value="1">俯瞰 · 重なり少</option></select></label>
+              <label>B Instancing <select id="instancing-b" data-lock disabled><option value="0" selected>個別 draw（基準）</option><option value="1">Instanced draw</option></select></label>
+              <label>B オブジェクト数 <input id="object-count-b" type="number" min="1" max="4096" step="1" value="256" list="object-count-presets" data-lock disabled></label>
+              <output id="draw-count-b">light · 10 objects · scene 10 + upsample 1 draws</output>
+            </div>
+          </div>
+          <datalist id="object-count-presets"><option value="64"></option><option value="256"></option><option value="1024"></option><option value="4096"></option></datalist>
+          <p>実験 03 は light、04 は heavy fragment。同じ形状を、描画順・depth prepass・固定カメラで比較します。描画方式は中庭のみ有効。順序はオブジェクト単位で、fragment 呼び出し数の実測ではありません。</p>
+          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。カメラは実験 03〜05、Instancing と個数は実験 05 のみ有効です。</p>
+          <p>Instancing は draw 呼び出しをまとめますが、頂点数・fragment 数の削減や高速化は保証しません。CPU/rAF は A/B 合計です。同数・同条件の画質一致を確かめ、時間の比較には A/A 個別と A/A instanced を別 run で計測してください。</p>
+          <p>Transform / color は 48 bytes × 4096 = 196608 bytes を初期化時に一度だけ転送し、A/B で共有。各側の使用範囲は N × 48 bytes、個数変更や毎フレームの instance 再転送・CPU transform 更新はありません。初期化コストはこの計測に含みません。</p>
+          <p>まず両側で実験・カメラ・倍率を揃え、B の描画方式だけ変更。Prepass は depth 10 + color 10 draws。CPU/rAF 合計と画質を確認し、常に速くなるとは仮定しません。WGSL 編集時の prepass 比較は同じ不透明 coverage / depth と、vertex position の @invariant 指定が前提です。discard・fragment depth の変更は別途検証してください。</p>
         </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>
@@ -54,7 +79,7 @@
         </div>
         <section class="measurement-panel" aria-labelledby="measure-heading">
           <h2 id="measure-heading">03 · 再現可能な計測</h2>
-          <p>適用済み A/B・時刻・カメラを固定。内部描画倍率も固定。CPU 呼び出しと rAF 間隔は両側＋合成の合計で、A/B 個別の時間ではありません。GPU 時間は未計測です。</p>
+          <p>適用済み A/B・時刻・カメラを固定。内部描画倍率・描画方式・Instancing・オブジェクト数・カメラ・fragment workload も記録。CPU 呼び出しと rAF 間隔は両側＋合成の合計で、A/B 個別の時間ではありません。GPU 時間は未計測です。</p>
           <div class="measurement-fields">
             <label>表示 canvas 幅 px<input id="measure-width" type="number" min="2" max="8192" value="1280" data-lock disabled></label>
             <label>表示 canvas 高さ px<input id="measure-height" type="number" min="1" max="8192" value="720" data-lock disabled></label>
