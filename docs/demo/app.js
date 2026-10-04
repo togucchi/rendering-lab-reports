@@ -1,7 +1,8 @@
+import { SSAO_FIELDS, SSAO_DEBUG_MODES, SSAO_PRESETS, ssaoSettings, ssaoWork, ssaoPngSuffix } from './ssao.mjs';
 import { SHADOW_FIELDS, SHADOW_DEBUG_MODES, shadowSettings, shadowPngSuffix } from './shadows.mjs';
 import { FLIGHTHELMET_ASSET, PBR_LIGHTING, PBR_DEBUG_MODES, PBR_TEXTURE_INPUTS, PBR_CAMERAS, DEFAULT_PBR_DEBUG, DEFAULT_PBR_FLAGS, pbrDebug, pbrFlags, pbrCamera, FlightHelmetLoader, readBoundedAsset } from './pbr.mjs';
 import { settings, MeasurementRun, reportCsv, frameWork } from './metrics.mjs';
-import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isPbr, isShadows, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
+import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isPbr, isShadows, isSsao, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('viewport');
@@ -21,6 +22,8 @@ const pbrDebugInputs = [$('pbr-debug-a'), $('pbr-debug-b')];
 const pbrTextureInputs = ['a', 'b'].map(side => PBR_TEXTURE_INPUTS.map(input => $(`pbr-${input.key}-${side}`)));
 const pbrDebugs = [DEFAULT_PBR_DEBUG, DEFAULT_PBR_DEBUG];
 const textureFlags = [DEFAULT_PBR_FLAGS, DEFAULT_PBR_FLAGS];
+const ssaoConfigs = [ssaoSettings(), ssaoSettings()];
+const ssaoInputs = ['a', 'b'].map(side => Object.fromEntries(SSAO_FIELDS.map(key => [key, $(`ssao-${key}-${side}`)])));
 const shadowConfigs = [shadowSettings(), shadowSettings()];
 const shadowInputs = ['a', 'b'].map(side => Object.fromEntries(SHADOW_FIELDS.map(key => [key, $(`shadow-${key.replaceAll('_', '-')}-${side}`)])));
 const flighthelmet = new FlightHelmetLoader(async () => {
@@ -97,8 +100,14 @@ function syncControls() {
       shadowInputs[index][key].value = String(shadowConfigs[index][key]);
       shadowInputs[index][key].disabled = !ready || gate.busy || !isShadows(slot.experiment);
     }
+    for (const key of SSAO_FIELDS) {
+      ssaoInputs[index][key].value = String(ssaoConfigs[index][key]);
+      ssaoInputs[index][key].disabled = !ready || gate.busy || !isSsao(slot.experiment);
+    }
+    $(`ssao-controls-${index === 0 ? 'a' : 'b'}`).disabled = !ready || gate.busy || !isSsao(slot.experiment);
+    for (const preset of Object.keys(SSAO_PRESETS)) $(`ssao-preset-${preset}-${index === 0 ? 'a' : 'b'}`).disabled = !ready || gate.busy || !isSsao(slot.experiment);
     $(index === 0 ? 'shadow-controls-a' : 'shadow-controls-b').disabled = !ready || gate.busy || !isShadows(slot.experiment);
-    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index]);
+    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index], ssaoConfigs[index]);
     $(index === 0 ? 'shadow-work-a' : 'shadow-work-b').textContent = isShadows(slot.experiment)
       ? `${work.shadow_resolution}² · ${(work.shadow_map_nominal_bytes / 1024).toFixed(0)} KiB depth · PCF ${work.shadow_pcf_kernel_samples} taps · active ≤${work.shadow_comparison_samples_max} comparisons · shadow pass ${work.shadow_map_depth_draw_calls} draws`
       : '実験 07 のみ有効';
@@ -106,6 +115,8 @@ function syncControls() {
       ? `${work.fragment_workload}${repeated ? ` · ${work.instancing_mode}` : ''} · ${work.scene_object_count} ${isPbr(slot.experiment) ? 'primitives' : 'objects'} · scene ${work.scene_draw_calls} + upsample 1 draws`
       : 'fullscreen 1 + upsample 1 draws';
   });
+  syncSsaoDimensions();
+  $('ssao-panel').hidden = !slots.some(slot => isSsao(slot.experiment));
   $('shadow-panel').hidden = !slots.some(slot => isShadows(slot.experiment));
   $('pbr-panel').hidden = !slots.some(slot => isPbr(slot.experiment));
   $('pbr-asset-status').textContent = flighthelmet.loaded ? 'FlightHelmet512.glb · GPU resources ready · A/B で共有' : '最初の選択時に同一 origin から GLB を取得します。';
@@ -160,6 +171,18 @@ function syncRenderDimensions(width = canvas.width, height = canvas.height) {
     const display = geometry.display_viewport_pixels;
     const internal = geometry.internal_render_pixels;
     $(index === 0 ? 'scale-size-a' : 'scale-size-b').textContent = `${internal.width} × ${internal.height} → ${display.width} × ${display.height} px`;
+  });
+  syncSsaoDimensions(width, height);
+}
+
+function syncSsaoDimensions(width = canvas.width, height = canvas.height) {
+  const geometries = renderGeometry(width, height, split, scales);
+  slots.forEach((slot, index) => {
+    const output = $(`ssao-work-${index === 0 ? 'a' : 'b'}`);
+    if (!isSsao(slot.experiment)) { output.textContent = '実験 08 のみ有効'; return; }
+    const work = ssaoWork(ssaoConfigs[index], geometries[index].internal_render_pixels);
+    const ao = work.ssao_ao_pixels;
+    output.textContent = `AO ${ao.width} × ${ao.height} px · ${work.ssao_samples} samples · ${(work.ssao_extra_nominal_bytes / 1024).toFixed(1)} KiB extra · ${work.ssao_extra_render_passes + 1} scene passes / draws`;
   });
 }
 
@@ -244,6 +267,24 @@ async function changeShadows(slotIndex, input) {
       setCompile(`${slotIndex === 0 ? 'A' : 'B'} · shadows ${config.enabled ? 'on' : 'off'} · ${config.resolution}² · PCF ${config.pcf}×${config.pcf} · ${SHADOW_DEBUG_MODES[config.debug].name} · ソースを保持`);
     } catch (error) { setCompile('Shadow 設定の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
   });
+}
+
+async function changeSsao(slotIndex, input) {
+  if (!ready || gate.busy || !isSsao(slots[slotIndex].experiment)) { syncControls(); return; }
+  await runLocked(async () => {
+    try {
+      const config = ssaoSettings(input);
+      // Validate all fields and publish only after the core accepts one transaction.
+      lab.set_ssao(slotIndex, config.samples, config.resolution, config.blur, config.debug, config.enabled);
+      ssaoConfigs[slotIndex] = config;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · SSAO ${config.enabled ? 'on' : 'off'} · ${config.samples} samples · AO ${config.resolution}% · ${SSAO_DEBUG_MODES[config.debug].name} · ソースを保持`);
+    } catch (error) { setCompile('SSAO 設定の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function ssaoPreset(slotIndex, preset) {
+  if (!Object.hasOwn(SSAO_PRESETS, preset)) return;
+  await changeSsao(slotIndex, SSAO_PRESETS[preset]);
 }
 
 async function scalePreset(percent) {
@@ -424,7 +465,7 @@ async function exportPng() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}${slots.some(slot => isPbr(slot.experiment)) ? `-pbr${pbrDebugs[0]}-${pbrDebugs[1]}-textures${textureFlags[0]}-${textureFlags[1]}` : ''}${shadowPngSuffix(slots, shadowConfigs)}-scale${scales[0]}-${scales[1]}.png`;
+      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}${slots.some(slot => isPbr(slot.experiment)) ? `-pbr${pbrDebugs[0]}-${pbrDebugs[1]}-textures${textureFlags[0]}-${textureFlags[1]}` : ''}${shadowPngSuffix(slots, shadowConfigs)}${ssaoPngSuffix(slots, ssaoConfigs)}-scale${scales[0]}-${scales[1]}.png`;
       document.body.append(link);
       link.click();
       link.remove();
@@ -465,9 +506,10 @@ async function measure() {
   } catch (error) { $('measure-status').textContent = errorText(error); return; }
   // Snapshot only applied shaders, never unapplied editor drafts.
   const measurementSlots = slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied,
-    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
+    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index], ssaoConfigs[index], renderGeometry(config.width, config.height, split, scales)[index].internal_render_pixels), ...renderGeometry(config.width, config.height, split, scales)[index]}));
   const context = {started_at: new Date().toISOString(), time_seconds: time, split,
-    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts, pbrDebugs, textureFlags, shadowConfigs),
+    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts, pbrDebugs, textureFlags, shadowConfigs, ssaoConfigs),
+    ssao_time_policy: slots.some(slot => isSsao(slot.experiment)) ? 'SSAO geometry and sampling fixed at t=0, seed=17; global time applies only to other experiments' : null,
     pbr_lighting: slots.some(slot => isPbr(slot.experiment)) ? {...PBR_LIGHTING} : null,
     display_canvas_physical_pixels: {width: config.width, height: config.height},
     render_scale_percent: [...scales],
@@ -486,7 +528,7 @@ async function measure() {
     adapter: lab.adapter_description(), timestamp_supported: lab.timestamp_supported(), timestamp_enabled: false,
     clock: 'performance.now; precision depends on browser privacy policy',
     pacing: 'requestAnimationFrame; foreground only; no GPU completion wait',
-    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded; FlightHelmet fetch/decode/GPU upload also excluded; required shadow maps regenerated inside every measured frame, including depth debug with shadows Off; shadow texture reallocation on setting changes excluded',
+    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded; FlightHelmet fetch/decode/GPU upload also excluded; required shadow maps regenerated inside every measured frame, including depth debug with shadows Off; shadow texture reallocation on setting changes excluded; SSAO gbuffer, AO and optional bilateral passes regenerated inside every enabled measured frame; SSAO Off skips those passes; SSAO setting/size allocation occurs before samples or in excluded warmup; shader compilation excluded',
     build_revision: $('measure-commit').value.trim() || 'unavailable: operator must record tested commit',
     build_revision_source: 'operator supplied; not automatically verified'};
   const run = new MeasurementRun(config, context);
@@ -546,6 +588,10 @@ pbrTextureInputs.forEach((inputs, index) => inputs.forEach(input => input.addEve
 shadowInputs.forEach((inputs, index) => Object.values(inputs).forEach(input => input.addEventListener('change', () =>
   changeShadows(index, Object.fromEntries(SHADOW_FIELDS.map(key => [key, inputs[key].value])))
 )));
+ssaoInputs.forEach((inputs, index) => Object.values(inputs).forEach(input => input.addEventListener('change', () =>
+  changeSsao(index, Object.fromEntries(SSAO_FIELDS.map(key => [key, inputs[key].value])))
+)));
+for (const [index, side] of ['a', 'b'].entries()) for (const preset of Object.keys(SSAO_PRESETS)) $(`ssao-preset-${preset}-${side}`).addEventListener('click', () => ssaoPreset(index, preset));
 for (const percent of [100, 75, 50]) $(`scale-preset-${percent}`).addEventListener('click', () => scalePreset(percent));
 $('measure-start').addEventListener('click', measure);
 $('measure-cancel').addEventListener('click', () => measurement?.abort('ユーザーが中止しました'));

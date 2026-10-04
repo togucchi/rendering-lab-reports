@@ -23,8 +23,8 @@
       <div class="preview-column">
         <div class="panel-header"><h2><span class="section-number">01</span> VIEWPORT</h2><span class="quiet">同じ時間、ふたつのパイプライン</span></div>
         <div class="experiments">
-          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
-          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
         <section class="render-scale-panel" aria-label="内部描画解像度">
           <div class="render-scale-fields">
@@ -108,6 +108,35 @@
           <p>PCF は nearest comparison sampler で texel 中心の 1 / 9 / 25 回の比較を平均し、bilinear hardware PCF は使いません。輪郭を平均しますが、影マップの情報量は増えません。Depth debug は 16 回の二分探索比較で光から見た正規化深度を再構成した量子化表示で、raster bias を含みます。再構成区間は 1/65536 以下（framebuffer / 表示の量子化前）で、厳密な depth load や距離ではありません。visibility は可視率の確認用です。Depth debug は Off でも 16 比較、通常の Off は 0 比較です。影範囲外では sample 数が減り、custom WGSL の sample 数は保証しません。</p>
           <p>Depth32Float は 4 bytes/texel。256² / 512² / 1024² は各側 256 KiB / 1 MiB / 4 MiB（driver overhead 等を除く）。On は毎フレーム shadow depth 1 + color 1 draw、Off は shadow pass と比較 sampling を省き color 1 draw。Depth map debug は Off でも影マップを再生成し、depth 1 + fullscreen debug 1 draw です。A/B の影マップは独立し、Off でも確保したメモリーは保持します。</p>
           <p class="shadow-warning">CPU/rAF は A/B 全 pass の合計で、GPU 時間は未計測。影 On/Off のコスト比較は、同じ条件の A/A On と A/A Off を別 run で計測します。静止中も計測フレームごとに影マップを再生成します。bias 用の 9 パイプラインは WGSL コンパイル時に準備し、計測中は選択のみです。高解像度・広い PCF が常に良い／速いとは限りません。</p>
+        </section>
+        <section id="ssao-panel" class="shadow-panel" aria-labelledby="ssao-heading" hidden>
+          <h2 id="ssao-heading">08 · 中庭 · SSAO</h2>
+          <div class="shadow-slots">
+            <fieldset id="ssao-controls-a" class="shadow-slot" data-lock disabled><legend>A · SSAO inputs</legend>
+              <label>A SSAO <select id="ssao-enabled-a" data-lock disabled><option value="1" selected>On · gbuffer + AO</option><option value="0">Off · AO passes なし</option></select></label>
+              <label>A Samples <select id="ssao-samples-a" data-lock disabled><option value="8">8 samples</option><option value="16">16 samples</option><option value="32" selected>32 samples</option></select></label>
+              <label>A AO 解像度 <select id="ssao-resolution-a" data-lock disabled><option value="100" selected>Full · 100% × 100%</option><option value="50">Half · 50% × 50%</option></select></label>
+              <label>A Bilateral blur <select id="ssao-blur-a" data-lock disabled><option value="0" selected>Off · raw AO</option><option value="1">Bilateral · radius 1</option><option value="2">Bilateral · radius 2</option></select></label>
+              <label>A Debug view <select id="ssao-debug-a" data-lock disabled><option value="0" selected>Final · 合成結果</option><option value="1">AO-only · 遮蔽のみ</option></select></label>
+              <div class="measurement-actions"><button id="ssao-preset-reference-a" type="button" class="subtle-button" data-lock disabled>32 / Full / raw</button><button id="ssao-preset-half-a" type="button" class="subtle-button" data-lock disabled>32 / Half / raw · AO 解像度のみ</button></div>
+              <output id="ssao-work-a">AO サイズと追加メモリーは描画時に表示</output>
+            </fieldset>
+            <fieldset id="ssao-controls-b" class="shadow-slot" data-lock disabled><legend>B · SSAO inputs</legend>
+              <label>B SSAO <select id="ssao-enabled-b" data-lock disabled><option value="1" selected>On · gbuffer + AO</option><option value="0">Off · AO passes なし</option></select></label>
+              <label>B Samples <select id="ssao-samples-b" data-lock disabled><option value="8">8 samples</option><option value="16">16 samples</option><option value="32" selected>32 samples</option></select></label>
+              <label>B AO 解像度 <select id="ssao-resolution-b" data-lock disabled><option value="100" selected>Full · 100% × 100%</option><option value="50">Half · 50% × 50%</option></select></label>
+              <label>B Bilateral blur <select id="ssao-blur-b" data-lock disabled><option value="0" selected>Off · raw AO</option><option value="1">Bilateral · radius 1</option><option value="2">Bilateral · radius 2</option></select></label>
+              <label>B Debug view <select id="ssao-debug-b" data-lock disabled><option value="0" selected>Final · 合成結果</option><option value="1">AO-only · 遮蔽のみ</option></select></label>
+              <div class="measurement-actions"><button id="ssao-preset-reference-b" type="button" class="subtle-button" data-lock disabled>32 / Full / raw</button><button id="ssao-preset-half-b" type="button" class="subtle-button" data-lock disabled>32 / Half / raw · AO 解像度のみ</button></div>
+              <output id="ssao-work-b">AO サイズと追加メモリーは描画時に表示</output>
+            </fieldset>
+          </div>
+          <p>SSAO は画面に見える形状から近接遮蔽を近似します。中庭・細い柱 3 本・傾斜面の固定 14 objects を使う独立実験で、shadow mapping / FlightHelmet PBR は合成しません。接触部、細い柱の輪郭、傾斜面、画面端で比較してください。</p>
+          <p>固定条件: world radius 0.7 · strength 1.3 · bias 0.03 · seed 17 · t = 0。SSAO はグローバル時間を無視します。A/B の WGSL・カメラ・内部描画倍率を揃え、samples / AO 解像度 / blur をひとつずつ変えると比較しやすくなります。Half プリセットは基準から AO 解像度だけを変えた 32 samples / Half / raw / Final / On です。プリセットは選んだ側の SSAO 設定だけを変更し、適用済みソースと編集中の変更を保持します。</p>
+          <p>Full / Half は AO target の各軸の倍率です。Half の AO は約 1/4 pixels（各軸 floor、最小 1）で、normal / world-position gbuffer は内部描画の full resolution を維持します。Bilateral blur は normal / position を参照して輪郭を保つ近似で、情報の欠落や halo、画面外の遮蔽を解決しません。AO は ambient 0.22 項だけに適用し、direct Lambert 0.78 項は変更しません。最終 AO の拡大は textureLoad による bilinear で、edge-aware upsampling ではないため、Half は輪郭に遮蔽がにじむ場合があります。AO-only の白は非遮蔽、暗部は遮蔽。Off + AO-only は白で、AO を計算しません。</p>
+          <p>追加 target は各側 RGBA16Float × 2（normal + world position、16 bytes/internal pixel）と RGBA8Unorm × 2（raw + blurred AO、8 bytes/AO pixel）。名目追加 bytes は 16 × internal pixels + 8 × AO pixels。既存 depth/color・alignment・driver overhead は除外します。blur Off でも両 AO targets を確保し、SSAO Off でも保持します。A/B の targets は独立です。</p>
+          <p>On は gbuffer 1 + AO 1 + final 1 pass/draw、blur 有効時は 1 pass/draw を追加。Off は final 1 pass/draw のみ。AO-only は final geometry の代わりに fullscreen 1 draw。さらに各側 upsample 1 draw を共通合成 pass に追加します。設定・固定条件・実サイズ・名目メモリー・pass/draw 数は JSON / CSV、PNG 名には全 SSAO 設定・固定条件を記録します。</p>
+          <p class="shadow-warning">CPU/rAF は A/B 全 pass の合計で、GPU 時間は未計測。コスト比較は同じ条件の A/A On と A/A Off を別 run で計測してください。AO/blur は enabled 時、静止中もフレームごとに更新します。設定変更時やサイズ固定直後のリソース再確保は記録 samples の前（warmup を含む）に行い、WGSL コンパイルも samples に含めません。画面上のノイズ・halo・接触部の消失と速度を分けて評価し、この画面だけから GPU 高速化率を推定しないでください。</p>
         </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>
