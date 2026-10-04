@@ -1,0 +1,312 @@
+{
+  "source_base_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
+  "source_base_scope": "Verified private repository base before Issue #6 working-tree changes; not the executed implementation commit.",
+  "working_tree_modified": true,
+  "final_source_commit": "4deccc8a3643a6115d7f62021fe7082b3730338e",
+  "source_snapshot_sha256": "30811a298d18fd4f9ec57bef727a89790810364ca0bbba0407d43e878131696f",
+  "hash_method": "SHA256 of compact UTF-8 JSON files list, sorted keys and comma/colon separators",
+  "scope": "Runtime, tests, build scripts, asset provenance and GLB; excludes reports/docs/evidence/target/generated web/pkg.",
+  "capture_caveat": "Post-run working-tree capture; not a claim that a published commit or browser build was executed. Rerun native verification after executable source changes.",
+  "native_profile": "release",
+  "files": [
+    {
+      "path": ".github/workflows/check.yml",
+      "sha256": "d13af56dcc780914bd2d34c5b8dcbd65c3f783b6dbeddbf4a65fd719ae65b669"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "69920d7bfd4b0ade0bbde4452f4e4ffb164474d86c4efbc91547fa73653bc523"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "f25c11de32b8af564988bf69e3e663902ea0ce8be1d1666aac22327b7ff76547"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "6fb4695332a3116d767d7988073778215e36063108ff047b0100d2f9ad759169"
+    },
+    {
+      "path": "crates/core/src/gltf_asset.rs",
+      "sha256": "26ff65108520b558c66ae139e37c99ee4ddb80ce43b2d3b63ca5b2b8894997b5"
+    },
+    {
+      "path": "crates/core/src/instancing.rs",
+      "sha256": "234f7dabbe76027dce71a6dbd107af4c20fb7c746df753b15bdfbf38a60e16d9"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "d80c1b0301b82800007a7e288dc053b9f97bc4b194a038e6b164f12473b5d153"
+    },
+    {
+      "path": "crates/core/src/overdraw.rs",
+      "sha256": "b650720fbe43ffab7482a252af25adf82c1d9c08acb178fc94f81a0d5b9cc9a2"
+    },
+    {
+      "path": "crates/core/src/pbr.rs",
+      "sha256": "6da6ec0124cd0cc4d1b5b9243a8acf1172e8c6e95a4de274bdd71c52da5dc56f"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/tests/courtyard_smoke.rs",
+      "sha256": "4ee1068ed6410c4a21bdd5cf54ec8ff9adab187f19ce492afd7cc9d32cd6e0b7"
+    },
+    {
+      "path": "crates/core/tests/gpu_smoke.rs",
+      "sha256": "2788bc2cf64f2094cd28407351031885f1456385eb4c31c308319400140114e4"
+    },
+    {
+      "path": "crates/core/tests/instancing_smoke.rs",
+      "sha256": "3debcdefda2ce9f44453f2021b8f98bb01e94d5434d219ee259e1e31246cffca"
+    },
+    {
+      "path": "crates/core/tests/overdraw_smoke.rs",
+      "sha256": "b73eadf591b39eed671dcd1945e2c2958e405ad3030d135cb674f043ad04406d"
+    },
+    {
+      "path": "crates/core/tests/pbr_smoke.rs",
+      "sha256": "ace69c21fcfd49b7f70d4dfc850c57fd484b2ea340d62224a3cf9869094d3552"
+    },
+    {
+      "path": "crates/core/tests/scale_smoke.rs",
+      "sha256": "db09346adcce355cf09d59e3104a44167d1f6929ac31800d139fb99e8bd28a91"
+    },
+    {
+      "path": "crates/native/Cargo.toml",
+      "sha256": "08bed5112b5e827047bad1912c8e5702295cd40f27664391c9d78ca77ea5e1d2"
+    },
+    {
+      "path": "crates/native/src/main.rs",
+      "sha256": "c87dec20ba9a2330f53a100016de59676dd6120ca18a6fed6c929fed712ebc5f"
+    },
+    {
+      "path": "crates/web/Cargo.toml",
+      "sha256": "99e5667a190332162941ca0d70c46f592aa051389222d27c04436e88a6d85f89"
+    },
+    {
+      "path": "crates/web/src/lib.rs",
+      "sha256": "f1742a521c75a87709d38d4a9d747e91b9251bcad42c773b7ea09c16a1ba0630"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "0ced6c68f4d45b22a4bb78b1687f6ba49887d9343d2a234526ca59b8cc85c5ec"
+    },
+    {
+      "path": "scripts/build-instancing-evidence.py",
+      "sha256": "7d2bb86c34e700fe72fd13c3070ce62e23b12520abd4c156a5e1bde11a958e5f"
+    },
+    {
+      "path": "scripts/build-overdraw-evidence.py",
+      "sha256": "2b5bf39d98e75a8c00a620c58fffa82d5d8a61e30fcb52530a6317f4ae7f7c02"
+    },
+    {
+      "path": "scripts/build-pbr-evidence.py",
+      "sha256": "28a9c2a78fdc153563a179811d8c4a51f66ac5a29979c5765d389abf6165b14f"
+    },
+    {
+      "path": "scripts/build-reports.py",
+      "sha256": "a095cb08de2089980c12fd284e531ad49bded75a7b09d0b35f202911c4a75008"
+    },
+    {
+      "path": "scripts/build-scale-evidence.py",
+      "sha256": "ca0da7e2c753bc07a89b09e125a1a97e7fd9f9fbbf5c635c1598a218fa8340ed"
+    },
+    {
+      "path": "scripts/build-web.sh",
+      "sha256": "f19eab4310ee109daeb25773e93a7f8008abf0044f40ea46e5107c5fe3074bce"
+    },
+    {
+      "path": "scripts/flighthelmet-requirements.txt",
+      "sha256": "d969086b7d6cec3c5769b23204d7a26f23f40fc25fb988e67df99be5da1c1e39"
+    },
+    {
+      "path": "scripts/flighthelmet-source.lock.json",
+      "sha256": "f536b652c58733ce7569a716fbc99a80a87d1bfbc29e561784c24cac39916fc1"
+    },
+    {
+      "path": "scripts/package-demo.py",
+      "sha256": "8de0f596d050365869bfe78213f4f96f543c14574c4a2d4a47560f4b2ed0093a"
+    },
+    {
+      "path": "scripts/prepare-flighthelmet.py",
+      "sha256": "b40305ab1a5c535ea98ac3332108636f489aac88c0ce73c5c2ec8d34b42d7a8c"
+    },
+    {
+      "path": "scripts/test_build_reports.py",
+      "sha256": "4e74335365b54f212445f9b45cce9d44eb1c7fc4cc440786ee4a64ae3be0b100"
+    },
+    {
+      "path": "scripts/test_flighthelmet.py",
+      "sha256": "57312dc569192523122bea47099c107bc8468778c96b494fe335e7fc4d3d698e"
+    },
+    {
+      "path": "web/app.js",
+      "sha256": "4362385d7d851c9921c60c5bccc84e8fc05f5bf8b806bcf48b05ca46752c1610"
+    },
+    {
+      "path": "web/assets/flighthelmet/CREDITS.md",
+      "sha256": "e07ba5c6aa6564d3293f702cc32d3f6fc376ce0713c5da3b744752efd0520825"
+    },
+    {
+      "path": "web/assets/flighthelmet/FlightHelmet512.glb",
+      "sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf"
+    },
+    {
+      "path": "web/assets/flighthelmet/README.md",
+      "sha256": "37b575920579abb94ce3bd5e654d1616555873e2ea61fb657199b3e4f75c64c5"
+    },
+    {
+      "path": "web/assets/flighthelmet/manifest.json",
+      "sha256": "b7f01adf4a9b425755147e625c699b93c73f3b3b736bbe5ec00ce9955c2da6c5"
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "9d493c4517e4faf53de1e1239a0cfb814f2eba16eaf964e238ccc6df854ead1a"
+    },
+    {
+      "path": "web/measurement-flow.test.mjs",
+      "sha256": "010c06fd6320a1f9a4de9ab82b86b62a0f7e6e21b211f31c81a0e2cc8471c7b2"
+    },
+    {
+      "path": "web/metrics.mjs",
+      "sha256": "c18df666b89cc3314df872751719a7b48ecee362f01acf22c74bbf8e830a250d"
+    },
+    {
+      "path": "web/metrics.test.mjs",
+      "sha256": "84874125faad1816d0f37f2149aa0c201e656464c1a0001b98ef4a7b09eab6fc"
+    },
+    {
+      "path": "web/pbr.mjs",
+      "sha256": "2387f9061d39fd8178c3b98b07379bf23a0d49a47ce3f6842e4c525fe878b650"
+    },
+    {
+      "path": "web/pbr.test.mjs",
+      "sha256": "224f7aee43471d16c095ec31f98e62dd151425dd5205b7c886eac503a6243e33"
+    },
+    {
+      "path": "web/shaders/color.wgsl",
+      "sha256": "8ac34c590ef4311396efaffbf42d9e7ffb8cde999f7ee9f9e3683bf137f778a1"
+    },
+    {
+      "path": "web/shaders/courtyard-heavy.wgsl",
+      "sha256": "a3591d4511f12356b0bdfc0fe6b18f23855418e926112240331766dd7c8dcb83"
+    },
+    {
+      "path": "web/shaders/courtyard.wgsl",
+      "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+    },
+    {
+      "path": "web/shaders/flighthelmet.wgsl",
+      "sha256": "a379dbd6f4f910c2befa722415f8cd1270a1066bd6fe1dc211cb5c9a3fec2560"
+    },
+    {
+      "path": "web/shaders/instancing.wgsl",
+      "sha256": "494c8f053f431852c7c47ed5651f4467b241d5639aa3bb3b9db617ff63372e5e"
+    },
+    {
+      "path": "web/shaders/sphere.wgsl",
+      "sha256": "b8789695c998397a7ccfa44115accf9a2c43c9329532ade28a8ed288360953cd"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    },
+    {
+      "path": "web/state.mjs",
+      "sha256": "5e3aa9a3bd42647616b099efcfe2fed500b74fdf6bf43c7036e2de5d298c574d"
+    },
+    {
+      "path": "web/state.test.mjs",
+      "sha256": "ea2df7dc2cd9a021967350c8fef6bc3edf57124e9f62f89fb3fafb70f291856b"
+    },
+    {
+      "path": "web/styles.css",
+      "sha256": "49bf9893fab3444827bf5c4d4dc1daaf38ac053492df9a13cac7b0093a06056c"
+    }
+  ],
+  "raw_evidence_files": [
+    {
+      "path": "camera-0-debug-0-flags-3.ppm",
+      "sha256": "f92fdfd01cf27605f9375db938501ab87ce4e38e79c7e77754aa8701ecd9c035"
+    },
+    {
+      "path": "camera-0-debug-0-flags-5.ppm",
+      "sha256": "cb4202ac91afe32873f81f2e6192f442299a416e7e179ce7ac3f3c14d08d8bb2"
+    },
+    {
+      "path": "camera-0-debug-0-flags-6.ppm",
+      "sha256": "10b7d821a9f9a593f5f6aea8347254aae0f865a25c72e65b299a1a65c371702c"
+    },
+    {
+      "path": "camera-0-debug-0-flags-7.ppm",
+      "sha256": "65c5cda614e008f5a520395c810d1e57794feffa6527ef8d1168031ba1635413"
+    },
+    {
+      "path": "camera-0-debug-1-flags-7.ppm",
+      "sha256": "8d46b5a774ceccaab5322f73555e9433dd209ee088e9d4cbb40835ae8cee2d83"
+    },
+    {
+      "path": "camera-0-debug-2-flags-7.ppm",
+      "sha256": "3126609483c80fc7557a8d8f470b340eda61ad605523b3b8c2c6f96735340db9"
+    },
+    {
+      "path": "camera-0-debug-3-flags-7.ppm",
+      "sha256": "05b580212b3d82f354ba0c2624d3c4571fd0ffdb75eb77cfa496b4a78baaedfe"
+    },
+    {
+      "path": "camera-0-debug-4-flags-7.ppm",
+      "sha256": "72214cfaed58e48cbee4de64dfe08fa2aa266aa39229ff869338a797f538389a"
+    },
+    {
+      "path": "camera-1-debug-0-flags-3.ppm",
+      "sha256": "126d46c6682059b528eab441be0587ec8790e7277fe4e17d88d04aa21b195f9d"
+    },
+    {
+      "path": "camera-1-debug-0-flags-5.ppm",
+      "sha256": "87756571453a55752a92f449c196b9c4147d272a5e849758ec845be43966d5e5"
+    },
+    {
+      "path": "camera-1-debug-0-flags-6.ppm",
+      "sha256": "b0dabad0f16ee483a8926e35991529acecd0ec1ce6361a8f348d8ad1b578cf3e"
+    },
+    {
+      "path": "camera-1-debug-0-flags-7.ppm",
+      "sha256": "badec528183594a0d75071da1b538170f3457d7f209b016a9897f20b061de9bc"
+    },
+    {
+      "path": "camera-1-debug-1-flags-7.ppm",
+      "sha256": "eb558e74b7569641ca8fd0285eae1378d486a541267f855067476a7699e66bb0"
+    },
+    {
+      "path": "camera-1-debug-2-flags-7.ppm",
+      "sha256": "06b2484e549ac8247ef8398efa1d3fe4d28e19e0b48bb8f62cba6ff6a944b3e2"
+    },
+    {
+      "path": "camera-1-debug-3-flags-7.ppm",
+      "sha256": "4bca5b8949e7a89f40b9826abae6ed1bc7782a7445dc5b8be17642fe5f7fb32d"
+    },
+    {
+      "path": "camera-1-debug-4-flags-7.ppm",
+      "sha256": "4fd6f23c6c78bfe80d9c6cffe41c1e0bb139e7d2ac0c918d3ea718a0c9baba17"
+    },
+    {
+      "path": "image-differences.json",
+      "sha256": "bb099db61f0dfd13bac378fe0386f69a7e7c6f765b621d41dcfacfa67baca800"
+    },
+    {
+      "path": "native-walltime.csv",
+      "sha256": "5bdd514536367c6c315c4cd55782caca80eb21adeb8c93e5952055009f5f600e"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "18ae753df9897d4af976e5fb4653256f153ddfcc27934ba34b68c84b82a9ef63"
+    }
+  ],
+  "final_source_verification": "Publisher verified the private commit archive: all 175 files match the frozen private manifest, zero extra files."
+}

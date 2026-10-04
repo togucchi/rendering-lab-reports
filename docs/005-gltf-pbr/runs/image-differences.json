@@ -1,0 +1,118 @@
+{
+  "reference": "same camera lit flags=7, internal comparisons only",
+  "domain": "RGB display-readback byte channels [0,255], not perceptual error",
+  "comparisons": [
+    {
+      "name": "camera-0-debug-1-flags-7",
+      "mae_against_lit": 7.529685974121094,
+      "changed_pixels": 43432,
+      "total_pixels": 262144,
+      "max_channel_difference": 222,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-2-flags-7",
+      "mae_against_lit": 28.44211196899414,
+      "changed_pixels": 43433,
+      "total_pixels": 262144,
+      "max_channel_difference": 255,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-3-flags-7",
+      "mae_against_lit": 9.329723358154297,
+      "changed_pixels": 31717,
+      "total_pixels": 262144,
+      "max_channel_difference": 255,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-4-flags-7",
+      "mae_against_lit": 20.973257700602215,
+      "changed_pixels": 43430,
+      "total_pixels": 262144,
+      "max_channel_difference": 255,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-0-flags-6",
+      "mae_against_lit": 9.955950419108072,
+      "changed_pixels": 30113,
+      "total_pixels": 262144,
+      "max_channel_difference": 166,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-0-flags-5",
+      "mae_against_lit": 0.5434621175130209,
+      "changed_pixels": 25340,
+      "total_pixels": 262144,
+      "max_channel_difference": 222,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-0-debug-0-flags-3",
+      "mae_against_lit": 3.118255615234375,
+      "changed_pixels": 30006,
+      "total_pixels": 262144,
+      "max_channel_difference": 216,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-1-flags-7",
+      "mae_against_lit": 8.018290201822916,
+      "changed_pixels": 38911,
+      "total_pixels": 262144,
+      "max_channel_difference": 244,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-2-flags-7",
+      "mae_against_lit": 19.427445729573567,
+      "changed_pixels": 38911,
+      "total_pixels": 262144,
+      "max_channel_difference": 255,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-3-flags-7",
+      "mae_against_lit": 5.584744771321614,
+      "changed_pixels": 20281,
+      "total_pixels": 262144,
+      "max_channel_difference": 255,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-4-flags-7",
+      "mae_against_lit": 21.97354507446289,
+      "changed_pixels": 38911,
+      "total_pixels": 262144,
+      "max_channel_difference": 247,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-0-flags-6",
+      "mae_against_lit": 5.862216949462891,
+      "changed_pixels": 18454,
+      "total_pixels": 262144,
+      "max_channel_difference": 149,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-0-flags-5",
+      "mae_against_lit": 0.5119171142578125,
+      "changed_pixels": 16194,
+      "total_pixels": 262144,
+      "max_channel_difference": 153,
+      "aa_max_error_reported_by_native_test": 0
+    },
+    {
+      "name": "camera-1-debug-0-flags-3",
+      "mae_against_lit": 1.4136695861816406,
+      "changed_pixels": 18300,
+      "total_pixels": 262144,
+      "max_channel_difference": 198,
+      "aa_max_error_reported_by_native_test": 0
+    }
+  ]
+}

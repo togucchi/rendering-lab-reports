@@ -1,0 +1,1566 @@
+{
+  "schema": 1,
+  "asset": "FlightHelmet512px",
+  "derivative": true,
+  "source": {
+    "repository": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+    "commit": "4995a638c96dbc94376d3d6164e70fee3ac7f7a2",
+    "model_path": "Models/FlightHelmet",
+    "original_file_count": 17,
+    "original_bytes": 48392569
+  },
+  "source_files": [
+    {
+      "path": "glTF/FlightHelmet.bin",
+      "bytes": 3227148,
+      "sha256": "9e623a27f837e1cc995d1380da5fd3becf4d29586fefba882fc0ba76b49f94bf"
+    },
+    {
+      "path": "glTF/FlightHelmet.gltf",
+      "bytes": 18698,
+      "sha256": "c9c16c8b85749f62f38ec6069700e5388c6894d8e566f51a35cc270255402cd3"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_GlassPlasticMat_BaseColor.png",
+      "bytes": 2306649,
+      "sha256": "0914544aabe161046f417274051e34ecc85163cfce6698581b3e1e18c96fe4f1"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_GlassPlasticMat_Normal.png",
+      "bytes": 2648815,
+      "sha256": "c297f18f3b4259fc8b411cdc843a4a44b8cef3e3a53b21cec7b53574e5ef6872"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_GlassPlasticMat_OcclusionRoughMetal.png",
+      "bytes": 3696183,
+      "sha256": "d4519704f15395c7138421a5814b478df549a2411bc6fa97dd6d02ba62dc6c54"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LeatherPartsMat_BaseColor.png",
+      "bytes": 5478748,
+      "sha256": "c9346ac6daa3ad34d0b36c1e7cf311ccbcc298710ea453cdf3b6ad40dc60013f"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LeatherPartsMat_Normal.png",
+      "bytes": 5675531,
+      "sha256": "7fb69b26f80c67df41e87d7344bde9d24dda0be77546b0a6acabc4040694872a"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LeatherPartsMat_OcclusionRoughMetal.png",
+      "bytes": 4375686,
+      "sha256": "b77e60f175e4632cd3d892bc9f0e748f522c9288a469585d5cb90270cd68910e"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LensesMat_BaseColor.png",
+      "bytes": 696304,
+      "sha256": "b55f6561f8adabc907360443aab010f3effaf05074fdccea46d8c2d66247cf16"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LensesMat_Normal.png",
+      "bytes": 5575,
+      "sha256": "430775894001933044c89070b1bfd4f9b8489f74780b1ab7079efb0afca95d8d"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_LensesMat_OcclusionRoughMetal.png",
+      "bytes": 601603,
+      "sha256": "35d81a71ab184f9b50f63ff8f3e0f90cfb6c99f9b2d9ed9d9887a902c16a458d"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_MetalPartsMat_BaseColor.png",
+      "bytes": 2680488,
+      "sha256": "8e26add3ad1b2398d58638580bb1fe56f2fbae3572b4a682b6595a5a26fb1b40"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_MetalPartsMat_Normal.png",
+      "bytes": 3273483,
+      "sha256": "a833fcc12718c02bcba97cbc9760d06c4a711ce7f36c23076e7cf6d4393a80e7"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_MetalPartsMat_OcclusionRoughMetal.png",
+      "bytes": 2976508,
+      "sha256": "17f3e27b51011b8f98751dae25958e2b850fcf1467f1019bec812553e0e5eb1d"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_RubberWoodMat_BaseColor.png",
+      "bytes": 3594300,
+      "sha256": "f751d643d1f220b300705d9ad57ed284a883eb7d3788469199b752f4381dcc37"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_RubberWoodMat_Normal.png",
+      "bytes": 3327566,
+      "sha256": "bb70753c836c59db7e245e5fe2c9db8eee833d29d67e03da348f6adb1e95142a"
+    },
+    {
+      "path": "glTF/FlightHelmet_Materials_RubberWoodMat_OcclusionRoughMetal.png",
+      "bytes": 3809284,
+      "sha256": "2727d4638514f75fcbd29777bf03db6bd2f0f1ad926e2976cf2346aa22c0bd19"
+    }
+  ],
+  "source_provenance_files": [
+    {
+      "path": "README.md",
+      "bytes": 3348,
+      "sha256": "7724b64fb4fae1135ddec3738d1eb9320d3bb9c890f599c423a09e205fb7257f"
+    },
+    {
+      "path": "metadata.json",
+      "bytes": 652,
+      "sha256": "41d0c37c739d5c25eb3e276a13ff7a2658abb2d44422812de7a839bb03c503a0"
+    }
+  ],
+  "license": {
+    "spdx": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "year": 2018,
+    "owner": "Public",
+    "credit": "Gary Hsu: Conversion from Maya"
+  },
+  "conversion": {
+    "algorithm": "semantic-area-v1",
+    "maximum_dimension": 512,
+    "geometry_unchanged": true,
+    "source_geometry_sha256": "9e623a27f837e1cc995d1380da5fd3becf4d29586fefba882fc0ba76b49f94bf",
+    "original_generator": "babylon.js glTF exporter for Maya 2018 v20200228.3 (with minor hand modifications)",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5",
+    "zlib_compile": "1.3.2",
+    "zlib_runtime": "1.3.2",
+    "script_sha256": "b40305ab1a5c535ea98ac3332108636f489aac88c0ce73c5c2ec8d34b42d7a8c",
+    "source_lock_sha256": "f536b652c58733ce7569a716fbc99a80a87d1bfbc29e561784c24cac39916fc1",
+    "base_color": "sRGB-decode RGB; equal-area float64 box; sRGB-encode RGB; linear alpha",
+    "normal": "UNORM to signed XYZ; equal-area float64 box; normalize (zero fallback +Z); UNORM",
+    "orm": "equal-area float64 box in linear data space, R=occlusion G=perceptual roughness B=metallic",
+    "quantization": "clamp [0,1], floor(x*255+0.5), uint8",
+    "png": "RGBA8, compress_level=9, optimize=False, no source metadata",
+    "mips": "Runtime CPU generation: repeated semantic-area filter from preceding quantized level; full chain through 1x1",
+    "mip_hash_scope": "Python float64 preparation reference only, not runtime/GPU-upload hashes; float32 runtime may accumulate small quantization differences"
+  },
+  "compatibility": {
+    "extensions_used": [
+      "KHR_materials_transmission"
+    ],
+    "extensions_required": [],
+    "unsupported_optional": [
+      "KHR_materials_transmission"
+    ],
+    "warning": "Transmission is unsupported in this baseline; LensesMat uses its opaque core metallic-roughness fallback.",
+    "material_count": 6,
+    "mesh_count": 6,
+    "unique_images": 15,
+    "samplers": [
+      {
+        "magFilter": 9729,
+        "minFilter": 9987
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "bytes": 1127,
+      "sha256": "e07ba5c6aa6564d3293f702cc32d3f6fc376ce0713c5da3b744752efd0520825"
+    },
+    {
+      "path": "FlightHelmet512.glb",
+      "bytes": 7428104,
+      "sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3513,
+      "sha256": "37b575920579abb94ce3bd5e654d1616555873e2ea61fb657199b3e4f75c64c5"
+    }
+  ],
+  "images": [
+    {
+      "image_index": 0,
+      "source": "FlightHelmet_Materials_RubberWoodMat_Normal.png",
+      "semantic": "normal",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "bb70753c836c59db7e245e5fe2c9db8eee833d29d67e03da348f6adb1e95142a",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 289980,
+      "png_sha256": "3bc8357020c4bac42120ca128deadb0ff94d43e103d5ceec332c383bddfdcef0",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "64426061bc994c62ef319346f50e2bb60fec785e4ac76749955827d712c4c4be"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "75da9ffb0e3f0dffad3b9b40bae287d7693f7b92d8e298660feec0a95a375d5c"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "847f86d5a44c43fec83c629d2f5fb23e8d22cb1408f6f101e481803be214e81f"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "5f682cdc30b967d0fd2649c74f25ee59c46686e3b3fcda83f734fd19ebb35938"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "80349e3cb89e4fa09c388558178c0e4b0e47fba1a90f6139a409c008451d92bd"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "7fd032f6e5c1750591505b9704957e5c3d357bdd3e1a0e03f85432b0a69ee838"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "512d8d5a020f56f3271eecbb16c7ea11c28bcd33da10680abd3e5b2f2057a15e"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "2f6c6f233a3399e38b3b034ce898bf917e1fed3aedcc1545f28b0be70e5e5226"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "7a6e26f1c6fc20aa87e74641851a8aa2c9d90f83162cc8139e318e0adf7add44"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "7d3637f853b2bd5a74fcb24776369cb407f4588675dcc5a32165bf6994a32c9b"
+        }
+      ]
+    },
+    {
+      "image_index": 1,
+      "source": "FlightHelmet_Materials_RubberWoodMat_OcclusionRoughMetal.png",
+      "semantic": "occlusion_roughness_metallic",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "2727d4638514f75fcbd29777bf03db6bd2f0f1ad926e2976cf2346aa22c0bd19",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 310446,
+      "png_sha256": "2f569056ec4cbf7e9cdc4761362c9ffaaee4b542e98fe9109d96dbb9a4099651",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "13887e6c267864197b7375bd56f0a58d6a15b2b857f5381b5b59bd7b3973d75f"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "5c5c7c5ab9444ef702a60a3528aff5e5c094b2c92dadeaf2a816bc0487656b61"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "ae0d70fa4a5728da7203577290d0d08ae9a0306a75a0fe6557c7e3105d65e4e8"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "881db48fb1d9dd2d3ba3a7034fbbb50e702e32eb30cdf37f9dd0a4ca642c32e3"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "6d9cb5b07278e1e4deb7d0f35520f536e180b4e5e069dfcf1ed969c9be09d512"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "7fde6df7b6ba32ed1058b844bccebba2d33cec01f330fe1bbda0446229554321"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "30df13e37961a67562abb8cc9fa4c4894723151e0d6240933dc8aa0b730edcef"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "ac5c100312ab688dd7463ca0087d4378f7ce9b493f3f5d7978012f915bc09bc0"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "1c4413a5759480cca53e9bf94d03526f96ac6f83f79c02157c4841a5e62fd8e8"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "3812d76ba93db039a5b93b68c413ad96602b2253e8aa966f1ff30c8d3486331b"
+        }
+      ]
+    },
+    {
+      "image_index": 2,
+      "source": "FlightHelmet_Materials_RubberWoodMat_BaseColor.png",
+      "semantic": "base_color",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "f751d643d1f220b300705d9ad57ed284a883eb7d3788469199b752f4381dcc37",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 278446,
+      "png_sha256": "f80cb81818e9697b11cd1bff3367fffb23d407d8f561e901ca659c54111ff7e1",
+      "gpu_format": "Rgba8UnormSrgb",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "6376a52eeb1f1a8042520ea77d1e6f3e3bfb559c7e77217d8c9c4b9dcc619cee"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "b7f3092e1c9c58ab20909e14882f580ae4c2116dac8773bdddb354ffcc95cb0c"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "e697b2862e84ca4477a07ea4d775779bc025271520b6e7c94af2a74480109944"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "97f08e803e88d8bb6177697298761ee10c4d8d59c6accfc0c15771b10787f7d1"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "3351dd89beece0d4bd551721453e158a3926a2f46d5d714cd853d79725acce16"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "f27a77485e757140c82b0fc0f67fc28d681f31d10147c9407b0c58eb2c89149d"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "89b51ebd50fd76e343b769c9c8e0bf47b390a42369336d17c0e89153ffc8b6c9"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "b38338e58f9b44b73149488693c8d55a1c5a99f0bcf9c8c5eca517a7316f5076"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "6670d91a7331110fa7bdcd5c479002b60a632e333df382d4866e35abbf5b98ff"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "1027a7f0a506ada31eb126a99f69f909c97511bd51f4fcb2ea1cc14b9594ae24"
+        }
+      ]
+    },
+    {
+      "image_index": 3,
+      "source": "FlightHelmet_Materials_GlassPlasticMat_Normal.png",
+      "semantic": "normal",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "c297f18f3b4259fc8b411cdc843a4a44b8cef3e3a53b21cec7b53574e5ef6872",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 277640,
+      "png_sha256": "559f024d10470bef30d9085f9aadaa809edfa5b95499bad02135b0051b92de6f",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "084abe550a25a2615d9b27cffad5bccf24f0807e11cc2376fb84fe782784d498"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "d4b087ba3e067bc690cd26874a2f0282b770884cfdf61366661455e709c4e6c7"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "e7c0ea2661436a00b808f1560929b04ad1f29f80cbfa67593f59eb72edb2a7f0"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "153b279a791be748b2e19c79d8e98d92606ec75b317c0c3ef3e4ce91ae0095e7"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "c98a52824f62ebe6c2c8573f0f058e292366f0cc15beaef5f881eb3feeb6e670"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "538e5958621826f1da6f91ad448125945bc74b89f0a150ccdc2a3e32bd1d6d41"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "fed883e2d2a68f8dd070890aa550a7ced9f1c807e3365d27f47deafabff842cf"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "5f47552fa8688c59e5ce03aa484d140c203164969675ccfd7715a3c566a93207"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "3b49d7a97ac6d0ab784af9f2aca919f9555ad45845141f1901aa366561176546"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "4a9d1ce89bf3b9835faab10443a12e5bc5e9b5f1ffbb2a80da1173d176db0fc9"
+        }
+      ]
+    },
+    {
+      "image_index": 4,
+      "source": "FlightHelmet_Materials_GlassPlasticMat_OcclusionRoughMetal.png",
+      "semantic": "occlusion_roughness_metallic",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "d4519704f15395c7138421a5814b478df549a2411bc6fa97dd6d02ba62dc6c54",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 304686,
+      "png_sha256": "99d28282cadc2cd2eb159be39fc64d2a960ea9e470c57601d694811e54d6217b",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "9e554b0091952f23a8ad2f6c919809c661721410e98594f4db8242879cd8e4a9"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "7c71e710330740f919ba32c18475b31d42a45ace48b123e4c8bc5c9409728ff2"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "3c0284405a6e50c471f6f9f7055bbab5e4dedb2995fb29150cc8fa019b62c5cf"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "a7e851fb78609d0201e2286eb402746199b369ade94c622616e762f7f6fa2145"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "e51ed321e68c424d37a4e1f1329e679459ed29415558b8b136662c2e7b7956c7"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "e32949aa4628ebcc9dd5f2f32bae07c9c569e37344c5cda7b7220ecf4f5b55f4"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "a799081070b7afb150ff009dc7e9af6c839d8e4016d169ab57985ea539368311"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "78a8b0f815e325145e7821e3439ab5baa71b2a6eecffcab192615c992a99a3c5"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "721ab26a5e60af5d7a6267a85c43b69f42e2bd7658a32563ebe2d9002c1671c0"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "b3dd432c7ea1abda4e719910f2c0ad0d9cfbd38a7ba09d7a206d164ab51193ff"
+        }
+      ]
+    },
+    {
+      "image_index": 5,
+      "source": "FlightHelmet_Materials_GlassPlasticMat_BaseColor.png",
+      "semantic": "base_color",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "0914544aabe161046f417274051e34ecc85163cfce6698581b3e1e18c96fe4f1",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 227563,
+      "png_sha256": "61e3e035b88bcc1eb0bf082e1a7dfde42bf34e6e85475b1f87b64bbc2b5f8232",
+      "gpu_format": "Rgba8UnormSrgb",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "a2ceabbb629d0614d57d3b090b58f531cffdf09c99d4120f08190c86449f9a19"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "852aa4bb2c6d8163cf0db8584029ee8de80c4829adef783ba9d9c6e3100bf130"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "e2dabba409c85a594788dd0ad03f87484a7a1ebdd4cde04e0ce917f13690e427"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "daf8c982c5e9a5a031b84c0814bcc5bf9da528e6590f532be3ca1ad82c7c2e7a"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "0552214e29cdf90f033555318b98edd8349caedc58b96a9fd73ab288e8f00a13"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "0c0d370d8182311840a4ceec554df77db9aba24c78acd547d4d9c71a65e93783"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "8c3f1391409377f0499268bccfb7b431a84326bbaaf847dc5e02c897c75a63a1"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "1192d62b93d970fbfdfe8c09ee6e39b9b6e64cd27c762d088f3ea11ed7c2114e"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "c6508a0bbe7e90f5a3d714926311def472b1b9c970ab04ac78a9fcc0867bdd1e"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "4ae9c0a1190e990cafff7554894a8943babee37631dbb318820f52849d8bd2b5"
+        }
+      ]
+    },
+    {
+      "image_index": 6,
+      "source": "FlightHelmet_Materials_MetalPartsMat_Normal.png",
+      "semantic": "normal",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "a833fcc12718c02bcba97cbc9760d06c4a711ce7f36c23076e7cf6d4393a80e7",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 331472,
+      "png_sha256": "ae0f4db8684c6c1dfd8fe000f588b99f541fca4769c363e15aaf91c723cbf807",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "043e396a30980fb896af2ab5a22e7f0a47d762dff2ccc1bcbded039bf0a2079d"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "887f5cfdd14bf6411c3fb207241a73cbc2be4e96ef82b8fb8de183894847c9d6"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "e4f0b666d62ccf38aeff4071fdb45728da4c369e3a203b601dc14c80081359e5"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "1c63dd913cd1498c5d2d358f66e50b49dd55e5521d3520f8c54567e6636a90d6"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "3e4cf7cf9e2512b561a8f923c3bd12207987629b5e681dd0d903a22f6ce2516c"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "3c0f5e25b26c9f5dc459d9a24fdb0185a8a26096748d54229c8f27976c7db672"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "4b528a32a28dd5a44a38b0b5302ef5b15e67369583bb23adbdcc558e8b941956"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "5a191482ac23674f887de0c86d22f2e2db4ede737d8819703983a591796c7acd"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "37fe60c60d391b2bfd97a088580bdfc44f7f286627e205f4fe6b36517d799c98"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "6666a83d73dd144639464a5a901b65cc5e2e4463eafcb0c267bb59a6f22d3d78"
+        }
+      ]
+    },
+    {
+      "image_index": 7,
+      "source": "FlightHelmet_Materials_MetalPartsMat_OcclusionRoughMetal.png",
+      "semantic": "occlusion_roughness_metallic",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "17f3e27b51011b8f98751dae25958e2b850fcf1467f1019bec812553e0e5eb1d",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 321683,
+      "png_sha256": "e6852ca021c5dbf444f867b910ee7848e66a0785657dcfe6eb6d3de4481c6fbe",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "b4fb26ce733ab693471ebd8eb600c6a4b67d52e2ff6404cfc11b164caf4b86fc"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "cfa28c9314322c38f218e02a0410d24aed43a51e5213c9be46fd73a62e1bf03e"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "2379ffbc6b56a17819cec3998a805c594f7861c75fb3a85809c1fb1ea52b0506"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "af7bf73013269405e0ad1788e8702670f698a7ad066a5e6b8573c728e5a32c79"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "1c818fcf57b0d005b3c55a9d748674927f804c22be9df05c7cdf30adf8d44455"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "0ce3742af8164c5894defbffb94d405d397e6d5d999ae954545796b70caffc16"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "2f9cd4cfaab4959a7252e58a8829e260ea00fdf75fd862ede020585712dcd9d2"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "3c74bbdadbb8eed7a07ca87cad8a301b9cd72a5d7e13d26b1641397322f09eea"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "2afd9bdb1aba98964c3a043efb216f75860b8c73be3949795911c5d79ba9636d"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "60763f648d0413b693eace42a77ea76fda3b52f3b574da75c266e3de6ac5e25f"
+        }
+      ]
+    },
+    {
+      "image_index": 8,
+      "source": "FlightHelmet_Materials_MetalPartsMat_BaseColor.png",
+      "semantic": "base_color",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "8e26add3ad1b2398d58638580bb1fe56f2fbae3572b4a682b6595a5a26fb1b40",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 304147,
+      "png_sha256": "d1c3bc442c0c2bc1c27b868222dd87b436201542e1687eded0badb99410decab",
+      "gpu_format": "Rgba8UnormSrgb",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "44a6d042aa23a28d9dfcee6726a0323d208434955f27843901e96217dcd8c7d7"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "b9da5435e79548c9d36f0cd543649ab4fb4a73d079074e132293b02778b9a4e7"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "a58fb83c1019a6a03f31873a0d505c69dc253ce5653f2ec53b380394f8c60e04"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "cc2aaa00dd571ebf691fa9c340a9c506e10c3452d9f717cf3a7c2fedcf94cd16"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "2fe9f4a9b404cdd96436212de665ebdd53ad1738c9785029d2947f0e832f1098"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "3445c2f17893daedd28e10fff78062289a50dac27143df8950bd7326eb61f32f"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "07c64ec1717ca558d753a73cf2f720ee4e881bcdfe8bdb86e05ae614ac71206e"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "820a857ea3e45341b96dae615ab809c42188228bae2a14ce963b576ab8643c53"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "92d5063fa61a6fb8ab00cacd8dc4662af9385fb46f2d125f92687c400ac3ebad"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "385e3534eb223f168c28ce053a6df5a1e9b0ec2364aab646abb0c43a15cc5e5b"
+        }
+      ]
+    },
+    {
+      "image_index": 9,
+      "source": "FlightHelmet_Materials_LeatherPartsMat_Normal.png",
+      "semantic": "normal",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "7fb69b26f80c67df41e87d7344bde9d24dda0be77546b0a6acabc4040694872a",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 416501,
+      "png_sha256": "dfd1268839fc57baaa311b95c9eb3bb08307b6b3f206425700d285d51fcabb95",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "b373a05769878665c6aa2e8d5518cb19fdc35e7149ad371cf1a012dcab4826c6"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "27810dbeeec14a38d34c8306818aa87efee6668c1c040bd6f77838ec8c5ad134"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "91cb73051862ac747a2465592d21802fa896713f5b42c247b0e825011c63ce73"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "82efeafef1239b4a6a2322a8bfdbd947b68aa9f9b5477ba91792c21c8ef84ddb"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "df48dd9182e1da1f1476ca5c755990dc644dc2e30271cf9e312656bea320b215"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "26432c7f075bc5296164f25317dd54fdbca69bc58f3cb25c11837cb8557200f0"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "f75b4c6a22f971b6cb9c596bdf9556713f077c51ca0b915fd3e19faef92b6ddb"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "324b8462082029f9e0b9541bb174a901e20142bdba877f564cd2c37642de8386"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "339b8294b36e4d47ba089ab73aae70eb15b50a6e1aba852297ed7fe1cab9a931"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "7d3637f853b2bd5a74fcb24776369cb407f4588675dcc5a32165bf6994a32c9b"
+        }
+      ]
+    },
+    {
+      "image_index": 10,
+      "source": "FlightHelmet_Materials_LeatherPartsMat_OcclusionRoughMetal.png",
+      "semantic": "occlusion_roughness_metallic",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "b77e60f175e4632cd3d892bc9f0e748f522c9288a469585d5cb90270cd68910e",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 354805,
+      "png_sha256": "9ec7b588a9b93aa40955c67ff620057ab9227a6f5efea93d8f69cdcbd42cec45",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "ff4cedd08c80e7d6abb062b79865a1bb8f5c2cb583b114386a058e855b3f9715"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "6022b3b93c4c62a9bb3c1d626719333931ac99fdcf5c8359555256f87c97888e"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "d45c5e01b3e5025bfde0b075dc9a24cc9cce8dc0d05eeb73058b7f6468af6e1c"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "36f2b9dcb2c228418efdf6cc38dda086ffb47aa7eac447f8529d022c221d2d8e"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "5129ccbf2e1298370b24d2512efc0e61459ebf285d97cb5f033fd795bb877a69"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "a29ca8a5e8ede5a855cd123f07045a50433b1755bacc980e17321d7846c15939"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "984e15713a155149cb6879f8c2d580d3ff9102cae0f25da51ed9a0abb3da88db"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "2170db9478e8fbd230384c4b87c152520cf2591ffe4fb8e3c9b5c6fc0b4e3f31"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "d4bc10b041096b078fc2fa3f9fad9b57cef47d05c6aae130bb991f60f12a3eb5"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "0209a4240db2dc2a60d1ccdd52645ffd59b64003e5ce86fb462289bb0ade4ef8"
+        }
+      ]
+    },
+    {
+      "image_index": 11,
+      "source": "FlightHelmet_Materials_LeatherPartsMat_BaseColor.png",
+      "semantic": "base_color",
+      "source_dimensions": [
+        2048,
+        2048
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "c9346ac6daa3ad34d0b36c1e7cf311ccbcc298710ea453cdf3b6ad40dc60013f",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 345417,
+      "png_sha256": "082bce57b7c7ae46e40585d3bbc39da4c46b1fafbb8b17e96a19043b0c83711c",
+      "gpu_format": "Rgba8UnormSrgb",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "4c777463a5328178407fc86d648aa323e8c1dd6a7c98157f501e406b285edd06"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "6df2eafde0ed9d3738d12dc85b86436a2c98186b0c40760a779dc19a6245a234"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "dca39bc478503e2b6960ebf8dbe4f653171ca8f461dd188bebbc78b4acf057a3"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "93a69118f5233a7d59b2c9454558dbb13861c00a1f13785ef724288e09b6720e"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "d9186c2b49e1973c25a5d1d42ede4e20fdd423e4794435ea7ac50d2019ea73ea"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "6f46fa6befd606950edc138b34d5d9c4e66031b776393282c047bb652e3398cd"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "3072dbdc04c823da17100d24a67ca1d848ab5a8c2d81708a1dc6791223838137"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "de0e662cb78654398e6934296da853ba47041e8d381bea45f6c356034f8f9f52"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "89c52a93c41f1cd3fd09a076757f9c7995c09dbd1a6219c230e9e4b55903d966"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "1a0b28d5a1b056e458928a3d0892e4d4b8914b3161d6331eb7dcfa72131456bd"
+        }
+      ]
+    },
+    {
+      "image_index": 12,
+      "source": "FlightHelmet_Materials_LensesMat_Normal.png",
+      "semantic": "normal",
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "430775894001933044c89070b1bfd4f9b8489f74780b1ab7079efb0afca95d8d",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 1890,
+      "png_sha256": "b3c40e7969c168ead676dbf11813f8ef930378d5ec6add207ad770dae71a85aa",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "c05e01d0f91c92c5d380d009f17d8e8966ce0dc9407f23deb4b6ec67d41f6ca9"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "78f9301ef9d23dcfe6fd23917ad9a455f13445f0406c3d7b90bf0f9c5aaec89f"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "70eb492517cef240487f65d0264f9f63eeedcf9971302fedbeb4ff2b3c152746"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "db5ef51ba3383e1181a3da11429c93f1acaf8c0e7cd8eaed84e3f9ef1447727d"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "7e608e653190b59799ad384d43f0f20c46f3cb50d29460a36064f227f9dccabe"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "de7cfc37c46a66129f085969d72645da87b12cd8db08653237a58da7dbf3fe98"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "0d2a9cd3770c2052dc581aee74e1ad0dd9899b1be63fb83024bb6541f4e87bbf"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "33869922b91375cf2b77363e8858a3aee06bae988641ad07f99e817b272d2c35"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "fdbd6ef5f12baf4464f5e024276b6aa1cf4082aa83c091babd3b96f5a86c724d"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "dde5bcff31e3b2e6085239af1da9827447d0705e8500092ab6bdf699d819c231"
+        }
+      ]
+    },
+    {
+      "image_index": 13,
+      "source": "FlightHelmet_Materials_LensesMat_OcclusionRoughMetal.png",
+      "semantic": "occlusion_roughness_metallic",
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "source_mode": "RGB",
+      "source_sha256": "35d81a71ab184f9b50f63ff8f3e0f90cfb6c99f9b2d9ed9d9887a902c16a458d",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 191317,
+      "png_sha256": "6e492d1e56889391b63f4f8ab22240be60259743f703b1a7ead9f33df68b8d61",
+      "gpu_format": "Rgba8Unorm",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "f90be8b170da7b98c905620f94c945045c62bc6e6bde6808e31eb23e59ffa859"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "5571a98784f143bc1af82dea71888de16c4c04e7a663ce5c2922914260d0c980"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "fd2f693d277481de97b87e6307443ec6cd72c8b81b8d9e94ad6740c1305c0db1"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "d3a2870312207fcb9349ff8bc3ca034c5c39fc31d3672ed7e22e177deb216155"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "3df8abaa1731a2e444ca6d92a43884f0862ffc50b2a8fb78b9a3b90db801e95c"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "9ae0d2af04643ed93d5719ef18876c2c9a4a752456187df2ef23525d95739d0f"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "482843d912dd70b3aa6df36fede8755669479cc6eab7f8a949f3c7653777888c"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "6abe09dc0d66bc40328b5136a3f05b7ef4e415a64cfbb5e0e9f742f31eaac7ad"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "f4221030dc25e579d2c5f6571a38ce000c0aab17d8f9bea64b4a853a4fafea76"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "71d98aaaf4b9c3808b824580277298000b2e5e4c7cef0bda1c09e3f2c6e9ec3c"
+        }
+      ]
+    },
+    {
+      "image_index": 14,
+      "source": "FlightHelmet_Materials_LensesMat_BaseColor.png",
+      "semantic": "base_color",
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "source_mode": "RGBA",
+      "source_sha256": "b55f6561f8adabc907360443aab010f3effaf05074fdccea46d8c2d66247cf16",
+      "derived_dimensions": [
+        512,
+        512
+      ],
+      "derived_mode": "RGBA",
+      "png_bytes": 234491,
+      "png_sha256": "345a0573d65a6975308cff3ff08d7fb9c50eb99b5289013aeb39819e58b9a849",
+      "gpu_format": "Rgba8UnormSrgb",
+      "gpu_bytes_with_mips": 1398100,
+      "mip_levels": [
+        {
+          "level": 0,
+          "width": 512,
+          "height": 512,
+          "rgba8_bytes": 1048576,
+          "rgba8_sha256": "4654390918f81a3a0d5db514a72f5b282041f94fd90a552ef276b1d5a19f64c2"
+        },
+        {
+          "level": 1,
+          "width": 256,
+          "height": 256,
+          "rgba8_bytes": 262144,
+          "rgba8_sha256": "c77fcd7f46d88144c22805834ab46dff7910aaa652f1fa86c4ed704712c2951d"
+        },
+        {
+          "level": 2,
+          "width": 128,
+          "height": 128,
+          "rgba8_bytes": 65536,
+          "rgba8_sha256": "347d42b9e9f03c8102a437c683517755bb52d6d7b5e2202dfde91d40cbb62537"
+        },
+        {
+          "level": 3,
+          "width": 64,
+          "height": 64,
+          "rgba8_bytes": 16384,
+          "rgba8_sha256": "ca574cf9cc6b99a62374bcff3d5a103d4a2483e005caa1293e3d2ec16b5a6c95"
+        },
+        {
+          "level": 4,
+          "width": 32,
+          "height": 32,
+          "rgba8_bytes": 4096,
+          "rgba8_sha256": "4376f304b75e8705f56698ac8a612be98b773fe3e57a690d7001771003cbd2f1"
+        },
+        {
+          "level": 5,
+          "width": 16,
+          "height": 16,
+          "rgba8_bytes": 1024,
+          "rgba8_sha256": "047c0b7ebe863fde396581beb013822b9d5a41007f0f8c6ef4ac89da20ac82f1"
+        },
+        {
+          "level": 6,
+          "width": 8,
+          "height": 8,
+          "rgba8_bytes": 256,
+          "rgba8_sha256": "d10e62dbdab91c72195cad6bf39b55845902b4b30230df001a8a672873b3f6e9"
+        },
+        {
+          "level": 7,
+          "width": 4,
+          "height": 4,
+          "rgba8_bytes": 64,
+          "rgba8_sha256": "740f49cc40b35e08a16871ef1add3b630da9504e5f6553a3feef4df062f3a2f3"
+        },
+        {
+          "level": 8,
+          "width": 2,
+          "height": 2,
+          "rgba8_bytes": 16,
+          "rgba8_sha256": "5dc410fd03107dc4f3de841d578633812d9305d811210cff18059bd7552a248f"
+        },
+        {
+          "level": 9,
+          "width": 1,
+          "height": 1,
+          "rgba8_bytes": 4,
+          "rgba8_sha256": "21cd0fe1e07d60d79755a25b7d774f74609e87a0a3e06a3b423f13298b24fc36"
+        }
+      ]
+    }
+  ],
+  "budgets": {
+    "package_limit_bytes": 8388608,
+    "package_bytes_including_manifest": 7481351,
+    "runtime_glb_transfer_bytes": 7428104,
+    "gpu_asset_texture_limit_bytes": 20971520,
+    "gpu_asset_rgba8_bytes_including_all_mips": 20971500,
+    "gpu_asset_plus_four_fallback_texels_bytes": 20971516,
+    "gpu_scope": "Unique asset images, all mips, plus up to four optional 1x1 RGBA8 fallback textures. Excludes geometry, framebuffer/depth and driver allocation overhead."
+  }
+}
