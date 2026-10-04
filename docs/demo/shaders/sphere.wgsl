@@ -1,6 +1,6 @@
 // Experiment 01: analytic sphere, Lambert diffuse + Blinn-Phong highlight.
 // Edit roughness, base color or lighting; invalid reloads retain the last pipeline.
-struct Globals { resolution: vec2f, time: f32, _pad: f32 }
+struct Globals { resolution: vec2f, time: f32, display_aspect: f32 }
 @group(0) @binding(0) var<uniform> globals: Globals;
 struct Vertex { @builtin(position) position: vec4f, @location(0) uv: vec2f }
 @vertex fn vs_main(@builtin(vertex_index) index: u32) -> Vertex {
@@ -11,7 +11,10 @@ struct Vertex { @builtin(position) position: vec4f, @location(0) uv: vec2f }
     return out;
 }
 @fragment fn fs_main(in: Vertex) -> @location(0) vec4f {
-    let uv = (in.uv * 2. - 1.) * vec2f(globals.resolution.x / globals.resolution.y, 1.);
+    // Resolution is internal pixels; display aspect is fixed even at odd rounded sizes.
+    let aspect = select(globals.resolution.x / globals.resolution.y,
+                        globals.display_aspect, globals.display_aspect > 0.);
+    let uv = (in.uv * 2. - 1.) * vec2f(aspect, 1.);
     let radius = .68;
     let r2 = dot(uv,uv) / (radius * radius);
     let background = mix(vec3f(.012,.019,.033), vec3f(.028,.047,.07), in.uv.y);
