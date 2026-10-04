@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "verification_record",
+  "is_sample": false,
+  "experiment": "001-procedural-courtyard",
+  "source_commit": "bcb259e6e5a8ebc9d11f132987a9a1e502c46010",
+  "executed_at": null,
+  "provenance": "Transcribed from existing verification and final check logs; renderer tests not rerun for report generation.",
+  "environment": {
+    "rust": "1.99.0",
+    "wgpu": "30.0.1",
+    "wasm_bindgen": "0.2.129",
+    "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "device_type": "CPU software rasterizer",
+    "backend": "GL",
+    "driver_info": "4.5 (Core Profile) Mesa 25.0.7-2+deb13u1"
+  },
+  "conditions": {
+    "width_px": 512,
+    "height_px": 512,
+    "time_seconds": 0,
+    "color_format": "Rgba8UnormSrgb",
+    "depth_format": "Depth32Float",
+    "camera": "fixed perspective, defined by source commit",
+    "external_assets": false
+  },
+  "geometry": {
+    "vertices": 1221,
+    "triangles": 1938
+  },
+  "checks": {
+    "rust_unit_tests": {
+      "status": "passed",
+      "count": 10
+    },
+    "javascript_tests": {
+      "status": "passed",
+      "count": 12
+    },
+    "native_workspace_check": "passed",
+    "wasm_target_check": "passed",
+    "release_wasm_build": "passed",
+    "rust_format": "passed",
+    "javascript_syntax": "passed",
+    "courtyard_offscreen_gpu_test": {
+      "status": "passed",
+      "count": 1
+    },
+    "browser_e2e": "not_run",
+    "native_window_e2e": "not_run",
+    "hardware_gpu": "not_run",
+    "remote_ci": "not_recorded"
+  },
+  "performance_metrics": null,
+  "image": {
+    "path": "../images/courtyard-gpu.png",
+    "kind": "offscreen_gpu_readback_png",
+    "sha256": "19a4691331d54f1d1f0cb2ea93b4778852b83e589f56dd0ad8bfe02ffb43f2f4"
+  }
+}
