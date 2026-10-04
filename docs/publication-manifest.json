@@ -76,8 +76,248 @@
     "sha256": "ecfb3154eb94953ad50ba626d4f43e04b505c95af96f833d577420116d4a7bd5"
   },
   {
+    "path": "003-overdraw/images/oblique-heavy-back-to-front.png",
+    "sha256": "128a1023a3d9af974e773864f945471de6e1532214c25cd238cf8525c976dedb"
+  },
+  {
+    "path": "003-overdraw/images/oblique-heavy-comparison.png",
+    "sha256": "205e5ed4c85705a8b092c0406be8a44e6cfb058802cb9ed6c30f14a42d799de7"
+  },
+  {
+    "path": "003-overdraw/images/oblique-heavy-depth-prepass.png",
+    "sha256": "128a1023a3d9af974e773864f945471de6e1532214c25cd238cf8525c976dedb"
+  },
+  {
+    "path": "003-overdraw/images/oblique-heavy-front-to-back.png",
+    "sha256": "3df50b4e52d949b83cbf65195a6661a92699ca0fd76c0b275590641c34a48e52"
+  },
+  {
+    "path": "003-overdraw/images/oblique-light-back-to-front.png",
+    "sha256": "4b2dbb4094f425cf561b77c28bad11e62b95bae22f6fddb97d49103fd6d69012"
+  },
+  {
+    "path": "003-overdraw/images/oblique-light-comparison.png",
+    "sha256": "7c4dd09a8ccda7bddb15d329a85a41e95b5d1d4ac9027608a74c72d06fe32e01"
+  },
+  {
+    "path": "003-overdraw/images/oblique-light-depth-prepass.png",
+    "sha256": "4b2dbb4094f425cf561b77c28bad11e62b95bae22f6fddb97d49103fd6d69012"
+  },
+  {
+    "path": "003-overdraw/images/oblique-light-front-to-back.png",
+    "sha256": "2803f9d7071a8d4af0289a885fd936124cc06f51727a1bae773c560b8b3009b2"
+  },
+  {
+    "path": "003-overdraw/images/overhead-heavy-back-to-front.png",
+    "sha256": "7685f87e1b44e2724624721c1b6968f286839d97bf51becb6068071a1b9e713f"
+  },
+  {
+    "path": "003-overdraw/images/overhead-heavy-comparison.png",
+    "sha256": "f17fbc04edacca46688e0cac3b53fb98f369884834899cf8f0d9152ba8765fdb"
+  },
+  {
+    "path": "003-overdraw/images/overhead-heavy-depth-prepass.png",
+    "sha256": "7685f87e1b44e2724624721c1b6968f286839d97bf51becb6068071a1b9e713f"
+  },
+  {
+    "path": "003-overdraw/images/overhead-heavy-front-to-back.png",
+    "sha256": "0b5a194885c34fa01a8816c56da06819fe9b279b083b008bcaf7807ed9d08407"
+  },
+  {
+    "path": "003-overdraw/images/overhead-light-back-to-front.png",
+    "sha256": "8ea464d11adcbdf2b7a3b459f26ab5222bc230897c0e8a17b68fc0e09bae172a"
+  },
+  {
+    "path": "003-overdraw/images/overhead-light-comparison.png",
+    "sha256": "9376e0ac80b27260ac98ff8e873cd7c605cfde38c252a1507e3edc98f58fa228"
+  },
+  {
+    "path": "003-overdraw/images/overhead-light-depth-prepass.png",
+    "sha256": "8ea464d11adcbdf2b7a3b459f26ab5222bc230897c0e8a17b68fc0e09bae172a"
+  },
+  {
+    "path": "003-overdraw/images/overhead-light-front-to-back.png",
+    "sha256": "07fa422418400726264a40f725a89f87f19c2e859d819fe29f318229eb8b272d"
+  },
+  {
+    "path": "003-overdraw/index.html",
+    "sha256": "2af4bcd6f157d2acbd26c928b8915d57f44c43af7fa1d3c8c41b8d4cb5843577"
+  },
+  {
+    "path": "003-overdraw/runs/image-differences.json",
+    "sha256": "ed990956204f807cd9c4dd13ec461046589681d1cae5404825116d6eb00189b1"
+  },
+  {
+    "path": "003-overdraw/runs/metadata.json",
+    "sha256": "8d58b1b33d663fe54463f551ccd62cf07025c95f21f4e31ad90c5f0a7b936331"
+  },
+  {
+    "path": "003-overdraw/runs/native-pooled.csv",
+    "sha256": "ec87f0d8da31b46911ef96d70d6276f082a2588ff78b13ee59ba35ec2d5f87e9"
+  },
+  {
+    "path": "003-overdraw/runs/native-summary.csv",
+    "sha256": "fb0173e8f8e67bb131cd08be409f35bc153064cc3347c8d0efcb2c671a9ad5a6"
+  },
+  {
+    "path": "003-overdraw/runs/native-walltime.csv",
+    "sha256": "be001e37331e957d5be76cb25fe289696f04a24727047a41ea2211eaad95f9aa"
+  },
+  {
+    "path": "003-overdraw/runs/source-snapshot.json",
+    "sha256": "8f0dbb2c20707bfb60830f35b31a8f7aaa3aa534ccd134dd1dc2fde91fca7162"
+  },
+  {
+    "path": "004-instancing/images/oblique-1-comparison.png",
+    "sha256": "ba8ce01e50a464b458e85fef70431eb22791c8b49941b376b68f6e5506ed78f5"
+  },
+  {
+    "path": "004-instancing/images/oblique-1-individual.png",
+    "sha256": "4bc4d2f589273f8b82406caad94e58a52487f89db0925ad2f1ad774da4b72622"
+  },
+  {
+    "path": "004-instancing/images/oblique-1-instanced.png",
+    "sha256": "4bc4d2f589273f8b82406caad94e58a52487f89db0925ad2f1ad774da4b72622"
+  },
+  {
+    "path": "004-instancing/images/oblique-1024-comparison.png",
+    "sha256": "c7fd5a647692c0d8f00f579d92f39355ca47067dbde0f3c7e02af3d3452001d6"
+  },
+  {
+    "path": "004-instancing/images/oblique-1024-individual.png",
+    "sha256": "03d3724088dbdcc408341921aae2479d3959a2c5499de019ecf3e0d49ee2d045"
+  },
+  {
+    "path": "004-instancing/images/oblique-1024-instanced.png",
+    "sha256": "03d3724088dbdcc408341921aae2479d3959a2c5499de019ecf3e0d49ee2d045"
+  },
+  {
+    "path": "004-instancing/images/oblique-256-comparison.png",
+    "sha256": "11ad8780056b31df49bf62b76e11890baf804ffa97d7294f5c7c85c10a27bb4f"
+  },
+  {
+    "path": "004-instancing/images/oblique-256-individual.png",
+    "sha256": "7b6aa4252525188a34a231e271767dcabe3dd56f8a4407e92196678e7125be15"
+  },
+  {
+    "path": "004-instancing/images/oblique-256-instanced.png",
+    "sha256": "7b6aa4252525188a34a231e271767dcabe3dd56f8a4407e92196678e7125be15"
+  },
+  {
+    "path": "004-instancing/images/oblique-4096-comparison.png",
+    "sha256": "e2deb2812073f0578d4cd50d17aa55d6c49eaa85c70076d031c7d97ccadb14f6"
+  },
+  {
+    "path": "004-instancing/images/oblique-4096-individual.png",
+    "sha256": "907739e56b8a3097a9a1dd1ee69d01aef8e80ac9572677b248ee3ccc50e60607"
+  },
+  {
+    "path": "004-instancing/images/oblique-4096-instanced.png",
+    "sha256": "907739e56b8a3097a9a1dd1ee69d01aef8e80ac9572677b248ee3ccc50e60607"
+  },
+  {
+    "path": "004-instancing/images/oblique-64-comparison.png",
+    "sha256": "4c26a9a666f237cceba1f9082cfc3af248bce8cd4486ee4c4908e403394241e3"
+  },
+  {
+    "path": "004-instancing/images/oblique-64-individual.png",
+    "sha256": "08ade0f7394e5e72f3efa2a1118e5122edeed29bc845e98c45dd5f34c8e3d823"
+  },
+  {
+    "path": "004-instancing/images/oblique-64-instanced.png",
+    "sha256": "08ade0f7394e5e72f3efa2a1118e5122edeed29bc845e98c45dd5f34c8e3d823"
+  },
+  {
+    "path": "004-instancing/images/overhead-1-comparison.png",
+    "sha256": "cf7c32983e85b1a76ab3ceb9d88ba7ea8211fff609d38fc6755c0073a4b04996"
+  },
+  {
+    "path": "004-instancing/images/overhead-1-individual.png",
+    "sha256": "c8c0d33c2d24f403859a58c19a3cb0c81e4a08d4a7b92a816afed8e77688df2f"
+  },
+  {
+    "path": "004-instancing/images/overhead-1-instanced.png",
+    "sha256": "c8c0d33c2d24f403859a58c19a3cb0c81e4a08d4a7b92a816afed8e77688df2f"
+  },
+  {
+    "path": "004-instancing/images/overhead-1024-comparison.png",
+    "sha256": "60102d0320e83bacc92e67ddc7a9b0dd669a2bb5ad272739a2e36ce9199cb2fc"
+  },
+  {
+    "path": "004-instancing/images/overhead-1024-individual.png",
+    "sha256": "13d3d4626815acd6af00a5b91a5e78882a0a66c6c51a1b663ae45b09fd0b0934"
+  },
+  {
+    "path": "004-instancing/images/overhead-1024-instanced.png",
+    "sha256": "13d3d4626815acd6af00a5b91a5e78882a0a66c6c51a1b663ae45b09fd0b0934"
+  },
+  {
+    "path": "004-instancing/images/overhead-256-comparison.png",
+    "sha256": "40667764753807de3ba262c4e10a8c834227c6e911f05cc5d99be38ab3696cd1"
+  },
+  {
+    "path": "004-instancing/images/overhead-256-individual.png",
+    "sha256": "abb270ba29c860eabc2f70013a298c86640a76bd5633a94e649ad894d8a01a48"
+  },
+  {
+    "path": "004-instancing/images/overhead-256-instanced.png",
+    "sha256": "abb270ba29c860eabc2f70013a298c86640a76bd5633a94e649ad894d8a01a48"
+  },
+  {
+    "path": "004-instancing/images/overhead-4096-comparison.png",
+    "sha256": "2e77652d07ede587c4ea45e379eef53803d789d2fbfe01300a3ccbdf6f69bcb1"
+  },
+  {
+    "path": "004-instancing/images/overhead-4096-individual.png",
+    "sha256": "2c160797be5af5d6605c30ac76677ae64a66f51e9e8cb781b6da64f35d77c1bd"
+  },
+  {
+    "path": "004-instancing/images/overhead-4096-instanced.png",
+    "sha256": "2c160797be5af5d6605c30ac76677ae64a66f51e9e8cb781b6da64f35d77c1bd"
+  },
+  {
+    "path": "004-instancing/images/overhead-64-comparison.png",
+    "sha256": "961ef20bfd17a42aceee1de0bd6d4b81fb33946e6ff0208f2f794e56e3c51b37"
+  },
+  {
+    "path": "004-instancing/images/overhead-64-individual.png",
+    "sha256": "668435d5c791610968dd98b77fb21eba1a380e1314cd94bf947ca777c55240b5"
+  },
+  {
+    "path": "004-instancing/images/overhead-64-instanced.png",
+    "sha256": "668435d5c791610968dd98b77fb21eba1a380e1314cd94bf947ca777c55240b5"
+  },
+  {
+    "path": "004-instancing/index.html",
+    "sha256": "3fe5a63dc839597f71a99064679b233cac9942c6d62c8d95a062afe543bc604c"
+  },
+  {
+    "path": "004-instancing/runs/image-differences.json",
+    "sha256": "2ff3e22aba653ea491f1441aa144c8c235ba7bb0c79dda4a458332eee548f576"
+  },
+  {
+    "path": "004-instancing/runs/metadata.json",
+    "sha256": "35d058ca87a1cb3f91b13a50d2770c8b6a06cd052f1849c1019762619126798b"
+  },
+  {
+    "path": "004-instancing/runs/native-pooled.csv",
+    "sha256": "8410f5743b4bab2c55cc62f5c7e4d5ebffe0bc4ea40348c6a0780851cfd374b6"
+  },
+  {
+    "path": "004-instancing/runs/native-summary.csv",
+    "sha256": "04f13baa66b2542879054255a17c05535f6bc2373f516324c40c085895bb95aa"
+  },
+  {
+    "path": "004-instancing/runs/native-walltime.csv",
+    "sha256": "7b9843379101a2758b47ffa43cce35bbb6ce5879bbb85844da5f26d6ae7edbec"
+  },
+  {
+    "path": "004-instancing/runs/source-snapshot.json",
+    "sha256": "8f1ba9d1d817beb3326aa4e1ca76826959d2c10e7cc91badcea1cb46c61e4c2d"
+  },
+  {
     "path": "index.html",
-    "sha256": "22255b39bd523766f1d7632868c3d9cebdce2ff0d767f8477597a2b592a40bc5"
+    "sha256": "2c5cb7e992e2d5fd6aeb04a384b56322dff4c45c00fbf73bd97d846e8f72a667"
   },
   {
     "path": "style.css",
