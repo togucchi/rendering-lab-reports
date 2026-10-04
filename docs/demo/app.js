@@ -1,5 +1,6 @@
+import { FLIGHTHELMET_ASSET, PBR_LIGHTING, PBR_DEBUG_MODES, PBR_TEXTURE_INPUTS, PBR_CAMERAS, DEFAULT_PBR_DEBUG, DEFAULT_PBR_FLAGS, pbrDebug, pbrFlags, pbrCamera, FlightHelmetLoader, readBoundedAsset } from './pbr.mjs';
 import { settings, MeasurementRun, reportCsv, frameWork } from './metrics.mjs';
-import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
+import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isPbr, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('viewport');
@@ -15,6 +16,20 @@ const instancingInputs = [$('instancing-a'), $('instancing-b')];
 const objectCountInputs = [$('object-count-a'), $('object-count-b')];
 const instancingModes = [0, 0];
 const objectCounts = [DEFAULT_OBJECT_COUNT, DEFAULT_OBJECT_COUNT];
+const pbrDebugInputs = [$('pbr-debug-a'), $('pbr-debug-b')];
+const pbrTextureInputs = ['a', 'b'].map(side => PBR_TEXTURE_INPUTS.map(input => $(`pbr-${input.key}-${side}`)));
+const pbrDebugs = [DEFAULT_PBR_DEBUG, DEFAULT_PBR_DEBUG];
+const textureFlags = [DEFAULT_PBR_FLAGS, DEFAULT_PBR_FLAGS];
+const flighthelmet = new FlightHelmetLoader(async () => {
+  // A fixed same-origin URL; no external fetch, redirect, or eager initialization.
+  const response = await fetch(new URL(FLIGHTHELMET_ASSET.file, import.meta.url), {mode: 'same-origin', credentials: 'same-origin', redirect: 'error'});
+  if (!response.ok) throw new Error(`FlightHelmet GLB の読み込みに失敗しました (HTTP ${response.status})。`);
+  const bytes = await readBoundedAsset(response);
+  const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+  const sha256 = Array.from(digest, value => value.toString(16).padStart(2, '0')).join('');
+  if (sha256 !== FLIGHTHELMET_ASSET.sha256) throw new Error('FlightHelmet GLB の SHA-256 が固定アセットと一致しません。');
+  return bytes;
+});
 const experiments = EXPERIMENTS;
 const slots = [0, 1].map(() => createExperimentSlot());
 const sources = new Map();
@@ -57,20 +72,31 @@ function syncControls() {
   $('measure-json').disabled = !lastReport || gate.busy;
   scaleInputs.forEach((input, index) => { input.value = String(scales[index]); });
   slots.forEach((slot, index) => {
+    experimentInputs[index].value = String(slot.experiment);
     const courtyard = isCourtyard(slot.experiment);
     const repeated = isInstancing(slot.experiment);
     modeInputs[index].value = String(modes[index]);
+    const cameraChoices = isPbr(slot.experiment) ? PBR_CAMERAS : COURTYARD_CAMERAS;
+    cameraInputs[index].innerHTML = cameraChoices.map(choice => `<option value="${choice.id}">${choice.name}</option>`).join('');
     cameraInputs[index].value = String(cameras[index]);
     instancingInputs[index].value = String(instancingModes[index]);
     objectCountInputs[index].value = String(objectCounts[index]);
     modeInputs[index].disabled = !ready || gate.busy || !courtyard;
     cameraInputs[index].disabled = !ready || gate.busy || !isMesh(slot.experiment);
     instancingInputs[index].disabled = objectCountInputs[index].disabled = !ready || gate.busy || !repeated;
-    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index]);
+    pbrDebugInputs[index].value = String(pbrDebugs[index]);
+    pbrDebugInputs[index].disabled = !ready || gate.busy || !isPbr(slot.experiment);
+    pbrTextureInputs[index].forEach((input, texture) => {
+      input.checked = Boolean(textureFlags[index] & PBR_TEXTURE_INPUTS[texture].bit);
+      input.disabled = !ready || gate.busy || !isPbr(slot.experiment);
+    });
+    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index]);
     $(index === 0 ? 'draw-count-a' : 'draw-count-b').textContent = isMesh(slot.experiment)
-      ? `${work.fragment_workload}${repeated ? ` · ${work.instancing_mode}` : ''} · ${work.scene_object_count} objects · scene ${work.scene_draw_calls} + upsample 1 draws`
+      ? `${work.fragment_workload}${repeated ? ` · ${work.instancing_mode}` : ''} · ${work.scene_object_count} ${isPbr(slot.experiment) ? 'primitives' : 'objects'} · scene ${work.scene_draw_calls} + upsample 1 draws`
       : 'fullscreen 1 + upsample 1 draws';
   });
+  $('pbr-panel').hidden = !slots.some(slot => isPbr(slot.experiment));
+  $('pbr-asset-status').textContent = flighthelmet.loaded ? 'FlightHelmet512.glb · GPU resources ready · A/B で共有' : '最初の選択時に同一 origin から GLB を取得します。';
   syncDirty();
 }
 
@@ -153,10 +179,11 @@ async function changeCamera(slotIndex, value) {
   if (!ready || gate.busy || !isMesh(slots[slotIndex].experiment)) { cameraInputs[slotIndex].value = String(cameras[slotIndex]); return; }
   await runLocked(async () => {
     try {
-      const camera = courtyardCamera(value);
+      const pbr = isPbr(slots[slotIndex].experiment);
+      const camera = pbr ? pbrCamera(value) : courtyardCamera(value);
       lab.set_camera(slotIndex, camera);
       cameras[slotIndex] = camera;
-      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${COURTYARD_CAMERAS[camera].name} · ソースを保持`);
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${(pbr ? PBR_CAMERAS : COURTYARD_CAMERAS)[camera].name} · ソースを保持`);
     } catch (error) { setCompile('カメラの変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
   });
 }
@@ -177,6 +204,20 @@ async function changeInstancing(slotIndex, modeValue, countValue) {
       objectCounts[slotIndex] = count;
       setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${INSTANCING_MODES[mode].name} · ${count} objects · ソースを保持`);
     } catch (error) { setCompile('Instancing の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function changePbr(slotIndex, debugValue, flagsValue) {
+  if (!ready || gate.busy || !isPbr(slots[slotIndex].experiment)) { syncControls(); return; }
+  await runLocked(async () => {
+    try {
+      const debug = pbrDebug(debugValue);
+      const flags = pbrFlags(flagsValue);
+      lab.set_pbr(slotIndex, debug, flags);
+      pbrDebugs[slotIndex] = debug;
+      textureFlags[slotIndex] = flags;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${PBR_DEBUG_MODES[debug].name} · texture flags ${flags} · ソースを保持`);
+    } catch (error) { setCompile('PBR 設定の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
   });
 }
 
@@ -321,6 +362,10 @@ async function changeExperiment(slotIndex, next) {
     setCompile('実験を読み込んでいます…', 'busy');
     try {
       const source = await sourceFor(next);
+      if (isPbr(next)) {
+        setCompile('FlightHelmet · GLB 取得 / decode / GPU upload…', 'busy');
+        await flighthelmet.ensureLoaded(lab);
+      }
       // The mesh experiment has a vertex layout and depth state of its own.
       // Configure its kind and compile the exact fetched source atomically.
       await lab.set_source(slotIndex, next, source);
@@ -354,7 +399,7 @@ async function exportPng() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}-scale${scales[0]}-${scales[1]}.png`;
+      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}${slots.some(slot => isPbr(slot.experiment)) ? `-pbr${pbrDebugs[0]}-${pbrDebugs[1]}-textures${textureFlags[0]}-${textureFlags[1]}` : ''}-scale${scales[0]}-${scales[1]}.png`;
       document.body.append(link);
       link.click();
       link.remove();
@@ -395,9 +440,10 @@ async function measure() {
   } catch (error) { $('measure-status').textContent = errorText(error); return; }
   // Snapshot only applied shaders, never unapplied editor drafts.
   const measurementSlots = slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied,
-    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
+    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
   const context = {started_at: new Date().toISOString(), time_seconds: time, split,
-    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts),
+    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts, pbrDebugs, textureFlags),
+    pbr_lighting: slots.some(slot => isPbr(slot.experiment)) ? {...PBR_LIGHTING} : null,
     display_canvas_physical_pixels: {width: config.width, height: config.height},
     render_scale_percent: [...scales],
     upsampling: 'linear filtering; offscreen targets composited into fixed display viewports',
@@ -405,7 +451,7 @@ async function measure() {
     viewport_order: 'A left, B right; same command buffer; order not randomized',
     vsync: 'browser presentation policy; not controlled', thermal_state: 'unavailable: not measured',
     environment_notes: $('measure-notes').value.trim() || 'unavailable: no operator notes',
-    camera: 'per-slot fixed camera; see slots[].camera and camera_id', scene_seed: 'deterministic procedural geometry; no RNG',
+    camera: 'per-slot fixed camera; see slots[].camera and camera_id', scene_seed: 'deterministic procedural geometry or pinned FlightHelmet GLB; no RNG',
     draw_call_counts_source: 'deterministic encoded draw calls; not measured fragment invocations or GPU work',
     ...frameWork(measurementSlots),
     shared_instance_buffer: sharedInstanceBufferWork(measurementSlots),
@@ -415,7 +461,7 @@ async function measure() {
     adapter: lab.adapter_description(), timestamp_supported: lab.timestamp_supported(), timestamp_enabled: false,
     clock: 'performance.now; precision depends on browser privacy policy',
     pacing: 'requestAnimationFrame; foreground only; no GPU completion wait',
-    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded',
+    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded; FlightHelmet fetch/decode/GPU upload also excluded',
     build_revision: $('measure-commit').value.trim() || 'unavailable: operator must record tested commit',
     build_revision_source: 'operator supplied; not automatically verified'};
   const run = new MeasurementRun(config, context);
@@ -467,6 +513,11 @@ modeInputs.forEach((select, index) => select.addEventListener('change', () => ch
 cameraInputs.forEach((select, index) => select.addEventListener('change', () => changeCamera(index, select.value)));
 instancingInputs.forEach((select, index) => select.addEventListener('change', () => changeInstancing(index, select.value, objectCounts[index])));
 objectCountInputs.forEach((input, index) => input.addEventListener('change', () => changeInstancing(index, instancingModes[index], input.value)));
+pbrDebugInputs.forEach((select, index) => select.addEventListener('change', () => changePbr(index, select.value, textureFlags[index])));
+pbrTextureInputs.forEach((inputs, index) => inputs.forEach(input => input.addEventListener('change', () => {
+  const flags = inputs.reduce((value, checkbox, texture) => value | (checkbox.checked ? PBR_TEXTURE_INPUTS[texture].bit : 0), 0);
+  return changePbr(index, pbrDebugs[index], flags);
+})));
 for (const percent of [100, 75, 50]) $(`scale-preset-${percent}`).addEventListener('click', () => scalePreset(percent));
 $('measure-start').addEventListener('click', measure);
 $('measure-cancel').addEventListener('click', () => measurement?.abort('ユーザーが中止しました'));

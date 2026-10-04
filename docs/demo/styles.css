@@ -20,3 +20,18 @@
 .overdraw-slot output { font: 10px/1.6 var(--mono); color: var(--amber); overflow-wrap: anywhere; }
 .overdraw-panel p { font-size: 10px; line-height: 1.8; color: var(--muted); margin: 10px 0 0; }
 @media (max-width: 410px) { .overdraw-slots { grid-template-columns: 1fr; } }
+
+.pbr-panel { padding: 14px 16px; border: 1px solid var(--line); border-top: 0; background: var(--panel); }
+.pbr-panel h2 { font-size: 12px; color: var(--green); margin: 0 0 12px; }
+.pbr-slots { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.pbr-slot { margin: 0; min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 4px; }
+.pbr-slot legend { color: var(--amber); font: 10px var(--mono); padding: 0 5px; }
+.pbr-slot label { display: block; font-size: 10px; color: var(--muted); }
+.pbr-slot select { display: block; width: 100%; margin: 5px 0 10px; padding: 6px; background: #17211e; color: var(--text); border: 1px solid #46564d; border-radius: 4px; font-size: 11px; }
+.pbr-slot .pbr-texture { display: flex; align-items: center; gap: 5px; margin: 8px 0; }
+.pbr-texture input { accent-color: var(--green); }
+.pbr-panel p { font-size: 10px; line-height: 1.8; color: var(--muted); margin: 10px 0 0; }
+.pbr-panel .pbr-warning { color: var(--amber); border-left: 2px solid var(--amber); padding-left: 9px; }
+@media (max-width: 410px) { .pbr-slots { grid-template-columns: 1fr; } }
+
+.pbr-panel a { color: var(--green); text-underline-offset: 3px; }

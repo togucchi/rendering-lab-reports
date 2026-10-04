@@ -1,3 +1,4 @@
+import { FLIGHTHELMET_ASSET, PBR_LIGHTING, PBR_DEBUG_MODES, PBR_CAMERAS, DEFAULT_PBR_DEBUG, DEFAULT_PBR_FLAGS, pbrDebug, pbrFlags, pbrCamera } from './pbr.mjs';
 /** Pure UI helpers; renderer state lives exclusively in the Rust core. */
 export const DEFAULT_EXPERIMENT = 2;
 export const EXPERIMENTS = Object.freeze([
@@ -6,11 +7,12 @@ export const EXPERIMENTS = Object.freeze([
   Object.freeze({ id: 2, name: 'メッシュの中庭', file: 'courtyard.wgsl' }),
   Object.freeze({ id: 3, name: '中庭 · heavy fragment', file: 'courtyard-heavy.wgsl' }),
   Object.freeze({ id: 4, name: '反復オブジェクト · instancing', file: 'instancing.wgsl' }),
+  Object.freeze({ id: 5, name: 'FlightHelmet · glTF PBR', file: 'flighthelmet.wgsl' }),
 ]);
 
 export function createExperimentSlot(experiment = DEFAULT_EXPERIMENT, source = '') {
   if (!Number.isInteger(experiment) || !EXPERIMENTS[experiment]) throw new Error('実験が見つかりません。');
-  return { experiment, draft: source, applied: source, original: source };
+  return { experiment, draft: source, applied: source, original: source, ...(isPbr(experiment) ? {asset_identity: FLIGHTHELMET_ASSET.sha256} : {}) };
 }
 
 export function clampFinite(value, min, max, fallback = min) {
@@ -104,7 +106,8 @@ export const COURTYARD_CAMERAS = Object.freeze([
 ]);
 export const isCourtyard = experiment => experiment === 2 || experiment === 3;
 export const isInstancing = experiment => experiment === 4;
-export const isMesh = experiment => isCourtyard(experiment) || isInstancing(experiment);
+export const isPbr = experiment => experiment === 5;
+export const isMesh = experiment => isCourtyard(experiment) || isInstancing(experiment) || isPbr(experiment);
 export const DEFAULT_OBJECT_COUNT = 256;
 export const MAX_OBJECT_COUNT = 4096;
 export const INSTANCE_DATA_STRIDE_BYTES = 48;
@@ -134,19 +137,25 @@ export function courtyardCamera(value) {
 }
 
 /** Applied renderer work per slot; a modified shader cannot be called light/heavy. */
-export function renderingWork(slot, mode = 1, camera = 0, instancing = 0, count = DEFAULT_OBJECT_COUNT) {
+export function renderingWork(slot, mode = 1, camera = 0, instancing = 0, count = DEFAULT_OBJECT_COUNT, debug = DEFAULT_PBR_DEBUG, flags = DEFAULT_PBR_FLAGS) {
+  const pbr = isPbr(slot.experiment);
   const courtyard = isCourtyard(slot.experiment);
   const repeated = isInstancing(slot.experiment);
   const effectiveMode = courtyard ? OVERDRAW_MODES[overdrawMode(mode)] : null;
-  const effectiveCamera = isMesh(slot.experiment) ? COURTYARD_CAMERAS[courtyardCamera(camera)] : null;
+  const effectiveCamera = pbr ? PBR_CAMERAS[pbrCamera(camera)] : (isMesh(slot.experiment) ? COURTYARD_CAMERAS[courtyardCamera(camera)] : null);
   const effectiveInstancing = repeated ? INSTANCING_MODES[instancingMode(instancing)] : null;
-  const objects = repeated ? objectCount(count) : (courtyard ? 10 : 0);
-  const colorDraws = repeated ? (effectiveInstancing.id === 0 ? objects : 1) : (courtyard ? 10 : 1);
+  const objects = pbr ? FLIGHTHELMET_ASSET.primitive_count : (repeated ? objectCount(count) : (courtyard ? 10 : 0));
+  const colorDraws = pbr ? FLIGHTHELMET_ASSET.primitive_count : (repeated ? (effectiveInstancing.id === 0 ? objects : 1) : (courtyard ? 10 : 1));
   const depthDraws = courtyard && effectiveMode.id === 2 ? 10 : 0;
-  const baseline = isMesh(slot.experiment) ? (slot.experiment === 3 ? 'heavy' : 'light') : 'not-applicable';
+  const baseline = pbr ? 'gltf-metallic-roughness-pbr' : (isMesh(slot.experiment) ? (slot.experiment === 3 ? 'heavy' : 'light') : 'not-applicable');
   const modified = slot.applied !== slot.original;
   return {
-    geometry: repeated ? 'procedural-repeated-opaque-objects' : (courtyard ? 'procedural-courtyard-10-objects' : 'fullscreen-triangle'),
+    geometry: pbr ? 'gltf-flighthelmet-indexed-primitives' : (repeated ? 'procedural-repeated-opaque-objects' : (courtyard ? 'procedural-courtyard-10-objects' : 'fullscreen-triangle')),
+    ...(pbr ? {asset: {...FLIGHTHELMET_ASSET, sha256: slot.asset_identity}, pbr_debug: PBR_DEBUG_MODES[pbrDebug(debug)].key, pbr_debug_id: pbrDebug(debug), pbr_texture_flags: pbrFlags(flags),
+      pbr_texture_inputs: {base_color: Boolean(flags & 1), normal: Boolean(flags & 2), orm: Boolean(flags & 4)},
+      lighting: {...PBR_LIGHTING}, camera_projection: {eye: [...effectiveCamera.eye], target: [0, 0.25, 0], fov_y_degrees: 45, aspect_policy: 'vertical FOV widens when aspect < 1', near: 0.01, far: 10}, material_count: FLIGHTHELMET_ASSET.material_count, geometry_count_unit: 'glTF primitives',
+      texture_toggle_scope: 'material contribution switches; built-in shader still samples all textures; not a texture-fetch reduction benchmark',
+      shared_immutable_textures: true, asset_upload_scope: 'once on first PBR selection; shared by A/B; excluded from measured run'} : {}),
     shader_modified: modified,
     fragment_workload: modified ? 'custom' : baseline,
     fragment_workload_baseline: baseline,
@@ -186,9 +195,10 @@ export function sharedInstanceBufferWork(slots) {
   };
 }
 
-export function comparisonKind(slots, scales, modes = [1, 1], cameras = [0, 0], instancingModes = [0, 0], objectCounts = [DEFAULT_OBJECT_COUNT, DEFAULT_OBJECT_COUNT]) {
+export function comparisonKind(slots, scales, modes = [1, 1], cameras = [0, 0], instancingModes = [0, 0], objectCounts = [DEFAULT_OBJECT_COUNT, DEFAULT_OBJECT_COUNT], pbrDebugs = [DEFAULT_PBR_DEBUG, DEFAULT_PBR_DEBUG], textureFlags = [DEFAULT_PBR_FLAGS, DEFAULT_PBR_FLAGS]) {
   return slots[0].experiment === slots[1].experiment && slots[0].applied === slots[1].applied && scales[0] === scales[1]
     && (!isMesh(slots[0].experiment) || cameras[0] === cameras[1])
     && (!isCourtyard(slots[0].experiment) || modes[0] === modes[1])
+    && (!isPbr(slots[0].experiment) || (pbrDebugs[0] === pbrDebugs[1] && textureFlags[0] === textureFlags[1] && slots[0].asset_identity === slots[1].asset_identity))
     && (!isInstancing(slots[0].experiment) || (instancingModes[0] === instancingModes[1] && objectCounts[0] === objectCounts[1])) ? 'A/A' : 'A/B';
 }

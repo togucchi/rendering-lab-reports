@@ -23,8 +23,8 @@
       <div class="preview-column">
         <div class="panel-header"><h2><span class="section-number">01</span> VIEWPORT</h2><span class="quiet">同じ時間、ふたつのパイプライン</span></div>
         <div class="experiments">
-          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
-          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
         <section class="render-scale-panel" aria-label="内部描画解像度">
           <div class="render-scale-fields">
@@ -55,10 +55,29 @@
           </div>
           <datalist id="object-count-presets"><option value="64"></option><option value="256"></option><option value="1024"></option><option value="4096"></option></datalist>
           <p>実験 03 は light、04 は heavy fragment。同じ形状を、描画順・depth prepass・固定カメラで比較します。描画方式は中庭のみ有効。順序はオブジェクト単位で、fragment 呼び出し数の実測ではありません。</p>
-          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。カメラは実験 03〜05、Instancing と個数は実験 05 のみ有効です。</p>
+          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。この欄のカメラは実験 03〜06、Instancing と個数は実験 05 のみ有効です。</p>
           <p>Instancing は draw 呼び出しをまとめますが、頂点数・fragment 数の削減や高速化は保証しません。CPU/rAF は A/B 合計です。同数・同条件の画質一致を確かめ、時間の比較には A/A 個別と A/A instanced を別 run で計測してください。</p>
           <p>Transform / color は 48 bytes × 4096 = 196608 bytes を初期化時に一度だけ転送し、A/B で共有。各側の使用範囲は N × 48 bytes、個数変更や毎フレームの instance 再転送・CPU transform 更新はありません。初期化コストはこの計測に含みません。</p>
           <p>まず両側で実験・カメラ・倍率を揃え、B の描画方式だけ変更。Prepass は depth 10 + color 10 draws。CPU/rAF 合計と画質を確認し、常に速くなるとは仮定しません。WGSL 編集時の prepass 比較は同じ不透明 coverage / depth と、vertex position の @invariant 指定が前提です。discard・fragment depth の変更は別途検証してください。</p>
+        </section>
+        <section id="pbr-panel" class="pbr-panel" aria-labelledby="pbr-heading" hidden>
+          <h2 id="pbr-heading">06 · FlightHelmet · glTF metallic-roughness</h2>
+          <div class="pbr-slots">
+            <fieldset class="pbr-slot"><legend>A · PBR inputs</legend>
+              <label>A Debug view <select id="pbr-debug-a" data-lock disabled><option value="0" selected>Lit · PBR</option><option value="1">Base color</option><option value="2">Normal</option><option value="3">Metallic</option><option value="4">Roughness</option></select></label>
+              <label class="pbr-texture"><input id="pbr-base-color-a" type="checkbox" checked data-lock disabled> Base color texture</label><label class="pbr-texture"><input id="pbr-normal-a" type="checkbox" checked data-lock disabled> Normal texture</label><label class="pbr-texture"><input id="pbr-orm-a" type="checkbox" checked data-lock disabled> ORM texture</label>
+            </fieldset>
+            <fieldset class="pbr-slot"><legend>B · PBR inputs</legend>
+              <label>B Debug view <select id="pbr-debug-b" data-lock disabled><option value="0" selected>Lit · PBR</option><option value="1">Base color</option><option value="2">Normal</option><option value="3">Metallic</option><option value="4">Roughness</option></select></label>
+              <label class="pbr-texture"><input id="pbr-base-color-b" type="checkbox" checked data-lock disabled> Base color texture</label><label class="pbr-texture"><input id="pbr-normal-b" type="checkbox" checked data-lock disabled> Normal texture</label><label class="pbr-texture"><input id="pbr-orm-b" type="checkbox" checked data-lock disabled> ORM texture</label>
+            </fieldset>
+          </div>
+          <p id="pbr-asset-status" role="status">最初の選択時に同一 origin から GLB を取得します。</p>
+          <p>固定条件: exposure 1 · Reinhard tone mapping · direct light (−0.5, 0.8, 1) · radiance (3, 3, 3) · IBL / shadow なし。AO は直接光に適用しません。ORM は R=occlusion / G=roughness / B=metallic。テクスチャ無効時も material factor を保持します。トグルは入力の寄与だけを切り替え、標準 WGSL は全 texture を sample するため、texture fetch 数の削減は保証しません。</p>
+          <p class="pbr-warning">制限: KHR_materials_transmission は未対応です。レンズは不透明として描画され、glTF の完全な外観再現ではありません。Debug view は物理的な明るさの比較ではありません。</p>
+          <p>正面 3/4 / 背面の固定カメラ。Overdraw・Instancing・オブジェクト数はこの実験では無効。WGSL・PBR inputs・カメラ・倍率を A/B で揃えると A/A です。</p>
+          <p><a href="./assets/flighthelmet/CREDITS.md">FlightHelmet512px · CC0-1.0 / credits</a> · 512px texture derivative · 7,428,104-byte GLB。</p>
+          <p>GLB bytes と不変 GPU textures は A/B で共有し、再選択で再取得しません。取得・decode・初回 GPU upload は CPU/rAF 計測に含まれません。asset identity と各側の debug / texture flags / lighting は JSON / CSV に記録します。</p>
         </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>

@@ -1,11 +1,14 @@
 {
-  "source_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
+  "source_commit": "4deccc8a3643a6115d7f62021fe7082b3730338e",
+  "source_base_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
   "rust": "1.99.0",
   "wasm_bindgen": "0.2.129",
   "profile": "release",
   "base_path": "/rendering-lab-reports/demo/",
-  "source_changes": false,
   "browser_gpu_runtime_verified": false,
   "native_offscreen_verified": true,
-  "native_adapter_class": "software CPU llvmpipe; not hardware performance evidence"
+  "native_adapter_class": "software CPU llvmpipe; not hardware performance evidence",
+  "reference_images_verified": false,
+  "flighthelmet_glb_sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf",
+  "source_changes": false
 }
