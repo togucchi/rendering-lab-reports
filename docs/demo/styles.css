@@ -3,3 +3,10 @@
 .scene-note{padding-top:2px}.scene-note+.learning-note{margin-top:12px}
 
 .measurement-panel{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.measurement-panel h2{font-size:12px;color:var(--green);margin:0 0 10px}.measurement-panel p{font-size:10px;line-height:1.8;color:var(--muted)}.measurement-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px}.measurement-fields label{font-size:9px;color:var(--muted)}.measurement-fields input{display:block;width:100%;margin-top:6px;padding:7px;border:1px solid var(--line);border-radius:4px;background:#111a16;color:#bed4bc;box-sizing:border-box}.measurement-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.measurement-panel pre{font:10px/1.8 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);margin-bottom:0}
+
+.render-scale-panel { padding: 12px 16px; border: 1px solid var(--border, #304039); border-top: 0; }
+.render-scale-fields { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.render-scale-fields label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12px; }
+.render-scale-fields select { background: #17211e; color: #e0e9e2; border: 1px solid #46564d; border-radius: 4px; padding: 5px; }
+.render-scale-fields output { font-family: monospace; font-size: 11px; }
+.render-scale-panel p { font-size: 11px; line-height: 1.6; color: #acb9b1; margin: 8px 0; }

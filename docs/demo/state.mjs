@@ -71,3 +71,26 @@ export class FrameRetryBudget {
     return this.delayMs;
   }
 }
+
+export const RENDER_SCALES = Object.freeze([100, 75, 50]);
+export function renderScale(value) {
+  const percent = Number(value);
+  if (!RENDER_SCALES.includes(percent)) throw new Error('内部描画倍率は 100 / 75 / 50% を指定してください。');
+  return percent;
+}
+
+/** Mirror core viewport_widths (including the f32 split) and integer target sizing. */
+export function renderGeometry(width, height, split, scales) {
+  const fraction = Math.fround(clampFinite(split, .05, .95, .5));
+  const left = Math.min(width - 1, Math.max(1, Math.round(Math.fround(width * fraction))));
+  return [left, width - left].map((w, index) => {
+    const percent = renderScale(scales[index]);
+    return {render_scale_percent: percent,
+      display_viewport_pixels: {x: index === 0 ? 0 : left, y: 0, width: w, height},
+      internal_render_pixels: {width: Math.max(1, Math.round(w * percent / 100)), height: Math.max(1, Math.round(height * percent / 100))}};
+  });
+}
+
+export function comparisonKind(slots, scales) {
+  return slots[0].experiment === slots[1].experiment && slots[0].applied === slots[1].applied && scales[0] === scales[1] ? 'A/A' : 'A/B';
+}

@@ -26,6 +26,15 @@
           <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
           <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
+        <section class="render-scale-panel" aria-label="内部描画解像度">
+          <div class="render-scale-fields">
+            <label>A 内部描画 <select id="scale-a" data-lock disabled><option value="100" selected>100%</option><option value="75">75%</option><option value="50">50%</option></select><output id="scale-size-a">—</output></label>
+            <label>B 内部描画 <select id="scale-b" data-lock disabled><option value="100" selected>100%</option><option value="75">75%</option><option value="50">50%</option></select><output id="scale-size-b">—</output></label>
+          </div>
+          <p>内部サイズ → 表示 viewport。表示サイズとカメラは固定し、linear 補間で拡大します。</p>
+          <div class="measurement-actions"><button id="scale-preset-100" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B100</button><button id="scale-preset-75" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B75</button><button id="scale-preset-50" class="subtle-button" type="button" data-lock disabled>中庭 A100 / B50</button></div>
+          <p>プリセットは同じ中庭 WGSL の A/B 用。50:50・停止 t=0 に戻します。ソースや編集中の変更は保持します。</p>
+        </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>
           <div class="canvas-grid" aria-hidden="true"></div>
@@ -45,10 +54,10 @@
         </div>
         <section class="measurement-panel" aria-labelledby="measure-heading">
           <h2 id="measure-heading">03 · 再現可能な計測</h2>
-          <p>適用済み A/B・時刻・カメラを固定。CPU 呼び出しと rAF 間隔を分離して記録します。GPU 時間は未計測です。</p>
+          <p>適用済み A/B・時刻・カメラを固定。内部描画倍率も固定。CPU 呼び出しと rAF 間隔は両側＋合成の合計で、A/B 個別の時間ではありません。GPU 時間は未計測です。</p>
           <div class="measurement-fields">
-            <label>幅 px<input id="measure-width" type="number" min="2" max="8192" value="1280" data-lock disabled></label>
-            <label>高さ px<input id="measure-height" type="number" min="1" max="8192" value="720" data-lock disabled></label>
+            <label>表示 canvas 幅 px<input id="measure-width" type="number" min="2" max="8192" value="1280" data-lock disabled></label>
+            <label>表示 canvas 高さ px<input id="measure-height" type="number" min="1" max="8192" value="720" data-lock disabled></label>
             <label>Warmup frames<input id="measure-warmup" type="number" min="1" max="10000" value="60" data-lock disabled></label>
             <label>Samples / run<input id="measure-samples" type="number" min="2" max="10000" value="180" data-lock disabled></label>
             <label>繰り返し<input id="measure-repeats" type="number" min="1" max="20" value="3" data-lock disabled></label>

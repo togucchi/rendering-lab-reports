@@ -1,10 +1,12 @@
 import { settings, MeasurementRun, reportCsv } from './metrics.mjs';
-import { DEFAULT_EXPERIMENT, EXPERIMENTS, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
+import { DEFAULT_EXPERIMENT, EXPERIMENTS, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('viewport');
 const editor = $('shader-source');
 const experimentInputs = [$('experiment-a'), $('experiment-b')];
+const scaleInputs = [$('scale-a'), $('scale-b')];
+const scales = [100, 100];
 const experiments = EXPERIMENTS;
 const slots = [0, 1].map(() => createExperimentSlot());
 const sources = new Map();
@@ -45,6 +47,7 @@ function syncControls() {
   $('measure-cancel').disabled = !measurement;
   $('measure-csv').disabled = !lastReport || gate.busy;
   $('measure-json').disabled = !lastReport || gate.busy;
+  scaleInputs.forEach((input, index) => { input.value = String(scales[index]); });
   syncDirty();
 }
 
@@ -91,6 +94,45 @@ function scheduleFrame() {
   if (ready && !gate.busy && playing && !document.hidden && !frame && !retryTimer) frame = requestAnimationFrame(tick);
 }
 
+function syncRenderDimensions(width = canvas.width, height = canvas.height) {
+  renderGeometry(width, height, split, scales).forEach((geometry, index) => {
+    const display = geometry.display_viewport_pixels;
+    const internal = geometry.internal_render_pixels;
+    $(index === 0 ? 'scale-size-a' : 'scale-size-b').textContent = `${internal.width} × ${internal.height} → ${display.width} × ${display.height} px`;
+  });
+}
+
+async function changeScale(slotIndex, value) {
+  if (!ready || gate.busy) { scaleInputs[slotIndex].value = String(scales[slotIndex]); return; }
+  await runLocked(async () => {
+    try {
+      const percent = renderScale(value);
+      lab.set_render_scale(slotIndex, percent);
+      scales[slotIndex] = percent;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} 内部描画 ${percent}% · 表示サイズは固定`);
+    } catch (error) { setCompile('描画倍率の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function scalePreset(percent) {
+  if (!ready || gate.busy) return;
+  // Never overwrite either applied WGSL or an editor draft to make a preset.
+  if (slots.some(slot => slot.experiment !== DEFAULT_EXPERIMENT) || slots[0].applied !== slots[1].applied) {
+    setCompile('プリセットには A/B 同じ中庭 WGSL が必要です', 'error', 'ソースは変更していません。A/B に同じ中庭 WGSL を適用してから再試行してください。');
+    return;
+  }
+  await runLocked(async () => {
+    try {
+      lab.set_render_scale(0, 100); scales[0] = 100;
+      lab.set_render_scale(1, renderScale(percent)); scales[1] = percent;
+      playing = false; time = 0; split = .5;
+      $('split').value = '50'; $('split-line').style.left = '50%'; $('split-value').textContent = '50 / 50';
+      syncTime();
+      setCompile(`中庭 A100 / B${percent} · t = 0 · 50:50 · ソースと編集中の変更を保持`);
+    } catch (error) { setCompile('プリセットの設定に失敗', 'error', errorText(error)); }
+  });
+}
+
 function resizeIfNeeded() {
   if (!ready || gate.busy) return;
   const dpr = window.devicePixelRatio || 1;
@@ -132,6 +174,7 @@ function draw(resetRetries = true) {
   }
   try {
     resizeIfNeeded();
+    syncRenderDimensions();
     if (lab.render(time, split) !== true) {
       // A transient unavailable surface is not a successfully presented frame.
       // Suspend animation and retry at a bounded cadence even when paused.
@@ -245,7 +288,7 @@ async function exportPng() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}.png`;
+      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-scale${scales[0]}-${scales[1]}.png`;
       document.body.append(link);
       link.click();
       link.remove();
@@ -286,19 +329,22 @@ async function measure() {
   } catch (error) { $('measure-status').textContent = errorText(error); return; }
   // Snapshot only applied shaders, never unapplied editor drafts.
   const context = {started_at: new Date().toISOString(), time_seconds: time, split,
-    comparison: slots[0].experiment === slots[1].experiment && slots[0].applied === slots[1].applied ? 'A/A' : 'A/B',
+    comparison: comparisonKind(slots, scales),
+    display_canvas_physical_pixels: {width: config.width, height: config.height},
+    render_scale_percent: [...scales],
+    upsampling: 'linear filtering; offscreen targets composited into fixed display viewports',
     display_css_pixels: {width: canvas.clientWidth, height: canvas.clientHeight},
     viewport_order: 'A left, B right; same command buffer; order not randomized',
     vsync: 'browser presentation policy; not controlled', thermal_state: 'unavailable: not measured',
     environment_notes: $('measure-notes').value.trim() || 'unavailable: no operator notes',
     camera: 'fixed courtyard camera v1', scene_seed: 'deterministic procedural geometry; no RNG',
-    slots: slots.map(slot => ({experiment: slot.experiment, source: slot.applied})),
+    slots: slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied, ...renderGeometry(config.width, config.height, split, scales)[index]})),
     browser: navigator.userAgent, platform: navigator.platform || 'unavailable',
     device_pixel_ratio: window.devicePixelRatio || 1, hardware: 'unavailable: not inferred from browser',
     adapter: lab.adapter_description(), timestamp_supported: lab.timestamp_supported(), timestamp_enabled: false,
     clock: 'performance.now; precision depends on browser privacy policy',
     pacing: 'requestAnimationFrame; foreground only; no GPU completion wait',
-    scope: 'combined A/B pass; not independent A-versus-B GPU benchmark',
+    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark',
     build_revision: $('measure-commit').value.trim() || 'unavailable: operator must record tested commit',
     build_revision_source: 'operator supplied; not automatically verified'};
   const run = new MeasurementRun(config, context);
@@ -308,6 +354,7 @@ async function measure() {
     try {
       canvas.width = config.width; canvas.height = config.height;
       lab.resize(config.width,config.height);
+      syncRenderDimensions(config.width, config.height);
       $('resolution').textContent = `${config.width} × ${config.height} px · 計測固定`;
       await new Promise(resolve => {
         const finish = reason => {
@@ -344,6 +391,8 @@ async function measure() {
     }
   });
 }
+scaleInputs.forEach((select, index) => select.addEventListener('change', () => changeScale(index, select.value)));
+for (const percent of [100, 75, 50]) $(`scale-preset-${percent}`).addEventListener('click', () => scalePreset(percent));
 $('measure-start').addEventListener('click', measure);
 $('measure-cancel').addEventListener('click', () => measurement?.abort('ユーザーが中止しました'));
 $('measure-csv').addEventListener('click', () => { if (lastReport && !gate.busy) download(reportCsv(lastReport),'text/csv;charset=utf-8','rendering-lab-measurements.csv'); });
