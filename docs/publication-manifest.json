@@ -1,0 +1,26 @@
+[
+  {
+    "path": ".nojekyll",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "001-procedural-courtyard/images/courtyard-gpu.png",
+    "sha256": "19a4691331d54f1d1f0cb2ea93b4778852b83e589f56dd0ad8bfe02ffb43f2f4"
+  },
+  {
+    "path": "001-procedural-courtyard/index.html",
+    "sha256": "e75af62e3300e7943647e785a238dc7a77f7429b5e5d2cc42bf98bd3212b6291"
+  },
+  {
+    "path": "001-procedural-courtyard/runs/verification.json",
+    "sha256": "b9fa8c3cf7165cf00d8932f668de152149111b64f0ddf1efbad4069f5a21ecb0"
+  },
+  {
+    "path": "index.html",
+    "sha256": "3758597559b96e906c2b5e62743a85100490453b6aedeed8c2816492a05b952f"
+  },
+  {
+    "path": "style.css",
+    "sha256": "2aeb1059d655b8b5b328079857999c05ce66585eb341fac887e819f8c4d40821"
+  }
+]
