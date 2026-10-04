@@ -2,7 +2,7 @@
 export const METRICS = ['frame_interval_ms', 'cpu_acquire_ms', 'cpu_encode_ms', 'cpu_submit_ms', 'cpu_present_ms', 'cpu_render_call_ms'];
 /** Each slot has scene passes, but both upscale draws share one final render pass. */
 export function frameWork(slots) {
-  const sum = key => slots.reduce((total, slot) => total + slot[key], 0);
+  const sum = key => slots.some(slot => slot[key] === null) ? null : slots.reduce((total, slot) => total + slot[key], 0);
   const scenes = sum('scene_render_passes');
   return {
     frame_scene_passes: scenes,

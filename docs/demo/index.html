@@ -23,8 +23,8 @@
       <div class="preview-column">
         <div class="panel-header"><h2><span class="section-number">01</span> VIEWPORT</h2><span class="quiet">同じ時間、ふたつのパイプライン</span></div>
         <div class="experiments">
-          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
-          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option><option value="8">09 · 中庭 · Culling / LOD</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option><option value="7">08 · 中庭 · SSAO</option><option value="8">09 · 中庭 · Culling / LOD</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
         <section class="render-scale-panel" aria-label="内部描画解像度">
           <div class="render-scale-fields">
@@ -55,7 +55,7 @@
           </div>
           <datalist id="object-count-presets"><option value="64"></option><option value="256"></option><option value="1024"></option><option value="4096"></option></datalist>
           <p>実験 03 は light、04 は heavy fragment。同じ形状を、描画順・depth prepass・固定カメラで比較します。描画方式は中庭のみ有効。順序はオブジェクト単位で、fragment 呼び出し数の実測ではありません。</p>
-          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。この欄のカメラは実験 03〜07、Instancing と個数は実験 05 のみ有効です。</p>
+          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。この欄のカメラは実験 03〜08、Instancing と個数は実験 05 のみ有効です。</p>
           <p>Instancing は draw 呼び出しをまとめますが、頂点数・fragment 数の削減や高速化は保証しません。CPU/rAF は A/B 合計です。同数・同条件の画質一致を確かめ、時間の比較には A/A 個別と A/A instanced を別 run で計測してください。</p>
           <p>Transform / color は 48 bytes × 4096 = 196608 bytes を初期化時に一度だけ転送し、A/B で共有。各側の使用範囲は N × 48 bytes、個数変更や毎フレームの instance 再転送・CPU transform 更新はありません。初期化コストはこの計測に含みません。</p>
           <p>まず両側で実験・カメラ・倍率を揃え、B の描画方式だけ変更。Prepass は depth 10 + color 10 draws。CPU/rAF 合計と画質を確認し、常に速くなるとは仮定しません。WGSL 編集時の prepass 比較は同じ不透明 coverage / depth と、vertex position の @invariant 指定が前提です。discard・fragment depth の変更は別途検証してください。</p>
@@ -137,6 +137,25 @@
           <p>追加 target は各側 RGBA16Float × 2（normal + world position、16 bytes/internal pixel）と RGBA8Unorm × 2（raw + blurred AO、8 bytes/AO pixel）。名目追加 bytes は 16 × internal pixels + 8 × AO pixels。既存 depth/color・alignment・driver overhead は除外します。blur Off でも両 AO targets を確保し、SSAO Off でも保持します。A/B の targets は独立です。</p>
           <p>On は gbuffer 1 + AO 1 + final 1 pass/draw、blur 有効時は 1 pass/draw を追加。Off は final 1 pass/draw のみ。AO-only は final geometry の代わりに fullscreen 1 draw。さらに各側 upsample 1 draw を共通合成 pass に追加します。設定・固定条件・実サイズ・名目メモリー・pass/draw 数は JSON / CSV、PNG 名には全 SSAO 設定・固定条件を記録します。</p>
           <p class="shadow-warning">CPU/rAF は A/B 全 pass の合計で、GPU 時間は未計測。コスト比較は同じ条件の A/A On と A/A Off を別 run で計測してください。AO/blur は enabled 時、静止中もフレームごとに更新します。設定変更時やサイズ固定直後のリソース再確保は記録 samples の前（warmup を含む）に行い、WGSL コンパイルも samples に含めません。画面上のノイズ・halo・接触部の消失と速度を分けて評価し、この画面だけから GPU 高速化率を推定しないでください。</p>
+        </section>
+        <section id="culling-panel" class="shadow-panel" aria-labelledby="culling-heading" hidden>
+          <h2 id="culling-heading">09 · 中庭 · CPU Culling / Distance LOD</h2>
+          <div class="shadow-slots">
+            <fieldset id="culling-controls-a" class="shadow-slot" data-lock disabled><legend>A · Culling / LOD</legend>
+              <label>A Mode <select id="culling-mode-a" data-lock disabled><option value="0" selected>Baseline · 全 objects / high LOD</option><option value="1">Cull only · frustum / high LOD</option><option value="2">LOD only · 全 objects / distance LOD</option><option value="3">Cull + LOD · frustum / distance LOD</option></select></label>
+              <output id="culling-work-a" aria-live="polite">次の描画で実際の submitted draw list を表示</output>
+            </fieldset>
+            <fieldset id="culling-controls-b" class="shadow-slot" data-lock disabled><legend>B · Culling / LOD</legend>
+              <label>B Mode <select id="culling-mode-b" data-lock disabled><option value="0" selected>Baseline · 全 objects / high LOD</option><option value="1">Cull only · frustum / high LOD</option><option value="2">LOD only · 全 objects / distance LOD</option><option value="3">Cull + LOD · frustum / distance LOD</option></select></label>
+              <output id="culling-work-b" aria-live="polite">次の描画で実際の submitted draw list を表示</output>
+            </fieldset>
+          </div>
+          <p>同じ中庭・不透明 geometry・光・カメラ経路を使い、A/B の CPU frustum culling と距離ベース LOD を独立に切り替えます。実験 05 の Instancing とは別の実験です。1 submitted object = 1 indexed draw で、draw batching は変更しません。固定カメラの選択は無効です。</p>
+          <p>時間の再生・停止・scrub で固定経路を再現します。同じ時刻・WGSL・倍率・50:50 の viewport で比較してください。Baseline と Cull only の画質一致を確認し、LOD only と Cull + LOD では輪郭の単純化と距離しきい値での popping を観察します。端を横切る objects や、床・壁に隠れた objects に注目してください。</p>
+          <p>固定 51 objects（中庭 10 + 外側の床 1 + 回転・非均等 scale の ellipsoid 40）。41 個の球 / ellipsoid は LOD 0/1/2 = 1840/440/100 triangles、箱・床は不変です。eye → world AABB 中心の距離が &lt;12 / 12〜24 / ≥24 で LOD を選び、しきい値と等しい場合は低 detail 側です。ヒステリシスはなく、16〜20 s では中心球の距離 12 ± 0.04 を繰り返して popping を見せます。CPU 経路は 0〜20 s で clamp、ブラウザー再生は 20 s で巻き戻ります。</p>
+          <p>Bounds はローカル box の 8 corners を変換して囲む world AABB。WebGPU の clip depth 0〜w に対応した 6 正規化平面を使い、交差する bounds を保持し、world epsilon 0.0001 を適用します。固定 light = normalize(0.75, 1.25, 0.7)、shader 時刻は 0。グローバル時間はカメラだけに使います。</p>
+          <p>CPU frustum test は画面外を除外し、壁の後ろの遮蔽は検出しません。Occlusion culling は未実装です。visible / submitted は描画対象数で、実際に見えている pixel 数ではありません。tested は culling Off で 0。draws・triangles・LOD 0/1/2 は最後に実際に送信した draw list の値で、fragment 数や GPU 時間ではありません。</p>
+          <p class="shadow-warning">CPU/rAF は A/B と合成の合計で、GPU 時間は未計測。速度比較は A/A baseline、A/A cull only、A/A LOD only、A/A both を別 run で計測してください。固定時刻でも CPU tests / LOD 選択を毎フレーム行い、CPU encode に含めます。計測は操作をロックし、計測サイズの実 draw list を JSON / CSV に記録します。custom WGSL で頂点を bounds 外へ移動すると culling の保守性が失われる可能性があります。</p>
         </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>
