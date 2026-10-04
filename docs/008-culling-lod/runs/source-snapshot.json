@@ -1,0 +1,54 @@
+{
+  "final_source_commit": "6866839ba1d4962b1a71ddc4819d433de598e45e",
+  "source_status": "Verified culling source commit; compiler-embedded measured source hashes and raw evidence are unchanged.",
+  "base_ssao_source_commit": "45dc17342d47e875b4078b403a21b7745b4b1979",
+  "verified_shadow_ancestor": "96e778e3f4eef04a142ea5db5610196feb98ef35",
+  "source_snapshot_sha256": "5328373b830d7892b5e16f57575ec69c0ce055913991756d4042d8b0ed9bbc39",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "69920d7bfd4b0ade0bbde4452f4e4ffb164474d86c4efbc91547fa73653bc523"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "f25c11de32b8af564988bf69e3e663902ea0ce8be1d1666aac22327b7ff76547"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "30a7caaa6b8f28226c0742a358446f98ef94dacc0f9264676bff4572ea62e2af"
+    },
+    {
+      "path": "crates/core/src/culling.rs",
+      "sha256": "78313c556224025725e618b6d365a045b9a590d989ae6a0e36e12544b5517d04"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "1154f8a90ee2be01a2f2b623fd3aa67e02cc5847de571b35f6ec66a7112a78d4"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/tests/culling_smoke.rs",
+      "sha256": "1f8a2119e139e109e6aaf16ea750a37b805b01e733e95aeb20a316d9442d5f0b"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "0ced6c68f4d45b22a4bb78b1687f6ba49887d9343d2a234526ca59b8cc85c5ec"
+    },
+    {
+      "path": "web/shaders/culling.wgsl",
+      "sha256": "32ece86b605be203d7771827d786f4678b145e6f273643216707072a3a5ae72c"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    }
+  ],
+  "base_ssao_public_commit": "f134ec73d35202298d962cbfb1f902de7ee8018b"
+}

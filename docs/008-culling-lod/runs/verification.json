@@ -1,0 +1,21 @@
+{
+"adapter":"llvmpipe (LLVM 19.1.7, 256 bits)","driver":"","driver_info":"4.5 (Core Profile) Mesa 25.0.7-2+deb13u1","backend":"Gl","device_type":"Cpu",
+"build_profile":"release","debug_assertions":false,"rustc_version":"rustc 1.99.0 (b940084d7 2026-09-28)",
+"command":"cargo test --locked --release -p rendering-core --test culling_smoke -- --ignored --nocapture",
+"width":512,"height":512,"display_width":512,"display_height":512,"internal_width":512,"internal_height":512,"scale_percent":100,"format":"Rgba8UnormSrgb","objects":51,"detailed_objects":41,"seed":0,
+"pipeline_compile_ms":2.182090,"pipeline_compile_scope":"validated_pipeline creation/validation after one earlier pipeline creation; may use driver cache; not cold startup compile", "first_slot_creation_ms":4.500482,
+"path_duration_seconds":20,"path_step_seconds":0.25,"path_frames":81,"modes":["baseline","culling","lod","culling_lod"],
+"cull_vs_baseline_exact_frames":81,"both_vs_lod_exact_frames":81,"changed_pixels_in_either_culling_comparison":0,"maximum_channel_error":0,
+"repeated_forward_exact_images":324,"backwards_exact_images":324,"total_path_readbacks":972,
+"timing_times":[0,2,4,8,10,12,16,16.5],"timing_repeats":3,"warmup_per_block":4,"samples_per_block":10,"timing_rows":960,"valid_start_to_start_intervals":864,
+"timing_scope":"Native offscreen serialized completion wall clocks. Projection/camera + select + uniform update + production scene and 100 percent upsample + finish + submit + blocking queue completion. No readback, geometry/target allocation, pipeline creation or presentation in sample. Preallocated geometry/targets/uniform/readback; selection allocates its production vectors. Rotating mode order between repeats.",
+"cpu_frustum_ms":"select observer boundary 0 to 1; plane construction and AABB tests when enabled; all-visible flag allocation otherwise",
+"cpu_lod_selection_ms":"select observer boundary 1 to 2; distance LOD and stable draw-list construction; still constructs list when LOD disabled",
+"cpu_encode_ms":"end of select through queue uniform write, command generation, scene and upsample passes, encoder finish",
+"native_queue_completion_wall_ms":"frame entry before camera/selection through blocking completion; CPU and driver/queue work, not GPU execution time",
+"native_frame_interval_ms":"genuine current minus previous frame starts within ten consecutive measured samples; first row each block blank; no warmups or CSV formatting included",
+"gpu_ms":null,"adapter_timestamp_query_available":true,"gpu_timestamp_queries_enabled":false,"gpu_timestamp_reason":"not enabled; GL software adapter evidence; blank GPU time never inferred from wall time",
+"browser_runtime":false,"surface_presentation":false,"android_runtime":false,"hardware_gpu_evidence":false,
+"two_slots":{"independent_uniforms":true,"independent_targets":true,"independent_selections":true,"independent_pipelines":true,"single_submission_per_pair":true,"repeat_exact":true,"reverse_encode_order_exact":true,"b_only_changes":[{"change":"cull_only","a_changed_pixels":0,"b_changed_pixels":0,"b_stats":[51, 22, 22, 22190, 22, 0, 0]},{"change":"cull_and_lod","a_changed_pixels":0,"b_changed_pixels":13121,"b_stats":[51, 22, 22, 2330, 10, 3, 9]},{"change":"camera_t10","a_changed_pixels":0,"b_changed_pixels":189250,"b_stats":[51, 36, 36, 6490, 11, 6, 19]},{"change":"custom_shader","a_changed_pixels":0,"b_changed_pixels":68717}],"a_only_changed_pixels":189513,"a_change_preserves_b":true,"restored_exact":true,"reload_rejections":[{"case":"invalid_wgsl","rejected":true,"old_pipeline_pixels_preserved":true},{"case":"abi_binding","rejected":true,"old_pipeline_pixels_preserved":true}]},
+"validation_clean":true
+}
