@@ -1,0 +1,242 @@
+{
+  "final_source_commit": "45dc17342d47e875b4078b403a21b7745b4b1979",
+  "source_status": "Verified private SSAO source commit45dc17342d47e875b4078b403a21b7745b4b1979: all556 archive files match the reviewed frozen source manifest. Publication-only metadata update; capture-time source/evidence hashes unchanged. Public deployment is not asserted here.",
+  "verified_pbr_ancestor": "4deccc8a3643a6115d7f62021fe7082b3730338e",
+  "shadow_source_commit": "96e778e3f4eef04a142ea5db5610196feb98ef35",
+  "shadow_source_status": "Publisher verified all498remote files match frozen rendering-lab-shadows manifest; this is the verified source base, not the final SSAO source SHA.",
+  "source_snapshot_sha256": "ac3bb17b486076fc91aa0ee863b3cd3f19e74b41357c29430c80d0a0e16ac775",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "69920d7bfd4b0ade0bbde4452f4e4ffb164474d86c4efbc91547fa73653bc523"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "f25c11de32b8af564988bf69e3e663902ea0ce8be1d1666aac22327b7ff76547"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "29954994de80d063fc5b3d1bddde77dd81f44d0472722d1bd3efd03f414e984d"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "7cffaf6054aed45db78ee855f1b5ad6b3c68b49b7b1d6ae47d6047cf96bb019e"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/src/shadows.rs",
+      "sha256": "adb2745bdd23c2cf78ed3d6e181f8539003ddbcdc09ca3b4340100c34079ceeb"
+    },
+    {
+      "path": "crates/core/src/ssao.rs",
+      "sha256": "058f371c41d90039ab2c4f6f8e430dcc43c3a1ccb519ec2cd9854f4e4b3c7407"
+    },
+    {
+      "path": "crates/core/tests/ssao_smoke.rs",
+      "sha256": "dcc7d42759be875661ce7a087463cfe5b36aba1f307a3bb9c4f99ec42bc92f44"
+    },
+    {
+      "path": "scripts/build-ssao-evidence.py",
+      "sha256": "0a80c92710844d5a76ed51b4c150cfb1a1a0b88416d068307aa813cb714e1ea6"
+    },
+    {
+      "path": "web/shaders/ssao.wgsl",
+      "sha256": "4a2b11ef1d7fcefcb6c69e7b8e8ddb2ca1a4efdfca6887369996fcc248e254dd"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    }
+  ],
+  "raw_evidence_files": [
+    {
+      "path": "camera-0-samples-16-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "5117cf2ccf3ac3464326c6b97eb4a0b4bb9b755a06ea2ab44be91141565f9479"
+    },
+    {
+      "path": "camera-0-samples-16-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "74829b2fb12a24cec74e8795e6653581f562c8d99ce6f7d9cd347d76059aa9e1"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-0-debug-0-on-0.ppm",
+      "sha256": "f79fff529049dced3978ed05a99e66d8d8db3b25f0e800266d915b5c10e634dc"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "c6feb1e2f53d27de8aef835490f0407c82e68f1682fabd3b90a126e941dfde8c"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-0-debug-1-on-0.ppm",
+      "sha256": "1aa9c126a89bc229c56426b79a039a3ac0c2d3e2c5b9c0da62b914c1286d924f"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "417c7bb1de19f15499edeba9ded83223f8a15bc4ed14452e2eedc11ee7a188ff"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-1-debug-0-on-1.ppm",
+      "sha256": "a2367b59d232f0090312c3f394f7758d82a07707eda0360e461c4b917a43bb00"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-1-debug-1-on-1.ppm",
+      "sha256": "3a5344b1fcef34068b144afb23806457edbeb5e93e4d19d1f8db0f9f718ff687"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-2-debug-0-on-1.ppm",
+      "sha256": "ed4e4120596fabf497e804927e156b0b6aa890fcd16c83ad32f58ae954412b67"
+    },
+    {
+      "path": "camera-0-samples-32-res-100-blur-2-debug-1-on-1.ppm",
+      "sha256": "1ad002e5e26b0d080f059b5de4b90d481dd4e1ce1d72bb5965c49d5ee82a07c5"
+    },
+    {
+      "path": "camera-0-samples-32-res-50-blur-0-debug-0-on-1.ppm",
+      "sha256": "14588ed369baf13934de9d1fea1aea14b6f7e0f1109a2ec8a2fa43063af3918f"
+    },
+    {
+      "path": "camera-0-samples-32-res-50-blur-0-debug-1-on-1.ppm",
+      "sha256": "74e83eaeab85898994b07e346f99adb46027f543776a5ba7ba26c2d24e98a54a"
+    },
+    {
+      "path": "camera-0-samples-8-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "49abc79ac41f5f7d5c3d63a455281519eddc733f2bbf61df02dff79bcba0206f"
+    },
+    {
+      "path": "camera-0-samples-8-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "d38cd1dac7f3b614cef2f17e8c8e8ea2c8baaac8cc89294db112734a2b26e52a"
+    },
+    {
+      "path": "camera-1-samples-16-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "550bbbce10012aaa50779132b61e23dfb293a5e831e6a4fca6af656520c1d0b6"
+    },
+    {
+      "path": "camera-1-samples-16-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "63ac292dae6001152660bb84073dcd815b2c3f71345b8d3c4ca6986f8b62ea55"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-0-debug-0-on-0.ppm",
+      "sha256": "c01c19994d88a82c428ba31197d5f4328f0f28aa46741abc40feb6a1dc6ead44"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "65b048784fe5c160230b6ebf380c994556873b4a4600db50d076d45442e60953"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-0-debug-1-on-0.ppm",
+      "sha256": "1aa9c126a89bc229c56426b79a039a3ac0c2d3e2c5b9c0da62b914c1286d924f"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "c3344a4f3455825df2cc2daa2720d60670fd805df45685ea98b794d906a0c958"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-1-debug-0-on-1.ppm",
+      "sha256": "38988082f5adcd468468a08e04bce783ca61ee8786af8a971324f2bb27d04cbb"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-1-debug-1-on-1.ppm",
+      "sha256": "64984e7ca3509308e7b5903e1f9e4c67529ec7e6def885b824931b17595d7ea9"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-2-debug-0-on-1.ppm",
+      "sha256": "f52db517213a727b830cc376736e03fd81d3c3ec1eaf81d51aac681e67cd940c"
+    },
+    {
+      "path": "camera-1-samples-32-res-100-blur-2-debug-1-on-1.ppm",
+      "sha256": "580e39ed381d7adc4e5785a38b28339f2367d82afb237bf674f5e7c11931bfd1"
+    },
+    {
+      "path": "camera-1-samples-32-res-50-blur-0-debug-0-on-1.ppm",
+      "sha256": "b81cd076b2a1280d72e0d9d1fcb749273d87188168ecec38b649a04550e6766f"
+    },
+    {
+      "path": "camera-1-samples-32-res-50-blur-0-debug-1-on-1.ppm",
+      "sha256": "f646b827acdf1b85228229d64481f824057c190eb697df18fa964efec3edcfbf"
+    },
+    {
+      "path": "camera-1-samples-8-res-100-blur-0-debug-0-on-1.ppm",
+      "sha256": "b6227116718086988a1c60f7eaa2a3c60ef8f4010c97a7f2c2b418160ba55241"
+    },
+    {
+      "path": "camera-1-samples-8-res-100-blur-0-debug-1-on-1.ppm",
+      "sha256": "a725ffc5afa3dda1ba4231f6fcf2311e3253844cfde5d6384c3ab58a8c77e48b"
+    },
+    {
+      "path": "compiled-sources/courtyard.rs",
+      "sha256": "29954994de80d063fc5b3d1bddde77dd81f44d0472722d1bd3efd03f414e984d"
+    },
+    {
+      "path": "compiled-sources/lib.rs",
+      "sha256": "7cffaf6054aed45db78ee855f1b5ad6b3c68b49b7b1d6ae47d6047cf96bb019e"
+    },
+    {
+      "path": "compiled-sources/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "compiled-sources/shadows.rs",
+      "sha256": "adb2745bdd23c2cf78ed3d6e181f8539003ddbcdc09ca3b4340100c34079ceeb"
+    },
+    {
+      "path": "compiled-sources/ssao.rs",
+      "sha256": "058f371c41d90039ab2c4f6f8e430dcc43c3a1ccb519ec2cd9854f4e4b3c7407"
+    },
+    {
+      "path": "compiled-sources/ssao.wgsl",
+      "sha256": "4a2b11ef1d7fcefcb6c69e7b8e8ddb2ca1a4efdfca6887369996fcc248e254dd"
+    },
+    {
+      "path": "compiled-sources/ssao_smoke.rs",
+      "sha256": "dcc7d42759be875661ce7a087463cfe5b36aba1f307a3bb9c4f99ec42bc92f44"
+    },
+    {
+      "path": "compiled-sources/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    },
+    {
+      "path": "edge-center-crop.ppm",
+      "sha256": "5ca413939d8f1d95774558cc9c8bf437a5981f5bad6b3b43a46ae52011c45a55"
+    },
+    {
+      "path": "edge-crop-off.ppm",
+      "sha256": "7f8e45965a03b605187919d3c2fde09082cab1bc2e8791ce7d92d3e37503d97b"
+    },
+    {
+      "path": "edge-limited-off.ppm",
+      "sha256": "879fe7355c55d9cfb938b37bc339600a216cbee22cf8707d6c4d50e195b2797a"
+    },
+    {
+      "path": "edge-limited-viewport.ppm",
+      "sha256": "7aaba573f8e6a5ed172720cee95186cb942340efc821730077f14ad88a1411e7"
+    },
+    {
+      "path": "edge-wide-ao.ppm",
+      "sha256": "417c7bb1de19f15499edeba9ded83223f8a15bc4ed14452e2eedc11ee7a188ff"
+    },
+    {
+      "path": "native-walltime.csv",
+      "sha256": "aad2bd85b7320d9cfa3a369c99f482bd669ef9724f32d0b9e2daba05fcc2889e"
+    },
+    {
+      "path": "slots-a-baseline.ppm",
+      "sha256": "c6feb1e2f53d27de8aef835490f0407c82e68f1682fabd3b90a126e941dfde8c"
+    },
+    {
+      "path": "slots-b-custom.ppm",
+      "sha256": "a8a73feddcd625f6fa2b4fcb686be6d30b5c9a564e94f043a41bea7340b586cc"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "27058c3b09fcdc8a4edc0ac57503708f14554e5a7261fabe029254aec3fd04b2"
+    }
+  ],
+  "private_source_verified": true,
+  "private_source_verified_file_count": 556
+}

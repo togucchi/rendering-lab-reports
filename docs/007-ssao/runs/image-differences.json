@@ -1,0 +1,215 @@
+{
+  "domain": "sRGB display bytes, not physical visibility, ground truth or perceptual error",
+  "conditions": [
+    {
+      "condition": 0,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.0,
+      "max_channel_difference": 0,
+      "changed_pixels": 0
+    },
+    {
+      "condition": 1,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.18695704142252603,
+      "max_channel_difference": 26,
+      "changed_pixels": 21902
+    },
+    {
+      "condition": 2,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.11595535278320312,
+      "max_channel_difference": 35,
+      "changed_pixels": 21031
+    },
+    {
+      "condition": 3,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.08582178751627605,
+      "max_channel_difference": 36,
+      "changed_pixels": 20462
+    },
+    {
+      "condition": 4,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.05929692586263021,
+      "max_channel_difference": 12,
+      "changed_pixels": 19478
+    },
+    {
+      "condition": 5,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.06920750935872395,
+      "max_channel_difference": 14,
+      "changed_pixels": 20690
+    },
+    {
+      "condition": 6,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.2996164957682292,
+      "max_channel_difference": 43,
+      "changed_pixels": 22304
+    },
+    {
+      "condition": 7,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.0,
+      "max_channel_difference": 0,
+      "changed_pixels": 0
+    },
+    {
+      "condition": 8,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.9375228881835938,
+      "max_channel_difference": 72,
+      "changed_pixels": 24051
+    },
+    {
+      "condition": 9,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.5704841613769531,
+      "max_channel_difference": 86,
+      "changed_pixels": 23370
+    },
+    {
+      "condition": 10,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.41139984130859375,
+      "max_channel_difference": 97,
+      "changed_pixels": 26093
+    },
+    {
+      "condition": 11,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.29285430908203125,
+      "max_channel_difference": 29,
+      "changed_pixels": 25550
+    },
+    {
+      "condition": 12,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.34290313720703125,
+      "max_channel_difference": 33,
+      "changed_pixels": 26569
+    },
+    {
+      "condition": 13,
+      "reference": "camera-0-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 1.4491157531738281,
+      "max_channel_difference": 130,
+      "changed_pixels": 24213
+    },
+    {
+      "condition": 14,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.0,
+      "max_channel_difference": 0,
+      "changed_pixels": 0
+    },
+    {
+      "condition": 15,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.18809636433919272,
+      "max_channel_difference": 21,
+      "changed_pixels": 28371
+    },
+    {
+      "condition": 16,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.11298116048177083,
+      "max_channel_difference": 17,
+      "changed_pixels": 26648
+    },
+    {
+      "condition": 17,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.11207199096679688,
+      "max_channel_difference": 15,
+      "changed_pixels": 27535
+    },
+    {
+      "condition": 18,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.06282552083333333,
+      "max_channel_difference": 7,
+      "changed_pixels": 25272
+    },
+    {
+      "condition": 19,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.07311248779296875,
+      "max_channel_difference": 9,
+      "changed_pixels": 26858
+    },
+    {
+      "condition": 20,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-0-on-1",
+      "mae_display_rgb_bytes": 0.32603200276692706,
+      "max_channel_difference": 36,
+      "changed_pixels": 29046
+    },
+    {
+      "condition": 21,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.0,
+      "max_channel_difference": 0,
+      "changed_pixels": 0
+    },
+    {
+      "condition": 22,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 1.1382942199707031,
+      "max_channel_difference": 91,
+      "changed_pixels": 32208
+    },
+    {
+      "condition": 23,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.6826019287109375,
+      "max_channel_difference": 49,
+      "changed_pixels": 31300
+    },
+    {
+      "condition": 24,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.6103515625,
+      "max_channel_difference": 57,
+      "changed_pixels": 36065
+    },
+    {
+      "condition": 25,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.372894287109375,
+      "max_channel_difference": 25,
+      "changed_pixels": 33505
+    },
+    {
+      "condition": 26,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 0.4344978332519531,
+      "max_channel_difference": 29,
+      "changed_pixels": 35058
+    },
+    {
+      "condition": 27,
+      "reference": "camera-1-samples-32-res-100-blur-0-debug-1-on-1",
+      "mae_display_rgb_bytes": 1.8630943298339844,
+      "max_channel_difference": 117,
+      "changed_pixels": 32297
+    }
+  ],
+  "screen_extent_ao": {
+    "mae_display_rgb_bytes": 0.035675048828125,
+    "max_channel_difference": 57,
+    "changed_pixels": 833,
+    "outer32px_changed_pixels": 706,
+    "outer32px_brighter_pixels": 706,
+    "outer32px_darker_pixels": 0,
+    "outer32px_max_channel_difference": 57
+  },
+  "screen_extent_off": {
+    "mae_display_rgb_bytes": 0.0004094441731770833,
+    "max_channel_difference": 73,
+    "changed_pixels": 2
+  }
+}

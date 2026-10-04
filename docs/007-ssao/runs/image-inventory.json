@@ -1,0 +1,357 @@
+{
+  "images": [
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "c598b73eb779eecfb9c08158847b00518322271c6dd0a2f03a5085769e783ffa",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-8-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "c31323742c84321f30e55039a0b35eff4c6e289b0f12f83ea667e242f40755ce",
+      "settings": {
+        "camera": 0,
+        "samples": 8,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-16-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "396bb2f7f7801331a43aa959cf9a6d197fdf71c7306e919a902c99f57401264f",
+      "settings": {
+        "camera": 0,
+        "samples": 16,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-50-blur-0-debug-0-on-1.png",
+      "sha256": "6d186db9c66f4cebe670e8a8f3d8f8ed307e600d0a3567dc654dbed634bc7215",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 50,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-1-debug-0-on-1.png",
+      "sha256": "81ba0b3fce73ea69d2e23f6af85f876a8da2fd646891cb2ba38cbf37f0bdebcb",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 1,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-2-debug-0-on-1.png",
+      "sha256": "f5ed8dbe9a48e43a07d1935ee9ea34b5dae98fa25aca9f22d22dfbe5f7ed6ebe",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 2,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-0-debug-0-on-0.png",
+      "sha256": "57e8d2de62fdcc9f031a8445a3b8d2f69bc8e384b5c9e993f4efd244f84c9fe5",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 0
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "a4511e0d393dad9a350563d4fc063d6f7888682059ec73a7e5bc0fb00d04d982",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-8-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "a18933516ba0de83f4676aa906cefc135436ed3e200a7b8727e1c7ef7f9738f6",
+      "settings": {
+        "camera": 0,
+        "samples": 8,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-16-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "3d9ec4b178bb7e0b92ed68e7b12bc75e593a4202707030557eec2216661c26d4",
+      "settings": {
+        "camera": 0,
+        "samples": 16,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-50-blur-0-debug-1-on-1.png",
+      "sha256": "d75ae6667d1739a4a782b0a254f0f4d69865bfaa583bcc6db5b5433b049b6cd7",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 50,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-1-debug-1-on-1.png",
+      "sha256": "02bac87796f1d7b94f27f851cdb3153ae5250d1cc4faa63672cec4d089e47ab5",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 1,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-2-debug-1-on-1.png",
+      "sha256": "2a4c06f7d8c3310406b525edd1e00c23aca7df3d5d893e091f82d63968aefffc",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 2,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-0-samples-32-res-100-blur-0-debug-1-on-0.png",
+      "sha256": "dcd927b55e091e2eb0d779d6e8d8fa669e6b8c42a7cd76fa300a1413f1568ad6",
+      "settings": {
+        "camera": 0,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 0
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "eba17721be4ee0e8869ca1bdc20b70cd322f19313af9d56c68b8a66ea1a3f558",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-8-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "21c18770ff2975a0705a0f32d91fb8f771a71a7f5fc8ee47359b4965570b4728",
+      "settings": {
+        "camera": 1,
+        "samples": 8,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-16-res-100-blur-0-debug-0-on-1.png",
+      "sha256": "6becf8ab847e45e356a5928fa3f0136b7accccde4017ca39cc809fb4db7772d1",
+      "settings": {
+        "camera": 1,
+        "samples": 16,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-50-blur-0-debug-0-on-1.png",
+      "sha256": "6afe799b344241f5fe474c84a5263cb9516478eac872abf113d7215c47e6a853",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 50,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-1-debug-0-on-1.png",
+      "sha256": "d02b886c1e9362549c1f27f1a19fed3eb04ad171b44625e4e6b21c57c421a45f",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 1,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-2-debug-0-on-1.png",
+      "sha256": "9bdc2ad80c85d9f76543e72692d4892af815c599804009e326c4012adb97ee89",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 2,
+        "debug": 0,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-0-debug-0-on-0.png",
+      "sha256": "bcdaee83649f12110b3e6bb88626cb817c6e2a4579d99ea594820d5741721a59",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 0,
+        "enabled": 0
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "f9e09c5eb81d815df6cb69656ab99a25e4a7f43b256da251027c1a94d5523060",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-8-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "5070ecbe84aaa8236f337d9c4607faed11a2a76de9a69cf56c4e9154b53777ce",
+      "settings": {
+        "camera": 1,
+        "samples": 8,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-16-res-100-blur-0-debug-1-on-1.png",
+      "sha256": "a4a71275318beb9081c58998708849f058143721408e07b9046c795999737569",
+      "settings": {
+        "camera": 1,
+        "samples": 16,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-50-blur-0-debug-1-on-1.png",
+      "sha256": "a5db1db8b706a8cf97714ba0786d3eb83542be7b5ed65a79cb96861b241e0795",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 50,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-1-debug-1-on-1.png",
+      "sha256": "3f6ddae4b3fdd9feace077781f8a32eeb5e24f2b69884f79c883f5a1563d51c8",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 1,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-2-debug-1-on-1.png",
+      "sha256": "a96ddaea6121307160641bc2657d512ce4f0c20dbec8d1288b6199d0b34882f4",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 2,
+        "debug": 1,
+        "enabled": 1
+      }
+    },
+    {
+      "path": "images/camera-1-samples-32-res-100-blur-0-debug-1-on-0.png",
+      "sha256": "dcd927b55e091e2eb0d779d6e8d8fa669e6b8c42a7cd76fa300a1413f1568ad6",
+      "settings": {
+        "camera": 1,
+        "samples": 32,
+        "ao_resolution": 100,
+        "blur": 0,
+        "debug": 1,
+        "enabled": 0
+      }
+    }
+  ],
+  "crop_boxes_xyxy": {
+    "thin_contact": [
+      80,
+      270,
+      280,
+      470
+    ],
+    "foreground": [
+      250,
+      295,
+      365,
+      410
+    ]
+  },
+  "crop_scale": 2,
+  "crop_filter": "nearest",
+  "screen_edge_diff_multiplier": 8
+}
