@@ -1,0 +1,207 @@
+{
+  "reference": "individual within same view and object count",
+  "domain": "display readback RGB byte channels in [0,255], not perceptual distance",
+  "regression_tolerance": "bit-exact equality",
+  "comparisons": [
+    {
+      "view": "oblique",
+      "objects": 1,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 1,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 64,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 64,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 256,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 256,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 1024,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 1024,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 4096,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "objects": 4096,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 1,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 1,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 64,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 64,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 256,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 256,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 1024,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 1024,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 4096,
+      "mode": "individual",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "objects": 4096,
+      "mode": "instanced",
+      "mae_vs_individual_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    }
+  ]
+}

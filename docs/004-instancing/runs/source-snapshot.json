@@ -1,0 +1,172 @@
+{
+  "source_base_commit": "f3068bf8f4c4255030db5038953d5141f7dfa276",
+  "source_base_scope": "verified issue3 source publication only; issue4 and issue5 are subsequent working-tree changes",
+  "issue4_base_working_tree_sha256": "b475e392014f4000d318a53dabfed15859f89356fb100ac627c8deddc69d48ab",
+  "working_tree_modified": true,
+  "final_source_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
+  "source_snapshot_sha256": "537d9981b342a216875a0f748e96625bd3929bd82dbd16c3b7b6f74f54aae441",
+  "hash_method": "SHA256 of UTF-8 compact JSON files list, keys sorted, separators comma/colon; runtime/tests/build scripts/manifests, excluding generated reports/docs/evidence/target/pkg",
+  "native_evidence_completed_utc": "2026-10-04T05:46:09.561097+00:00",
+  "native_profile": "release",
+  "files": [
+    {
+      "path": ".github/workflows/check.yml",
+      "sha256": "d13af56dcc780914bd2d34c5b8dcbd65c3f783b6dbeddbf4a65fd719ae65b669"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "ad7787eff87ced35966b1fe57f1f796e6fe2bfcbd844210127bab11024541027"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "4cbb66ac9e820f480718e24b8f9e0ca14e86bb67fb34a65ccefa3fcc16742704"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "6fb4695332a3116d767d7988073778215e36063108ff047b0100d2f9ad759169"
+    },
+    {
+      "path": "crates/core/src/instancing.rs",
+      "sha256": "234f7dabbe76027dce71a6dbd107af4c20fb7c746df753b15bdfbf38a60e16d9"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "3e961962d453bf265ae25db460bf58e14b9f7d0b4cdb9175b80c2c713c196f96"
+    },
+    {
+      "path": "crates/core/src/overdraw.rs",
+      "sha256": "b650720fbe43ffab7482a252af25adf82c1d9c08acb178fc94f81a0d5b9cc9a2"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/tests/courtyard_smoke.rs",
+      "sha256": "4ee1068ed6410c4a21bdd5cf54ec8ff9adab187f19ce492afd7cc9d32cd6e0b7"
+    },
+    {
+      "path": "crates/core/tests/gpu_smoke.rs",
+      "sha256": "2788bc2cf64f2094cd28407351031885f1456385eb4c31c308319400140114e4"
+    },
+    {
+      "path": "crates/core/tests/instancing_smoke.rs",
+      "sha256": "3debcdefda2ce9f44453f2021b8f98bb01e94d5434d219ee259e1e31246cffca"
+    },
+    {
+      "path": "crates/core/tests/overdraw_smoke.rs",
+      "sha256": "b73eadf591b39eed671dcd1945e2c2958e405ad3030d135cb674f043ad04406d"
+    },
+    {
+      "path": "crates/core/tests/scale_smoke.rs",
+      "sha256": "db09346adcce355cf09d59e3104a44167d1f6929ac31800d139fb99e8bd28a91"
+    },
+    {
+      "path": "crates/native/Cargo.toml",
+      "sha256": "08bed5112b5e827047bad1912c8e5702295cd40f27664391c9d78ca77ea5e1d2"
+    },
+    {
+      "path": "crates/native/src/main.rs",
+      "sha256": "8f5631ae1ecd932103057b27e7c922ead050ebb6651d8b00fac87d4a152ea218"
+    },
+    {
+      "path": "crates/web/Cargo.toml",
+      "sha256": "99e5667a190332162941ca0d70c46f592aa051389222d27c04436e88a6d85f89"
+    },
+    {
+      "path": "crates/web/src/lib.rs",
+      "sha256": "f43c2f3fcc62e53b79e63620e28901b6b5f93fb6a4041b9cb132ff9380975146"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "0ced6c68f4d45b22a4bb78b1687f6ba49887d9343d2a234526ca59b8cc85c5ec"
+    },
+    {
+      "path": "scripts/build-instancing-evidence.py",
+      "sha256": "7d2bb86c34e700fe72fd13c3070ce62e23b12520abd4c156a5e1bde11a958e5f"
+    },
+    {
+      "path": "scripts/build-overdraw-evidence.py",
+      "sha256": "17071c1e8bc4cb0550a0493dca329aafb6d0904b9c64713da85562e53417447b"
+    },
+    {
+      "path": "scripts/build-reports.py",
+      "sha256": "1a9b201e6a4d5ba67ec047a6b16fbea6b453edc5c68e30c60319ead643dcf1bf"
+    },
+    {
+      "path": "scripts/build-scale-evidence.py",
+      "sha256": "ca0da7e2c753bc07a89b09e125a1a97e7fd9f9fbbf5c635c1598a218fa8340ed"
+    },
+    {
+      "path": "scripts/build-web.sh",
+      "sha256": "f19eab4310ee109daeb25773e93a7f8008abf0044f40ea46e5107c5fe3074bce"
+    },
+    {
+      "path": "scripts/package-demo.py",
+      "sha256": "28b336c25d9eb718ceb817a064d11e38d9678bed178e0b6c66b811a663cf3380"
+    },
+    {
+      "path": "web/app.js",
+      "sha256": "1671be46d995723e26b368bb714b003919fea7084edda24b75e068cb8d5e787a"
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "73fe38d046157b5c8d3a6567e06a12edbd2be00de000ac700c1643d26c4e578a"
+    },
+    {
+      "path": "web/measurement-flow.test.mjs",
+      "sha256": "362f66c19cd3e353d72753931679b33356f79ccef4fd4858964f3708ca385909"
+    },
+    {
+      "path": "web/metrics.mjs",
+      "sha256": "c18df666b89cc3314df872751719a7b48ecee362f01acf22c74bbf8e830a250d"
+    },
+    {
+      "path": "web/metrics.test.mjs",
+      "sha256": "84874125faad1816d0f37f2149aa0c201e656464c1a0001b98ef4a7b09eab6fc"
+    },
+    {
+      "path": "web/shaders/color.wgsl",
+      "sha256": "8ac34c590ef4311396efaffbf42d9e7ffb8cde999f7ee9f9e3683bf137f778a1"
+    },
+    {
+      "path": "web/shaders/courtyard-heavy.wgsl",
+      "sha256": "a3591d4511f12356b0bdfc0fe6b18f23855418e926112240331766dd7c8dcb83"
+    },
+    {
+      "path": "web/shaders/courtyard.wgsl",
+      "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+    },
+    {
+      "path": "web/shaders/instancing.wgsl",
+      "sha256": "494c8f053f431852c7c47ed5651f4467b241d5639aa3bb3b9db617ff63372e5e"
+    },
+    {
+      "path": "web/shaders/sphere.wgsl",
+      "sha256": "b8789695c998397a7ccfa44115accf9a2c43c9329532ade28a8ed288360953cd"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    },
+    {
+      "path": "web/state.mjs",
+      "sha256": "e31de1372de62828a1015127316b6c60a64f344b45b4699d34997158e8bab779"
+    },
+    {
+      "path": "web/state.test.mjs",
+      "sha256": "2e55d1c2c8cceb381c0e573a6d3ac700fd86761647b314e1c210d62fec6697fc"
+    },
+    {
+      "path": "web/styles.css",
+      "sha256": "841d3d80fc7b9e6959bda37ea68e181769df4fa0ec55ad8c15b35e93d0fe4b17"
+    }
+  ],
+  "final_source_commit_verified": true,
+  "final_source_commit_matches_all_snapshot_files": true,
+  "working_tree_modified_scope": "Measurement-time state; all captured files were subsequently published byte-for-byte in final_source_commit."
+}
