@@ -9,7 +9,7 @@
   },
   {
     "path": "001-procedural-courtyard/index.html",
-    "sha256": "e75af62e3300e7943647e785a238dc7a77f7429b5e5d2cc42bf98bd3212b6291"
+    "sha256": "dc1348cae02f856213b20e18428fa0c6aede0659e85fcf43d5ee69696ba89674"
   },
   {
     "path": "001-procedural-courtyard/runs/verification.json",
@@ -57,7 +57,7 @@
   },
   {
     "path": "002-internal-resolution/index.html",
-    "sha256": "ded7ff0b5f321481b2a8cc979c8bc1c448d4ffdc3a0c0ac69ba7809f86512824"
+    "sha256": "6325e8f3ee403794d899471c471eb144d1bbaf23139931286e1c84f5e0b246c4"
   },
   {
     "path": "002-internal-resolution/runs/metadata.json",
@@ -141,7 +141,7 @@
   },
   {
     "path": "003-overdraw/index.html",
-    "sha256": "2af4bcd6f157d2acbd26c928b8915d57f44c43af7fa1d3c8c41b8d4cb5843577"
+    "sha256": "ba6a588baea1b909014970d034aeb7d3756e6ae9b317c4412c879aad04ececbd"
   },
   {
     "path": "003-overdraw/runs/image-differences.json",
@@ -289,7 +289,7 @@
   },
   {
     "path": "004-instancing/index.html",
-    "sha256": "4b7b96346ea13c25a9b4320c90a34a1c5ad197eb63b6f1b4ac56f95c42581458"
+    "sha256": "488f4b5918697866987d8c93bc8be6aeabcc5349252f56b907592363f1b5f9e4"
   },
   {
     "path": "004-instancing/runs/image-differences.json",
@@ -397,7 +397,7 @@
   },
   {
     "path": "005-gltf-pbr/index.html",
-    "sha256": "390b8423e4653d112a0dfb3cf07d4ee4e7a159775fd6ab81d0c46aca3254650b"
+    "sha256": "252cdc66935da6eb159b34b3991519baa531976ba3eff53d99f078c88c3ec6c2"
   },
   {
     "path": "005-gltf-pbr/runs/asset-manifest.json",
@@ -1553,7 +1553,7 @@
   },
   {
     "path": "006-shadow-mapping/index.html",
-    "sha256": "35ae961c2284dbd640b4f1cab22ca22cffa79aaa0236791ec65fc6a35b328c8b"
+    "sha256": "4ffcf95c8cff4324c1479cecf1fa8a45a68b7b305d8911e8582eeb3a162689a9"
   },
   {
     "path": "006-shadow-mapping/runs/base-snapshot.json",
@@ -1765,7 +1765,7 @@
   },
   {
     "path": "007-ssao/index.html",
-    "sha256": "6f3033ad469e7a559294cd1c2dc4365b6824ac305ace581a42532dc3252f97bd"
+    "sha256": "0fec13f10fa70d24bf50441ce308ff814ffd97fa7240137ed49fee7fb04b3949"
   },
   {
     "path": "007-ssao/runs/image-differences.json",
@@ -3137,7 +3137,7 @@
   },
   {
     "path": "008-culling-lod/index.html",
-    "sha256": "201df81b3859a487ba2c7de7ffd4b346082da8d60d21faeaed0b96c3ef0cc2c5"
+    "sha256": "255bacfb865517bd7168f0f0fb8b5f9d8997fc8ac6c8b00ee88129bd14105c64"
   },
   {
     "path": "008-culling-lod/runs/camera-path.csv",
@@ -3289,7 +3289,7 @@
   },
   {
     "path": "index.html",
-    "sha256": "60381571afdab8ef47af7f19f707498e1ebe94f6121b0fe98d7b1be50166ef04"
+    "sha256": "fd8be0637488ba6053315508d99adb2838ca0d10481c778ad05433332bb5768b"
   },
   {
     "path": "style.css",
