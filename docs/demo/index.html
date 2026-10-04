@@ -23,8 +23,8 @@
       <div class="preview-column">
         <div class="panel-header"><h2><span class="section-number">01</span> VIEWPORT</h2><span class="quiet">同じ時間、ふたつのパイプライン</span></div>
         <div class="experiments">
-          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
-          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-a">A</span><span class="sr-only">A の実験</span><select id="experiment-a" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option></select><span id="revision-a" class="revision">ORIGINAL</span></label>
+          <label class="experiment"><span class="slot-dot slot-b">B</span><span class="sr-only">B の実験</span><select id="experiment-b" data-lock disabled><option value="0">01 · 色と座標</option><option value="1">02 · 球体と光</option><option value="2" selected>03 · メッシュの中庭</option><option value="3">04 · 中庭 · heavy fragment</option><option value="4">05 · 反復オブジェクト · instancing</option><option value="5">06 · FlightHelmet · glTF PBR</option><option value="6">07 · 中庭 · shadow mapping</option></select><span id="revision-b" class="revision">ORIGINAL</span></label>
         </div>
         <section class="render-scale-panel" aria-label="内部描画解像度">
           <div class="render-scale-fields">
@@ -55,7 +55,7 @@
           </div>
           <datalist id="object-count-presets"><option value="64"></option><option value="256"></option><option value="1024"></option><option value="4096"></option></datalist>
           <p>実験 03 は light、04 は heavy fragment。同じ形状を、描画順・depth prepass・固定カメラで比較します。描画方式は中庭のみ有効。順序はオブジェクト単位で、fragment 呼び出し数の実測ではありません。</p>
-          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。この欄のカメラは実験 03〜06、Instancing と個数は実験 05 のみ有効です。</p>
+          <p>実験 05 は同じ不透明オブジェクトを反復描画。個別 draw は N draws、Instanced draw は 1 draw。数は 1〜4096（初期値 256）。両側の実験・WGSL・個数・カメラ・倍率を揃え、B の Instancing だけ変更します。この欄のカメラは実験 03〜07、Instancing と個数は実験 05 のみ有効です。</p>
           <p>Instancing は draw 呼び出しをまとめますが、頂点数・fragment 数の削減や高速化は保証しません。CPU/rAF は A/B 合計です。同数・同条件の画質一致を確かめ、時間の比較には A/A 個別と A/A instanced を別 run で計測してください。</p>
           <p>Transform / color は 48 bytes × 4096 = 196608 bytes を初期化時に一度だけ転送し、A/B で共有。各側の使用範囲は N × 48 bytes、個数変更や毎フレームの instance 再転送・CPU transform 更新はありません。初期化コストはこの計測に含みません。</p>
           <p>まず両側で実験・カメラ・倍率を揃え、B の描画方式だけ変更。Prepass は depth 10 + color 10 draws。CPU/rAF 合計と画質を確認し、常に速くなるとは仮定しません。WGSL 編集時の prepass 比較は同じ不透明 coverage / depth と、vertex position の @invariant 指定が前提です。discard・fragment depth の変更は別途検証してください。</p>
@@ -78,6 +78,36 @@
           <p>正面 3/4 / 背面の固定カメラ。Overdraw・Instancing・オブジェクト数はこの実験では無効。WGSL・PBR inputs・カメラ・倍率を A/B で揃えると A/A です。</p>
           <p><a href="./assets/flighthelmet/CREDITS.md">FlightHelmet512px · CC0-1.0 / credits</a> · 512px texture derivative · 7,428,104-byte GLB。</p>
           <p>GLB bytes と不変 GPU textures は A/B で共有し、再選択で再取得しません。取得・decode・初回 GPU upload は CPU/rAF 計測に含まれません。asset identity と各側の debug / texture flags / lighting は JSON / CSV に記録します。</p>
+        </section>
+        <section id="shadow-panel" class="shadow-panel" aria-labelledby="shadow-heading" hidden>
+          <h2 id="shadow-heading">07 · 中庭 · Shadow mapping</h2>
+          <div class="shadow-slots">
+            <fieldset id="shadow-controls-a" class="shadow-slot" data-lock disabled><legend>A · Shadow inputs</legend>
+              <label>A Shadow mapping <select id="shadow-enabled-a" data-lock disabled><option value="1" selected>On · shadow pass + sampling</option><option value="0">Off · shadow pass / sampling なし</option></select></label>
+              <label>A Shadow map 解像度 <select id="shadow-resolution-a" data-lock disabled><option value="256">256 × 256</option><option value="512" selected>512 × 512</option><option value="1024">1024 × 1024</option></select></label>
+              <label>A Rasterizer constant bias <select id="shadow-depth-bias-a" data-lock disabled><option value="0">なし · 0</option><option value="1" selected>基準 · reference</option><option value="2">過大 · exaggerated</option></select></label>
+              <label>A Rasterizer slope-scale bias <select id="shadow-slope-bias-a" data-lock disabled><option value="0">なし · 0</option><option value="1" selected>基準 · reference</option><option value="2">過大 · exaggerated</option></select></label>
+              <label>A PCF kernel <select id="shadow-pcf-a" data-lock disabled><option value="1">1 × 1 · 1 tap</option><option value="3" selected>3 × 3 · 9 taps</option><option value="5">5 × 5 · 25 taps</option></select></label>
+              <label>A 光の位置 <select id="shadow-light-a" data-lock disabled><option value="0" selected>高い光 · high</option><option value="1">低い光 · low</option></select></label>
+              <label>A Debug view <select id="shadow-debug-a" data-lock disabled><option value="0" selected>Shaded · 陰影</option><option value="1">Reconstructed depth · 量子化深度</option><option value="2">Shadow visibility · 可視率</option></select></label>
+              <output id="shadow-work-a">512² · 1024 KiB depth · PCF 9 taps · shadow pass 1 draw</output>
+            </fieldset>
+            <fieldset id="shadow-controls-b" class="shadow-slot" data-lock disabled><legend>B · Shadow inputs</legend>
+              <label>B Shadow mapping <select id="shadow-enabled-b" data-lock disabled><option value="1" selected>On · shadow pass + sampling</option><option value="0">Off · shadow pass / sampling なし</option></select></label>
+              <label>B Shadow map 解像度 <select id="shadow-resolution-b" data-lock disabled><option value="256">256 × 256</option><option value="512" selected>512 × 512</option><option value="1024">1024 × 1024</option></select></label>
+              <label>B Rasterizer constant bias <select id="shadow-depth-bias-b" data-lock disabled><option value="0">なし · 0</option><option value="1" selected>基準 · reference</option><option value="2">過大 · exaggerated</option></select></label>
+              <label>B Rasterizer slope-scale bias <select id="shadow-slope-bias-b" data-lock disabled><option value="0">なし · 0</option><option value="1" selected>基準 · reference</option><option value="2">過大 · exaggerated</option></select></label>
+              <label>B PCF kernel <select id="shadow-pcf-b" data-lock disabled><option value="1">1 × 1 · 1 tap</option><option value="3" selected>3 × 3 · 9 taps</option><option value="5">5 × 5 · 25 taps</option></select></label>
+              <label>B 光の位置 <select id="shadow-light-b" data-lock disabled><option value="0" selected>高い光 · high</option><option value="1">低い光 · low</option></select></label>
+              <label>B Debug view <select id="shadow-debug-b" data-lock disabled><option value="0" selected>Shaded · 陰影</option><option value="1">Reconstructed depth · 量子化深度</option><option value="2">Shadow visibility · 可視率</option></select></label>
+              <output id="shadow-work-b">512² · 1024 KiB depth · PCF 9 taps · shadow pass 1 draw</output>
+            </fieldset>
+          </div>
+          <p>中庭に細い柱 3 本と傾斜面を加え、light-space depth map から照合します。A/B の WGSL・カメラ・倍率を揃え、解像度・bias・PCF・光をひとつずつ変えて比較してください。全設定は JSON / CSV と PNG のファイル名に記録します。</p>
+          <p>Rasterizer constant bias は 0 / 2 / 65536、slope-scale は 0 / 1 / 8、clamp は 0。light depth pass の DepthBiasState に適用し、受光側の offset はありません。constant の単位は深度形式・実装依存で、正規化深度ではありません。「基準」は固定した比較条件で、native llvmpipe では PCF3/5 の縞状 acne を確認したアーティファクト例です。開始候補は512²・constant2・slope1・PCF1（硬い輪郭と階段状aliasingが残る）で、他GPUの最適値を保証しません。bias なしや基準条件の acne（自己遮蔽の縞）、過大 bias の peter-panning（影の浮き）、低解像度の aliasing（階段状の輪郭）を比較できます。</p>
+          <p>PCF は nearest comparison sampler で texel 中心の 1 / 9 / 25 回の比較を平均し、bilinear hardware PCF は使いません。輪郭を平均しますが、影マップの情報量は増えません。Depth debug は 16 回の二分探索比較で光から見た正規化深度を再構成した量子化表示で、raster bias を含みます。再構成区間は 1/65536 以下（framebuffer / 表示の量子化前）で、厳密な depth load や距離ではありません。visibility は可視率の確認用です。Depth debug は Off でも 16 比較、通常の Off は 0 比較です。影範囲外では sample 数が減り、custom WGSL の sample 数は保証しません。</p>
+          <p>Depth32Float は 4 bytes/texel。256² / 512² / 1024² は各側 256 KiB / 1 MiB / 4 MiB（driver overhead 等を除く）。On は毎フレーム shadow depth 1 + color 1 draw、Off は shadow pass と比較 sampling を省き color 1 draw。Depth map debug は Off でも影マップを再生成し、depth 1 + fullscreen debug 1 draw です。A/B の影マップは独立し、Off でも確保したメモリーは保持します。</p>
+          <p class="shadow-warning">CPU/rAF は A/B 全 pass の合計で、GPU 時間は未計測。影 On/Off のコスト比較は、同じ条件の A/A On と A/A Off を別 run で計測します。静止中も計測フレームごとに影マップを再生成します。bias 用の 9 パイプラインは WGSL コンパイル時に準備し、計測中は選択のみです。高解像度・広い PCF が常に良い／速いとは限りません。</p>
         </section>
         <div id="canvas-wrap" class="canvas-wrap">
           <canvas id="viewport" width="1200" height="760" aria-label="A と B の WebGPU レンダリング結果"></canvas>

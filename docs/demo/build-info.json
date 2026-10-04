@@ -1,14 +1,21 @@
 {
-  "source_commit": "4deccc8a3643a6115d7f62021fe7082b3730338e",
-  "source_base_commit": "23df62d9e5353f244121625c8159d80d9d731bfb",
+  "source_commit": "96e778e3f4eef04a142ea5db5610196feb98ef35",
+  "source_base_commit": "4deccc8a3643a6115d7f62021fe7082b3730338e",
+  "source_base_snapshot_manifest_sha256": "e7913402ca8d97df847077f7d58da474dbef28af2670280e6c276b0568b42332",
+  "profile": "release",
   "rust": "1.99.0",
   "wasm_bindgen": "0.2.129",
-  "profile": "release",
   "base_path": "/rendering-lab-reports/demo/",
   "browser_gpu_runtime_verified": false,
   "native_offscreen_verified": true,
-  "native_adapter_class": "software CPU llvmpipe; not hardware performance evidence",
-  "reference_images_verified": false,
-  "flighthelmet_glb_sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf",
-  "source_changes": false
+  "native_adapter_class": "software CPU llvmpipe GL; not hardware performance evidence",
+  "shadow_static_conditions": 48,
+  "shadow_temporal_conditions": 9,
+  "shadow_temporal_frames_per_condition": 24,
+  "shadow_native_samples": 1440,
+  "gpu_timestamps_measured": false,
+  "pbr_reference_images_verified": false,
+  "private_source_verified": true,
+  "private_source_verified_file_count": 498,
+  "source_verification_scope": "Publisher verified downloaded private commit archive: commit comment matched and all498 files SHA256-identical to reviewed manifest, no extras. This metadata does not assert public deployment."
 }

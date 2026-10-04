@@ -1,6 +1,7 @@
+import { SHADOW_FIELDS, SHADOW_DEBUG_MODES, shadowSettings, shadowPngSuffix } from './shadows.mjs';
 import { FLIGHTHELMET_ASSET, PBR_LIGHTING, PBR_DEBUG_MODES, PBR_TEXTURE_INPUTS, PBR_CAMERAS, DEFAULT_PBR_DEBUG, DEFAULT_PBR_FLAGS, pbrDebug, pbrFlags, pbrCamera, FlightHelmetLoader, readBoundedAsset } from './pbr.mjs';
 import { settings, MeasurementRun, reportCsv, frameWork } from './metrics.mjs';
-import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isPbr, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
+import { DEFAULT_EXPERIMENT, EXPERIMENTS, OVERDRAW_MODES, COURTYARD_CAMERAS, INSTANCING_MODES, DEFAULT_OBJECT_COUNT, isCourtyard, isInstancing, isPbr, isShadows, isMesh, overdrawMode, courtyardCamera, instancingMode, objectCount, renderingWork, sharedInstanceBufferWork, renderScale, renderGeometry, comparisonKind, createExperimentSlot, advanceTime, backingSize, clampFinite, errorText, isDirty, OperationGate, FrameRetryBudget } from './state.mjs';
 
 const $ = (id) => document.getElementById(id);
 const canvas = $('viewport');
@@ -20,6 +21,8 @@ const pbrDebugInputs = [$('pbr-debug-a'), $('pbr-debug-b')];
 const pbrTextureInputs = ['a', 'b'].map(side => PBR_TEXTURE_INPUTS.map(input => $(`pbr-${input.key}-${side}`)));
 const pbrDebugs = [DEFAULT_PBR_DEBUG, DEFAULT_PBR_DEBUG];
 const textureFlags = [DEFAULT_PBR_FLAGS, DEFAULT_PBR_FLAGS];
+const shadowConfigs = [shadowSettings(), shadowSettings()];
+const shadowInputs = ['a', 'b'].map(side => Object.fromEntries(SHADOW_FIELDS.map(key => [key, $(`shadow-${key.replaceAll('_', '-')}-${side}`)])));
 const flighthelmet = new FlightHelmetLoader(async () => {
   // A fixed same-origin URL; no external fetch, redirect, or eager initialization.
   const response = await fetch(new URL(FLIGHTHELMET_ASSET.file, import.meta.url), {mode: 'same-origin', credentials: 'same-origin', redirect: 'error'});
@@ -90,11 +93,20 @@ function syncControls() {
       input.checked = Boolean(textureFlags[index] & PBR_TEXTURE_INPUTS[texture].bit);
       input.disabled = !ready || gate.busy || !isPbr(slot.experiment);
     });
-    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index]);
+    for (const key of SHADOW_FIELDS) {
+      shadowInputs[index][key].value = String(shadowConfigs[index][key]);
+      shadowInputs[index][key].disabled = !ready || gate.busy || !isShadows(slot.experiment);
+    }
+    $(index === 0 ? 'shadow-controls-a' : 'shadow-controls-b').disabled = !ready || gate.busy || !isShadows(slot.experiment);
+    const work = renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index]);
+    $(index === 0 ? 'shadow-work-a' : 'shadow-work-b').textContent = isShadows(slot.experiment)
+      ? `${work.shadow_resolution}² · ${(work.shadow_map_nominal_bytes / 1024).toFixed(0)} KiB depth · PCF ${work.shadow_pcf_kernel_samples} taps · active ≤${work.shadow_comparison_samples_max} comparisons · shadow pass ${work.shadow_map_depth_draw_calls} draws`
+      : '実験 07 のみ有効';
     $(index === 0 ? 'draw-count-a' : 'draw-count-b').textContent = isMesh(slot.experiment)
       ? `${work.fragment_workload}${repeated ? ` · ${work.instancing_mode}` : ''} · ${work.scene_object_count} ${isPbr(slot.experiment) ? 'primitives' : 'objects'} · scene ${work.scene_draw_calls} + upsample 1 draws`
       : 'fullscreen 1 + upsample 1 draws';
   });
+  $('shadow-panel').hidden = !slots.some(slot => isShadows(slot.experiment));
   $('pbr-panel').hidden = !slots.some(slot => isPbr(slot.experiment));
   $('pbr-asset-status').textContent = flighthelmet.loaded ? 'FlightHelmet512.glb · GPU resources ready · A/B で共有' : '最初の選択時に同一 origin から GLB を取得します。';
   syncDirty();
@@ -218,6 +230,19 @@ async function changePbr(slotIndex, debugValue, flagsValue) {
       textureFlags[slotIndex] = flags;
       setCompile(`${slotIndex === 0 ? 'A' : 'B'} · ${PBR_DEBUG_MODES[debug].name} · texture flags ${flags} · ソースを保持`);
     } catch (error) { setCompile('PBR 設定の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
+  });
+}
+
+async function changeShadows(slotIndex, input) {
+  if (!ready || gate.busy || !isShadows(slots[slotIndex].experiment)) { syncControls(); return; }
+  await runLocked(async () => {
+    try {
+      const config = shadowSettings(input);
+      // All fields are validated and sent together. Retain last-good JS state on failure.
+      lab.set_shadows(slotIndex, config.resolution, config.depth_bias, config.slope_bias, config.pcf, config.light, config.debug, config.enabled);
+      shadowConfigs[slotIndex] = config;
+      setCompile(`${slotIndex === 0 ? 'A' : 'B'} · shadows ${config.enabled ? 'on' : 'off'} · ${config.resolution}² · PCF ${config.pcf}×${config.pcf} · ${SHADOW_DEBUG_MODES[config.debug].name} · ソースを保持`);
+    } catch (error) { setCompile('Shadow 設定の変更に失敗 · 直前の設定を保持', 'error', errorText(error)); }
   });
 }
 
@@ -399,7 +424,7 @@ async function exportPng() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}${slots.some(slot => isPbr(slot.experiment)) ? `-pbr${pbrDebugs[0]}-${pbrDebugs[1]}-textures${textureFlags[0]}-${textureFlags[1]}` : ''}-scale${scales[0]}-${scales[1]}.png`;
+      link.download = `rendering-lab-t${time.toFixed(2)}-ab${Math.round(split * 100)}-exp${slots[0].experiment}-${slots[1].experiment}-mode${modes[0]}-${modes[1]}-cam${cameras[0]}-${cameras[1]}-inst${instancingModes[0]}-${instancingModes[1]}-objects${objectCounts[0]}-${objectCounts[1]}${slots.some(slot => isPbr(slot.experiment)) ? `-pbr${pbrDebugs[0]}-${pbrDebugs[1]}-textures${textureFlags[0]}-${textureFlags[1]}` : ''}${shadowPngSuffix(slots, shadowConfigs)}-scale${scales[0]}-${scales[1]}.png`;
       document.body.append(link);
       link.click();
       link.remove();
@@ -440,9 +465,9 @@ async function measure() {
   } catch (error) { $('measure-status').textContent = errorText(error); return; }
   // Snapshot only applied shaders, never unapplied editor drafts.
   const measurementSlots = slots.map((slot, index) => ({experiment: slot.experiment, source: slot.applied,
-    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
+    ...renderingWork(slot, modes[index], cameras[index], instancingModes[index], objectCounts[index], pbrDebugs[index], textureFlags[index], shadowConfigs[index]), ...renderGeometry(config.width, config.height, split, scales)[index]}));
   const context = {started_at: new Date().toISOString(), time_seconds: time, split,
-    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts, pbrDebugs, textureFlags),
+    comparison: comparisonKind(slots, scales, modes, cameras, instancingModes, objectCounts, pbrDebugs, textureFlags, shadowConfigs),
     pbr_lighting: slots.some(slot => isPbr(slot.experiment)) ? {...PBR_LIGHTING} : null,
     display_canvas_physical_pixels: {width: config.width, height: config.height},
     render_scale_percent: [...scales],
@@ -461,7 +486,7 @@ async function measure() {
     adapter: lab.adapter_description(), timestamp_supported: lab.timestamp_supported(), timestamp_enabled: false,
     clock: 'performance.now; precision depends on browser privacy policy',
     pacing: 'requestAnimationFrame; foreground only; no GPU completion wait',
-    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded; FlightHelmet fetch/decode/GPU upload also excluded',
+    scope: 'combined A/B offscreen and composite passes; no per-slot timings; not independent A-versus-B GPU benchmark; renderer initialization and static instance upload excluded; FlightHelmet fetch/decode/GPU upload also excluded; required shadow maps regenerated inside every measured frame, including depth debug with shadows Off; shadow texture reallocation on setting changes excluded',
     build_revision: $('measure-commit').value.trim() || 'unavailable: operator must record tested commit',
     build_revision_source: 'operator supplied; not automatically verified'};
   const run = new MeasurementRun(config, context);
@@ -518,6 +543,9 @@ pbrTextureInputs.forEach((inputs, index) => inputs.forEach(input => input.addEve
   const flags = inputs.reduce((value, checkbox, texture) => value | (checkbox.checked ? PBR_TEXTURE_INPUTS[texture].bit : 0), 0);
   return changePbr(index, pbrDebugs[index], flags);
 })));
+shadowInputs.forEach((inputs, index) => Object.values(inputs).forEach(input => input.addEventListener('change', () =>
+  changeShadows(index, Object.fromEntries(SHADOW_FIELDS.map(key => [key, inputs[key].value])))
+)));
 for (const percent of [100, 75, 50]) $(`scale-preset-${percent}`).addEventListener('click', () => scalePreset(percent));
 $('measure-start').addEventListener('click', measure);
 $('measure-cancel').addEventListener('click', () => measurement?.abort('ユーザーが中止しました'));
