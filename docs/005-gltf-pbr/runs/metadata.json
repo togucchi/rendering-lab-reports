@@ -1,0 +1,393 @@
+{
+  "schema": 1,
+  "provenance": "Fixed parameters transcribed from pbr_smoke.rs, pbr.rs, lib.rs and flighthelmet.wgsl; source snapshot identifies exact files. Native verification.json is preserved separately.",
+  "command": "RENDERING_LAB_PBR_OUTPUT=\"$PWD/evidence/pbr-native\" cargo test --locked --release -p rendering-core --test pbr_smoke -- --ignored --nocapture",
+  "build_profile": "release",
+  "display_size": [
+    512,
+    512
+  ],
+  "internal_size": [
+    512,
+    512
+  ],
+  "scale_percent": 100,
+  "color_format": "Rgba8UnormSrgb",
+  "depth_format": "Depth32Float",
+  "depth_compare": "Less",
+  "depth_write": true,
+  "sample_count": 1,
+  "scene_draws": 6,
+  "scene_passes": 1,
+  "display_draws": 1,
+  "display_passes": 1,
+  "scene_clear_linear_rgba": [
+    0.025,
+    0.037,
+    0.052,
+    1
+  ],
+  "display_filter": "linear-light bilinear clamp",
+  "globals": {
+    "group": 0,
+    "binding": 0,
+    "size_bytes": 80,
+    "resolution": [
+      512,
+      512
+    ],
+    "time_seconds": 0,
+    "display_aspect": 1,
+    "view_projection": "pbr::view_projection(512,512,camera), column-major f32; right-handed perspective, WebGPU depth 0..1"
+  },
+  "cameras": [
+    {
+      "id": 0,
+      "eye": [
+        0.7,
+        0.5,
+        1.1
+      ]
+    },
+    {
+      "id": 1,
+      "eye": [
+        -0.8,
+        0.55,
+        -1.1
+      ]
+    }
+  ],
+  "camera_target": [
+    0,
+    0.25,
+    0
+  ],
+  "camera_up": [
+    0,
+    1,
+    0
+  ],
+  "fov_y_degrees_at_aspect_1": 45,
+  "near": 0.01,
+  "far": 10,
+  "light": {
+    "type": "directional",
+    "direction_toward_light_before_normalization": [
+      -0.5,
+      0.8,
+      1
+    ],
+    "linear_rgb_radiance": [
+      3,
+      3,
+      3
+    ],
+    "exposure": 1
+  },
+  "brdf": {
+    "distribution": "GGX",
+    "visibility": "height-correlated Smith (includes 1/(4*N.L*N.V))",
+    "fresnel": "Schlick",
+    "dielectric_f0": 0.04,
+    "alpha": "max(perceptual_roughness^2,0.0016)",
+    "diffuse": "(1-F)*(1-metallic)*baseColor/pi",
+    "tone_map": "Reinhard linear/(1+linear) for lit mode only",
+    "output": "linear shader output, sRGB attachment encode; no shader gamma power"
+  },
+  "material_flags": {
+    "1": "base-color texture",
+    "2": "normal map",
+    "4": "metallic-roughness texture"
+  },
+  "debug_modes": {
+    "0": "lit",
+    "1": "base color",
+    "2": "world normal encoded N*0.5+0.5",
+    "3": "metallic",
+    "4": "perceptual roughness"
+  },
+  "textures": {
+    "base_color": "Rgba8UnormSrgb",
+    "normal_and_orm": "Rgba8Unorm",
+    "orm_channels": "R occlusion, G perceptual roughness, B metallic; R unused for direct lighting",
+    "sampler": "REPEAT, linear mag/min and linear mip filtering",
+    "dimensions": [
+      512,
+      512
+    ],
+    "unique_images": 15,
+    "mip_dimensions": [
+      512,
+      256,
+      128,
+      64,
+      32,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "bytes_per_image_with_mips": 1398100,
+    "asset_texture_bytes": 20971500,
+    "budget_bytes": 20971520,
+    "scope": "Unique asset images, all mips, plus up to four optional 1x1 RGBA8 fallback textures. Excludes geometry, framebuffer/depth and driver allocation overhead.",
+    "mip_reference_hash_scope": "Python float64 preparation reference only, not runtime/GPU-upload hashes; float32 runtime may accumulate small quantization differences"
+  },
+  "native_numeric_fixtures": {
+    "actual_wgsl_helpers": true,
+    "target_format": "Rgba16Float",
+    "absolute_tolerance": 0.001,
+    "coverage": [
+      "GGX distribution analytical values",
+      "Smith visibility normal-incidence and symmetry",
+      "Schlick Fresnel analytical value",
+      "ORM channel routing and factors",
+      "tangent handedness and normalScale",
+      "flat normal",
+      "back-face normal flip"
+    ]
+  },
+  "srgb_gray_readback": {
+    "expected_byte_values": [
+      128,
+      188
+    ],
+    "max_absolute_byte_error": 1
+  },
+  "glb_sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf",
+  "glb_bytes": 7428104,
+  "materials_from_packaged_glb": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 0
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "doubleSided": true,
+      "name": "HoseMat"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 0
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "name": "RubberWoodMat"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 5
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      },
+      "normalTexture": {
+        "index": 3
+      },
+      "occlusionTexture": {
+        "index": 4
+      },
+      "name": "GlassPlasticMat"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 8
+        },
+        "metallicRoughnessTexture": {
+          "index": 7
+        }
+      },
+      "normalTexture": {
+        "index": 6
+      },
+      "occlusionTexture": {
+        "index": 7
+      },
+      "name": "MetalPartsMat"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 11
+        },
+        "metallicRoughnessTexture": {
+          "index": 10
+        }
+      },
+      "normalTexture": {
+        "index": 9
+      },
+      "occlusionTexture": {
+        "index": 10
+      },
+      "name": "LeatherPartsMat"
+    },
+    {
+      "extensions": {
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1
+        }
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 14
+        },
+        "metallicRoughnessTexture": {
+          "index": 13
+        }
+      },
+      "normalTexture": {
+        "index": 12
+      },
+      "occlusionTexture": {
+        "index": 13
+      },
+      "name": "LensesMat"
+    }
+  ],
+  "warmup_frames_per_condition": 3,
+  "warmup_per_repeat": false,
+  "repeats": 3,
+  "samples_per_repeat": 10,
+  "condition_order": [
+    {
+      "camera": 0,
+      "debug": 0,
+      "flags": 7
+    },
+    {
+      "camera": 0,
+      "debug": 1,
+      "flags": 7
+    },
+    {
+      "camera": 0,
+      "debug": 2,
+      "flags": 7
+    },
+    {
+      "camera": 0,
+      "debug": 3,
+      "flags": 7
+    },
+    {
+      "camera": 0,
+      "debug": 4,
+      "flags": 7
+    },
+    {
+      "camera": 0,
+      "debug": 0,
+      "flags": 6
+    },
+    {
+      "camera": 0,
+      "debug": 0,
+      "flags": 5
+    },
+    {
+      "camera": 0,
+      "debug": 0,
+      "flags": 3
+    },
+    {
+      "camera": 1,
+      "debug": 0,
+      "flags": 7
+    },
+    {
+      "camera": 1,
+      "debug": 1,
+      "flags": 7
+    },
+    {
+      "camera": 1,
+      "debug": 2,
+      "flags": 7
+    },
+    {
+      "camera": 1,
+      "debug": 3,
+      "flags": 7
+    },
+    {
+      "camera": 1,
+      "debug": 4,
+      "flags": 7
+    },
+    {
+      "camera": 1,
+      "debug": 0,
+      "flags": 6
+    },
+    {
+      "camera": 1,
+      "debug": 0,
+      "flags": 5
+    },
+    {
+      "camera": 1,
+      "debug": 0,
+      "flags": 3
+    }
+  ],
+  "timing": {
+    "clock": "std::time::Instant native wall clock",
+    "components": [
+      "cpu_encode_ms",
+      "cpu_submit_ms",
+      "native_queue_wait_ms",
+      "native_queue_completion_wall_ms"
+    ],
+    "encode": "encoder creation, render passes, command recording and finish",
+    "submit": "queue.submit call",
+    "wait": "blocking completion of that submission",
+    "total": "sum of encode, submit and wait",
+    "includes": [
+      "6 scene draws",
+      "1 fullscreen display draw",
+      "driver work in submit/wait"
+    ],
+    "excludes": [
+      "asset decode and mip generation/upload",
+      "fixed buffer/target allocation",
+      "pipeline creation",
+      "readback and image encoding",
+      "surface acquire/presentation/vsync/browser"
+    ],
+    "serialized": true,
+    "randomized": false,
+    "gpu_timestamps": false,
+    "thermal_or_external_load_control": false
+  },
+  "reference": {
+    "matched_images_available": false,
+    "criterion_complete": false,
+    "viewer": "https://github.khronos.org/glTF-Sample-Viewer-Release/",
+    "blocker": "Parent cloud-browser attempt reported WebGL 2 unsupported; no matched Khronos render was obtained.",
+    "not_a_reference_comparison": "A/A repeat equality and input/debug changes are internal regression checks only."
+  }
+}
