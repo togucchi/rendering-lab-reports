@@ -289,7 +289,7 @@
   },
   {
     "path": "004-instancing/index.html",
-    "sha256": "3fe5a63dc839597f71a99064679b233cac9942c6d62c8d95a062afe543bc604c"
+    "sha256": "4b7b96346ea13c25a9b4320c90a34a1c5ad197eb63b6f1b4ac56f95c42581458"
   },
   {
     "path": "004-instancing/runs/image-differences.json",
@@ -321,6 +321,6 @@
   },
   {
     "path": "style.css",
-    "sha256": "2aeb1059d655b8b5b328079857999c05ce66585eb341fac887e819f8c4d40821"
+    "sha256": "0af340071ec87b12d6c70d9f004433d16443021793c4d97438a4ac0fca31a669"
   }
 ]
