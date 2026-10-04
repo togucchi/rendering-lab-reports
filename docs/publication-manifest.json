@@ -16,8 +16,68 @@
     "sha256": "b9fa8c3cf7165cf00d8932f668de152149111b64f0ddf1efbad4069f5a21ecb0"
   },
   {
+    "path": "002-internal-resolution/images/color-100.png",
+    "sha256": "4ad56763545ce82a40fd6ed6c01e0c0fc50a2f20bf86e7cd3041bb90bde5911e"
+  },
+  {
+    "path": "002-internal-resolution/images/color-50.png",
+    "sha256": "310ffa89653887ddd54d8e88c6ead0bc40fcde4b84afd2021f70cc5a86c2dae6"
+  },
+  {
+    "path": "002-internal-resolution/images/color-75.png",
+    "sha256": "9c5b8b0879c248dc10e0cd17c129e990e750700f034608555ae4bbae534ac246"
+  },
+  {
+    "path": "002-internal-resolution/images/courtyard-100.png",
+    "sha256": "ce38b189d0d64ca0edee06b062491bc1d342f1bdbaf25acfbde7107bfe8f9c95"
+  },
+  {
+    "path": "002-internal-resolution/images/courtyard-50.png",
+    "sha256": "3f1f423b7105561def77a0dec269206b48e9661ef2ed493fef633920366b4f5a"
+  },
+  {
+    "path": "002-internal-resolution/images/courtyard-75.png",
+    "sha256": "698e5ca6895de65fc86fa7b889cffeb7dbe39e0150768636980008252452345b"
+  },
+  {
+    "path": "002-internal-resolution/images/courtyard-comparison.png",
+    "sha256": "bafdb17d89dcc61c7179476564bdf00833727c374fe54e26748a589665e74e5b"
+  },
+  {
+    "path": "002-internal-resolution/images/sphere-100.png",
+    "sha256": "bfc9b86ab478dd0ab5bdf58a19186b141bf38bc3b793e16458eaec3ab9b0ca0b"
+  },
+  {
+    "path": "002-internal-resolution/images/sphere-50.png",
+    "sha256": "70853e21629007f0940ea809867ef74f13d998aee1d5e465e97a4a1bec509964"
+  },
+  {
+    "path": "002-internal-resolution/images/sphere-75.png",
+    "sha256": "31dac33f01d6e0b4c508ce121bc1ac12f3ac31867c76ea116133408d9414b1b6"
+  },
+  {
+    "path": "002-internal-resolution/index.html",
+    "sha256": "ded7ff0b5f321481b2a8cc979c8bc1c448d4ffdc3a0c0ac69ba7809f86512824"
+  },
+  {
+    "path": "002-internal-resolution/runs/metadata.json",
+    "sha256": "e124360c52b74318632b71538f75f33b7cce00c8b4f91820b79ae93de02712f2"
+  },
+  {
+    "path": "002-internal-resolution/runs/native-summary.csv",
+    "sha256": "e0cbea6303677ff0ee1b46749c32529dea693df3c32b74f2d8ba422b468132c7"
+  },
+  {
+    "path": "002-internal-resolution/runs/native-walltime.csv",
+    "sha256": "fa68b481d8cbca912b27da2cdab8398d55ddd1b9736e5a2824ce3e65bd0522b8"
+  },
+  {
+    "path": "002-internal-resolution/runs/source-snapshot.json",
+    "sha256": "ecfb3154eb94953ad50ba626d4f43e04b505c95af96f833d577420116d4a7bd5"
+  },
+  {
     "path": "index.html",
-    "sha256": "3758597559b96e906c2b5e62743a85100490453b6aedeed8c2816492a05b952f"
+    "sha256": "22255b39bd523766f1d7632868c3d9cebdce2ff0d767f8477597a2b592a40bc5"
   },
   {
     "path": "style.css",
