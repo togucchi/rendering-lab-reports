@@ -1,0 +1,151 @@
+{
+  "reference": "back-to-front within the same view and workload",
+  "domain": "display readback RGB byte channels in [0,255], not linear-light or perceptual distance",
+  "regression_tolerance": {
+    "mae_exclusive_max": 0.001,
+    "changed_pixels_max": 8,
+    "max_byte_channel_difference_max": 40
+  },
+  "comparisons": [
+    {
+      "view": "oblique",
+      "workload": "light",
+      "mode": "back-to-front",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "workload": "light",
+      "mode": "front-to-back",
+      "mae_vs_back_to_front_byte_channels": 0.0002581278483072917,
+      "changed_pixels": 4,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 33,
+      "changed_pixel_bounds_xyxy_exclusive": [
+        151,
+        214,
+        501,
+        335
+      ]
+    },
+    {
+      "view": "oblique",
+      "workload": "light",
+      "mode": "depth-prepass",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "workload": "heavy",
+      "mode": "back-to-front",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "oblique",
+      "workload": "heavy",
+      "mode": "front-to-back",
+      "mae_vs_back_to_front_byte_channels": 0.000255584716796875,
+      "changed_pixels": 4,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 33,
+      "changed_pixel_bounds_xyxy_exclusive": [
+        151,
+        214,
+        501,
+        335
+      ]
+    },
+    {
+      "view": "oblique",
+      "workload": "heavy",
+      "mode": "depth-prepass",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "workload": "light",
+      "mode": "back-to-front",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "workload": "light",
+      "mode": "front-to-back",
+      "mae_vs_back_to_front_byte_channels": 7.120768229166667e-05,
+      "changed_pixels": 1,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 35,
+      "changed_pixel_bounds_xyxy_exclusive": [
+        263,
+        53,
+        264,
+        54
+      ]
+    },
+    {
+      "view": "overhead",
+      "workload": "light",
+      "mode": "depth-prepass",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "workload": "heavy",
+      "mode": "back-to-front",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    },
+    {
+      "view": "overhead",
+      "workload": "heavy",
+      "mode": "front-to-back",
+      "mae_vs_back_to_front_byte_channels": 7.120768229166667e-05,
+      "changed_pixels": 1,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 35,
+      "changed_pixel_bounds_xyxy_exclusive": [
+        263,
+        53,
+        264,
+        54
+      ]
+    },
+    {
+      "view": "overhead",
+      "workload": "heavy",
+      "mode": "depth-prepass",
+      "mae_vs_back_to_front_byte_channels": 0.0,
+      "changed_pixels": 0,
+      "total_pixels": 262144,
+      "max_byte_channel_difference": 0,
+      "changed_pixel_bounds_xyxy_exclusive": null
+    }
+  ]
+}

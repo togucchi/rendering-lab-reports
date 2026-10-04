@@ -1,0 +1,13 @@
+view,workload,mode,repeat,samples,scene_draws,scene_passes,upsample_draws,upsample_passes,median_cpu_encode_submit_ms,median_native_queue_wait_ms,median_native_queue_completion_wall_ms,p95_cpu_encode_submit_ms,p95_native_queue_wait_ms,p95_native_queue_completion_wall_ms
+oblique,light,back-to-front,pooled,90,10,1,1,1,1.573197,0.564949,2.169758,1.972026,0.907830,2.512969
+oblique,light,front-to-back,pooled,90,10,1,1,1,1.452664,0.613521,2.072802,2.091217,0.872984,2.661013
+oblique,light,depth-prepass,pooled,90,20,2,1,1,0.913864,1.096649,2.191547,2.267797,1.571239,3.038590
+oblique,heavy,back-to-front,pooled,90,10,1,1,1,6.571549,0.536998,6.905048,9.194851,0.744018,9.499732
+oblique,heavy,front-to-back,pooled,90,10,1,1,1,5.142340,0.541013,5.629910,5.966657,1.136958,6.956943
+oblique,heavy,depth-prepass,pooled,90,20,2,1,1,1.002274,4.616158,6.087269,6.377683,6.202359,7.630492
+overhead,light,back-to-front,pooled,90,10,1,1,1,1.678622,0.616244,2.300001,2.089634,0.845417,3.210499
+overhead,light,front-to-back,pooled,90,10,1,1,1,1.571325,0.573321,2.168861,2.283451,0.727043,2.779843
+overhead,light,depth-prepass,pooled,90,20,2,1,1,1.823622,0.842439,2.657367,2.227859,1.967804,3.079335
+overhead,heavy,back-to-front,pooled,90,10,1,1,1,7.367252,0.484475,7.767518,15.729667,1.953248,17.820474
+overhead,heavy,front-to-back,pooled,90,10,1,1,1,6.061727,0.474901,6.454474,8.648666,0.768354,9.098099
+overhead,heavy,depth-prepass,pooled,90,20,2,1,1,1.517275,5.534520,7.526111,11.265899,21.853847,28.840265

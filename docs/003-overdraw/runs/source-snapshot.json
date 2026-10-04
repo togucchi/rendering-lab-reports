@@ -1,0 +1,139 @@
+{
+  "source_base_commit": "f3068bf8f4c4255030db5038953d5141f7dfa276",
+  "source_base_status": "verified_issue3_publication; issue4 native-tested working tree identified below",
+  "working_tree_modified": true,
+  "final_source_commit": null,
+  "source_snapshot_sha256": "b475e392014f4000d318a53dabfed15859f89356fb100ac627c8deddc69d48ab",
+  "hash_method": "SHA256 of UTF-8 compact JSON files list, keys sorted, separators comma/colon",
+  "native_evidence_completed_utc": "2026-10-04T05:28:41.195678+00:00",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "ad7787eff87ced35966b1fe57f1f796e6fe2bfcbd844210127bab11024541027"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "4cbb66ac9e820f480718e24b8f9e0ca14e86bb67fb34a65ccefa3fcc16742704"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "01edcccac3f02f5dcac07a525b469d2d9266093c5afb8fd8d4534a24d55db5d6"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "3b54d51309c91140f2c933d37cce08c672386a9a146d2639da288f430a9a176d"
+    },
+    {
+      "path": "crates/core/src/overdraw.rs",
+      "sha256": "b650720fbe43ffab7482a252af25adf82c1d9c08acb178fc94f81a0d5b9cc9a2"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/tests/courtyard_smoke.rs",
+      "sha256": "4ee1068ed6410c4a21bdd5cf54ec8ff9adab187f19ce492afd7cc9d32cd6e0b7"
+    },
+    {
+      "path": "crates/core/tests/gpu_smoke.rs",
+      "sha256": "2788bc2cf64f2094cd28407351031885f1456385eb4c31c308319400140114e4"
+    },
+    {
+      "path": "crates/core/tests/overdraw_smoke.rs",
+      "sha256": "b73eadf591b39eed671dcd1945e2c2958e405ad3030d135cb674f043ad04406d"
+    },
+    {
+      "path": "crates/core/tests/scale_smoke.rs",
+      "sha256": "db09346adcce355cf09d59e3104a44167d1f6929ac31800d139fb99e8bd28a91"
+    },
+    {
+      "path": "crates/native/Cargo.toml",
+      "sha256": "08bed5112b5e827047bad1912c8e5702295cd40f27664391c9d78ca77ea5e1d2"
+    },
+    {
+      "path": "crates/native/src/main.rs",
+      "sha256": "7fd82e5e2b350db62f5ec6097815596a02b66de06e90bcece9b095674bf84034"
+    },
+    {
+      "path": "crates/web/Cargo.toml",
+      "sha256": "99e5667a190332162941ca0d70c46f592aa051389222d27c04436e88a6d85f89"
+    },
+    {
+      "path": "crates/web/src/lib.rs",
+      "sha256": "5875cfa452863e341081f3a290e1e6afccf94624ffe424a25cad38cab5388d48"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "0ced6c68f4d45b22a4bb78b1687f6ba49887d9343d2a234526ca59b8cc85c5ec"
+    },
+    {
+      "path": "scripts/build-overdraw-evidence.py",
+      "sha256": "17071c1e8bc4cb0550a0493dca329aafb6d0904b9c64713da85562e53417447b"
+    },
+    {
+      "path": "scripts/build-reports.py",
+      "sha256": "1a9b201e6a4d5ba67ec047a6b16fbea6b453edc5c68e30c60319ead643dcf1bf"
+    },
+    {
+      "path": "scripts/build-scale-evidence.py",
+      "sha256": "ca0da7e2c753bc07a89b09e125a1a97e7fd9f9fbbf5c635c1598a218fa8340ed"
+    },
+    {
+      "path": "scripts/build-web.sh",
+      "sha256": "f19eab4310ee109daeb25773e93a7f8008abf0044f40ea46e5107c5fe3074bce"
+    },
+    {
+      "path": "scripts/package-demo.py",
+      "sha256": "324f5f07323fecf4e8da9075943935a7e95e69d19e7e93f6d111e7175eaf8ea3"
+    },
+    {
+      "path": "web/app.js",
+      "sha256": "b44c3f3ce94c642c4de24af35293d2059e7ebe41ba6a3327ec3a9fcaacf5854b"
+    },
+    {
+      "path": "web/measurement-flow.test.mjs",
+      "sha256": "266513392274da71a588e4918381cc3daf0fe1101b413b8113643680b83f99f0"
+    },
+    {
+      "path": "web/metrics.mjs",
+      "sha256": "c18df666b89cc3314df872751719a7b48ecee362f01acf22c74bbf8e830a250d"
+    },
+    {
+      "path": "web/metrics.test.mjs",
+      "sha256": "1d28320122eb222c9bd0502be5a57fdf1c4417a47b8e8c663b8c72fd0d3bc0f9"
+    },
+    {
+      "path": "web/shaders/color.wgsl",
+      "sha256": "8ac34c590ef4311396efaffbf42d9e7ffb8cde999f7ee9f9e3683bf137f778a1"
+    },
+    {
+      "path": "web/shaders/courtyard-heavy.wgsl",
+      "sha256": "a3591d4511f12356b0bdfc0fe6b18f23855418e926112240331766dd7c8dcb83"
+    },
+    {
+      "path": "web/shaders/courtyard.wgsl",
+      "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+    },
+    {
+      "path": "web/shaders/sphere.wgsl",
+      "sha256": "b8789695c998397a7ccfa44115accf9a2c43c9329532ade28a8ed288360953cd"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    },
+    {
+      "path": "web/state.mjs",
+      "sha256": "f3fe04c915e3a3cc8b452fa8442268ceecc9120a563e36ec12c1f51308f7e7d1"
+    },
+    {
+      "path": "web/state.test.mjs",
+      "sha256": "c5d8a6fdecf19dd205fb430522f7c812cb1d71891036df49acb4f7870f39c2db"
+    }
+  ]
+}
