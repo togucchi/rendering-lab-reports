@@ -1,0 +1,389 @@
+{
+  "domain": "display readback RGB bytes; not perceptual quality or ground-truth error",
+  "conditions": [
+    {
+      "condition": 0,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0,
+      "changed_pixels": 0,
+      "max_channel_difference": 0
+    },
+    {
+      "condition": 1,
+      "name": "camera-0-light-0-res-256-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.656426747639974,
+      "changed_pixels": 46355,
+      "max_channel_difference": 53
+    },
+    {
+      "condition": 2,
+      "name": "camera-0-light-0-res-1024-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.6154912312825522,
+      "changed_pixels": 44838,
+      "max_channel_difference": 57
+    },
+    {
+      "condition": 3,
+      "name": "camera-0-light-0-res-512-depth-0-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0011355082194010417,
+      "changed_pixels": 19,
+      "max_channel_difference": 25
+    },
+    {
+      "condition": 4,
+      "name": "camera-0-light-0-res-512-depth-2-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.8689066569010415,
+      "changed_pixels": 52384,
+      "max_channel_difference": 68
+    },
+    {
+      "condition": 5,
+      "name": "camera-0-light-0-res-512-depth-1-slope-0-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 6.325457255045573,
+      "changed_pixels": 84155,
+      "max_channel_difference": 58
+    },
+    {
+      "condition": 6,
+      "name": "camera-0-light-0-res-512-depth-1-slope-2-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.9387944539388022,
+      "changed_pixels": 52862,
+      "max_channel_difference": 81
+    },
+    {
+      "condition": 7,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-1-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 3.059406280517578,
+      "changed_pixels": 53910,
+      "max_channel_difference": 69
+    },
+    {
+      "condition": 8,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-5-debug-0-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.307417551676432,
+      "changed_pixels": 85320,
+      "max_channel_difference": 35
+    },
+    {
+      "condition": 9,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-0",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 5.589449564615886,
+      "changed_pixels": 61791,
+      "max_channel_difference": 102
+    },
+    {
+      "condition": 10,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-1-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 150.67536290486655,
+      "changed_pixels": 262144,
+      "max_channel_difference": 211
+    },
+    {
+      "condition": 11,
+      "name": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-2-on-1",
+      "reference": "camera-0-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 39.50013987223307,
+      "changed_pixels": 110420,
+      "max_channel_difference": 226
+    },
+    {
+      "condition": 12,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0,
+      "changed_pixels": 0,
+      "max_channel_difference": 0
+    },
+    {
+      "condition": 13,
+      "name": "camera-0-light-1-res-256-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.3343887329101562,
+      "changed_pixels": 37346,
+      "max_channel_difference": 39
+    },
+    {
+      "condition": 14,
+      "name": "camera-0-light-1-res-1024-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.2547925313313801,
+      "changed_pixels": 34383,
+      "max_channel_difference": 30
+    },
+    {
+      "condition": 15,
+      "name": "camera-0-light-1-res-512-depth-0-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.00012842814127604166,
+      "changed_pixels": 5,
+      "max_channel_difference": 11
+    },
+    {
+      "condition": 16,
+      "name": "camera-0-light-1-res-512-depth-2-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.283490498860677,
+      "changed_pixels": 33912,
+      "max_channel_difference": 37
+    },
+    {
+      "condition": 17,
+      "name": "camera-0-light-1-res-512-depth-1-slope-0-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 2.6179186503092446,
+      "changed_pixels": 60913,
+      "max_channel_difference": 32
+    },
+    {
+      "condition": 18,
+      "name": "camera-0-light-1-res-512-depth-1-slope-2-pcf-3-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.3318227132161458,
+      "changed_pixels": 34606,
+      "max_channel_difference": 62
+    },
+    {
+      "condition": 19,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-1-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.5415280659993489,
+      "changed_pixels": 37734,
+      "max_channel_difference": 50
+    },
+    {
+      "condition": 20,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-5-debug-0-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.0823033650716145,
+      "changed_pixels": 64814,
+      "max_channel_difference": 27
+    },
+    {
+      "condition": 21,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-0",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 5.825279235839844,
+      "changed_pixels": 65787,
+      "max_channel_difference": 62
+    },
+    {
+      "condition": 22,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-1-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 175.74128850301108,
+      "changed_pixels": 262144,
+      "max_channel_difference": 215
+    },
+    {
+      "condition": 23,
+      "name": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-2-on-1",
+      "reference": "camera-0-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 43.31487147013346,
+      "changed_pixels": 110420,
+      "max_channel_difference": 219
+    },
+    {
+      "condition": 24,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0,
+      "changed_pixels": 0,
+      "max_channel_difference": 0
+    },
+    {
+      "condition": 25,
+      "name": "camera-1-light-0-res-256-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 4.316050211588542,
+      "changed_pixels": 64697,
+      "max_channel_difference": 53
+    },
+    {
+      "condition": 26,
+      "name": "camera-1-light-0-res-1024-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 4.214141845703125,
+      "changed_pixels": 61366,
+      "max_channel_difference": 45
+    },
+    {
+      "condition": 27,
+      "name": "camera-1-light-0-res-512-depth-0-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0012372334798177083,
+      "changed_pixels": 19,
+      "max_channel_difference": 27
+    },
+    {
+      "condition": 28,
+      "name": "camera-1-light-0-res-512-depth-2-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 4.2272186279296875,
+      "changed_pixels": 63598,
+      "max_channel_difference": 67
+    },
+    {
+      "condition": 29,
+      "name": "camera-1-light-0-res-512-depth-1-slope-0-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 9.481620788574219,
+      "changed_pixels": 116815,
+      "max_channel_difference": 58
+    },
+    {
+      "condition": 30,
+      "name": "camera-1-light-0-res-512-depth-1-slope-2-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 4.307539621988933,
+      "changed_pixels": 64117,
+      "max_channel_difference": 81
+    },
+    {
+      "condition": 31,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-1-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 4.602439880371094,
+      "changed_pixels": 66764,
+      "max_channel_difference": 70
+    },
+    {
+      "condition": 32,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-5-debug-0-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 3.5410130818684897,
+      "changed_pixels": 119657,
+      "max_channel_difference": 35
+    },
+    {
+      "condition": 33,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-0",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 10.27783457438151,
+      "changed_pixels": 84767,
+      "max_channel_difference": 102
+    },
+    {
+      "condition": 34,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-1-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 139.37500381469727,
+      "changed_pixels": 262144,
+      "max_channel_difference": 211
+    },
+    {
+      "condition": 35,
+      "name": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-2-on-1",
+      "reference": "camera-1-light-0-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 48.84968566894531,
+      "changed_pixels": 140781,
+      "max_channel_difference": 222
+    },
+    {
+      "condition": 36,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.0,
+      "changed_pixels": 0,
+      "max_channel_difference": 0
+    },
+    {
+      "condition": 37,
+      "name": "camera-1-light-1-res-256-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.611284891764323,
+      "changed_pixels": 43964,
+      "max_channel_difference": 77
+    },
+    {
+      "condition": 38,
+      "name": "camera-1-light-1-res-1024-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.5056521097819011,
+      "changed_pixels": 40057,
+      "max_channel_difference": 53
+    },
+    {
+      "condition": 39,
+      "name": "camera-1-light-1-res-512-depth-0-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 0.000244140625,
+      "changed_pixels": 8,
+      "max_channel_difference": 13
+    },
+    {
+      "condition": 40,
+      "name": "camera-1-light-1-res-512-depth-2-slope-1-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.5137240091959636,
+      "changed_pixels": 39695,
+      "max_channel_difference": 53
+    },
+    {
+      "condition": 41,
+      "name": "camera-1-light-1-res-512-depth-1-slope-0-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 3.1440709431966147,
+      "changed_pixels": 72843,
+      "max_channel_difference": 59
+    },
+    {
+      "condition": 42,
+      "name": "camera-1-light-1-res-512-depth-1-slope-2-pcf-3-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.5935910542805989,
+      "changed_pixels": 40624,
+      "max_channel_difference": 62
+    },
+    {
+      "condition": 43,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-1-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.8291867574055989,
+      "changed_pixels": 44543,
+      "max_channel_difference": 81
+    },
+    {
+      "condition": 44,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-5-debug-0-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 1.295728047688802,
+      "changed_pixels": 77913,
+      "max_channel_difference": 37
+    },
+    {
+      "condition": 45,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-0",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 10.748675028483072,
+      "changed_pixels": 104124,
+      "max_channel_difference": 116
+    },
+    {
+      "condition": 46,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-1-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 172.94789123535156,
+      "changed_pixels": 262144,
+      "max_channel_difference": 211
+    },
+    {
+      "condition": 47,
+      "name": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-2-on-1",
+      "reference": "camera-1-light-1-res-512-depth-1-slope-1-pcf-3-debug-0-on-1",
+      "mae_rgb_bytes": 53.31561152140299,
+      "changed_pixels": 140781,
+      "max_channel_difference": 217
+    }
+  ]
+}

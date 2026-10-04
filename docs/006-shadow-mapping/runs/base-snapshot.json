@@ -1,0 +1,122 @@
+{
+  "base_commit": "4deccc8a3643a6115d7f62021fe7082b3730338e",
+  "commit_status": "verified private PBR base: all 175 commit-tree files byte-identical to the reviewed PBR snapshot",
+  "source": "rendering-lab-pbr runtime/core baseline copied before this experiment; presentation/report hotfix files excluded",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "69920d7bfd4b0ade0bbde4452f4e4ffb164474d86c4efbc91547fa73653bc523"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "9e3680cf8724974ca406f9462b56bd8aef1cb70be1c2c043e063b359dff36d0f"
+    },
+    {
+      "path": "crates/core/Cargo.toml",
+      "sha256": "f25c11de32b8af564988bf69e3e663902ea0ce8be1d1666aac22327b7ff76547"
+    },
+    {
+      "path": "crates/core/src/courtyard.rs",
+      "sha256": "6fb4695332a3116d767d7988073778215e36063108ff047b0100d2f9ad759169"
+    },
+    {
+      "path": "crates/core/src/gltf_asset.rs",
+      "sha256": "26ff65108520b558c66ae139e37c99ee4ddb80ce43b2d3b63ca5b2b8894997b5"
+    },
+    {
+      "path": "crates/core/src/instancing.rs",
+      "sha256": "234f7dabbe76027dce71a6dbd107af4c20fb7c746df753b15bdfbf38a60e16d9"
+    },
+    {
+      "path": "crates/core/src/lib.rs",
+      "sha256": "d80c1b0301b82800007a7e288dc053b9f97bc4b194a038e6b164f12473b5d153"
+    },
+    {
+      "path": "crates/core/src/overdraw.rs",
+      "sha256": "b650720fbe43ffab7482a252af25adf82c1d9c08acb178fc94f81a0d5b9cc9a2"
+    },
+    {
+      "path": "crates/core/src/pbr.rs",
+      "sha256": "6da6ec0124cd0cc4d1b5b9243a8acf1172e8c6e95a4de274bdd71c52da5dc56f"
+    },
+    {
+      "path": "crates/core/src/scale.rs",
+      "sha256": "127ce7f7841df7feecb744d0e81c4d33f06babebe545101fd3f41b16463ad58b"
+    },
+    {
+      "path": "crates/core/tests/courtyard_smoke.rs",
+      "sha256": "4ee1068ed6410c4a21bdd5cf54ec8ff9adab187f19ce492afd7cc9d32cd6e0b7"
+    },
+    {
+      "path": "crates/core/tests/gpu_smoke.rs",
+      "sha256": "2788bc2cf64f2094cd28407351031885f1456385eb4c31c308319400140114e4"
+    },
+    {
+      "path": "crates/core/tests/instancing_smoke.rs",
+      "sha256": "3debcdefda2ce9f44453f2021b8f98bb01e94d5434d219ee259e1e31246cffca"
+    },
+    {
+      "path": "crates/core/tests/overdraw_smoke.rs",
+      "sha256": "b73eadf591b39eed671dcd1945e2c2958e405ad3030d135cb674f043ad04406d"
+    },
+    {
+      "path": "crates/core/tests/pbr_smoke.rs",
+      "sha256": "ace69c21fcfd49b7f70d4dfc850c57fd484b2ea340d62224a3cf9869094d3552"
+    },
+    {
+      "path": "crates/core/tests/scale_smoke.rs",
+      "sha256": "db09346adcce355cf09d59e3104a44167d1f6929ac31800d139fb99e8bd28a91"
+    },
+    {
+      "path": "crates/native/Cargo.toml",
+      "sha256": "08bed5112b5e827047bad1912c8e5702295cd40f27664391c9d78ca77ea5e1d2"
+    },
+    {
+      "path": "crates/native/src/main.rs",
+      "sha256": "c87dec20ba9a2330f53a100016de59676dd6120ca18a6fed6c929fed712ebc5f"
+    },
+    {
+      "path": "crates/web/Cargo.toml",
+      "sha256": "99e5667a190332162941ca0d70c46f592aa051389222d27c04436e88a6d85f89"
+    },
+    {
+      "path": "crates/web/src/lib.rs",
+      "sha256": "f1742a521c75a87709d38d4a9d747e91b9251bcad42c773b7ea09c16a1ba0630"
+    },
+    {
+      "path": "web/shaders/color.wgsl",
+      "sha256": "8ac34c590ef4311396efaffbf42d9e7ffb8cde999f7ee9f9e3683bf137f778a1"
+    },
+    {
+      "path": "web/shaders/courtyard-heavy.wgsl",
+      "sha256": "a3591d4511f12356b0bdfc0fe6b18f23855418e926112240331766dd7c8dcb83"
+    },
+    {
+      "path": "web/shaders/courtyard.wgsl",
+      "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+    },
+    {
+      "path": "web/shaders/flighthelmet.wgsl",
+      "sha256": "a379dbd6f4f910c2befa722415f8cd1270a1066bd6fe1dc211cb5c9a3fec2560"
+    },
+    {
+      "path": "web/shaders/instancing.wgsl",
+      "sha256": "494c8f053f431852c7c47ed5651f4467b241d5639aa3bb3b9db617ff63372e5e"
+    },
+    {
+      "path": "web/shaders/sphere.wgsl",
+      "sha256": "b8789695c998397a7ccfa44115accf9a2c43c9329532ade28a8ed288360953cd"
+    },
+    {
+      "path": "web/shaders/upsample.wgsl",
+      "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+    }
+  ],
+  "inventory_sha256": "1b528b902d306e712988a490b2d77b5a0b0f62573122fd870409d4fb674f93d8",
+  "verification_scope": {
+    "verified_commit_file_count": 175,
+    "comparison": "byte-for-byte equality with reviewed PBR snapshot",
+    "inventory_below": "runtime/core subset captured before this experiment; presentation/report hotfix files excluded"
+  },
+  "final_source_commit": null
+}
