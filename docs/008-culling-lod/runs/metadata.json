@@ -1,0 +1,51 @@
+{
+  "width": 512,
+  "height": 512,
+  "path_frames": 81,
+  "path_step_seconds": 0.25,
+  "path_duration_seconds": 20,
+  "seed": 0,
+  "object_count": 51,
+  "modes": [
+    "Baseline: highest detail",
+    "CPU culling only",
+    "Distance LOD only",
+    "Culling + LOD"
+  ],
+  "lod_thresholds_world_units": [
+    12,
+    24
+  ],
+  "lod_boundary": "Equality chooses lower detail; stateless hard switch; no hysteresis or crossfade",
+  "lod_sphere_triangles": [
+    1840,
+    440,
+    100
+  ],
+  "distance": "Euclidean eye to transformed world AABB center",
+  "bounds": "Original courtyard indexed geometry bounds; transformed ellipsoid local[-1,1]^3 eight corners; same conservative bounds across all LODs",
+  "planes": "Normalized VP row3±row0,row3±row1,row2,row3-row2; WebGPU clip Z[0,W], inside >=-0.0001 world",
+  "visibility": "Frustum intersection only, not occlusion; tested51 only in culling modes. visible means submitted conservative candidate, not guaranteed visible pixels",
+  "batches": "One object per indexed draw batch. Existing issue5 instancing experiment unchanged, not combined with this study. No GPU culling.",
+  "geometry_vertices": 56595,
+  "geometry_indices": 293070,
+  "geometry_nominal_gpu_bytes": 3209700,
+  "geometry_memory_scope": "Shared static vertex+index buffers across both slots/all modes; 36-byte vertex, 4-byte index; excludes alignment, driver and pre-existing experiments. All three LODs retained, Core uploads this scene at startup even while another experiment is selected.",
+  "light": "Fixed normalize(.75,1.25,.7), ambient.19 + Lambert.81; time changes camera only",
+  "timing": "Native release llvmpipe CPU/GL blocking completion wall time and host CPU phases, not GPU timestamps/hardware/browser/Android FPS",
+  "warmups": 4,
+  "repeats": 3,
+  "samples_per_repeat": 10,
+  "timing_samples": 960,
+  "acceptance_scope": "Exploratory 512² whole-frame display-byte error: MAE<=0.5 and <=1% pixels have a channel difference>8. This does not guarantee invisible silhouette pop or stable threshold jitter.",
+  "criterion_failed_frames": [],
+  "maximum_image_error": {
+    "frame": 0,
+    "time": 0.0,
+    "mae_display_rgb_bytes": 0.2551129659016927,
+    "max_channel_difference": 169,
+    "changed_pixels": 13121,
+    "pixels_over_8": 1806,
+    "criterion_mae_le_0p5_and_pixels_over8_le1percent": true
+  }
+}
