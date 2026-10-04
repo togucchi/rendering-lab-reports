@@ -316,8 +316,212 @@
     "sha256": "8f1ba9d1d817beb3326aa4e1ca76826959d2c10e7cc91badcea1cb46c61e4c2d"
   },
   {
+    "path": "005-gltf-pbr/images/camera-0-debug-0-flags-3.png",
+    "sha256": "64a8d822746e71264c96063f25f810722db70df6f91c599ba09e2b74495e6de5"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-0-flags-5.png",
+    "sha256": "bb94954aa140b11c0b103c7c448a9b155628a81f09729f1e6cb7cf7559573ad4"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-0-flags-6.png",
+    "sha256": "95dcb01f2ee8bd3675d6204579f7d3112b888cad8bc45cd286e6e6e90a10f457"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-0-flags-7.png",
+    "sha256": "10a527370da28bed2c26ea807621480b392c7eb01e10188c144eedcd6f5256dd"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-1-flags-7.png",
+    "sha256": "7aab37a6218cc4d823c30b6a6cb58cc0188c0415171348864e3911669e8643e4"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-2-flags-7.png",
+    "sha256": "6c63e433849d3ed7c93812d49f801f04415ddcaa5e5dc44206c41a924cfe2514"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-3-flags-7.png",
+    "sha256": "3d025c4b9dfcff0448168123d4ab7c55b4169529a3be17988c1df5ece22d6c3b"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-debug-4-flags-7.png",
+    "sha256": "25e8b175e54407dca0832f839cf19ee7c95e9f46fa03421c9de2a1ce055e9ba3"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-input-comparison.png",
+    "sha256": "621667391c5766fd1c3b953f5178dd6067dd635d823780ef82d50a9808f2350e"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-0-modes.png",
+    "sha256": "9bfd6b429bc18f4ffd66d6364df384153e1dbe24a79faa36a7bb4ea50e273745"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-0-flags-3.png",
+    "sha256": "a6b3fd2012cca40859611455db92f0bec1ab48cca42895bde588374fa6f4c4e4"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-0-flags-5.png",
+    "sha256": "590413fb2afd496eee9fad9d2f407c58ec4d756a646901948b2a26540df82aef"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-0-flags-6.png",
+    "sha256": "79d10a39a8aaa75496435d5fa1f0cfa69412f81146062c0daca542480f164619"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-0-flags-7.png",
+    "sha256": "0f5c843c2f77b7e83fcc0a3633273db44d9aec5e052a4283cdf5ae4e398423fc"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-1-flags-7.png",
+    "sha256": "570e8d6b5a7395934ea2489ca41f533fad84daf4e367bf201baadbe40efd97ea"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-2-flags-7.png",
+    "sha256": "c7757103911050704552a73c24ec05bc0e32729e311ffbd14dc26aa508584111"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-3-flags-7.png",
+    "sha256": "a8c3aa94f3ffc5e3cd1dce529a7f8edf0260bc9fb91b4347163a16e128ffa191"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-debug-4-flags-7.png",
+    "sha256": "f4a702944d555070db1742a12294f4853c5a0f6ea2207edbdcfd4d48928c6b82"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-input-comparison.png",
+    "sha256": "aaffe029ec7144b59a8085729a9a0f2024f40aee1f5c3216328d31707e392809"
+  },
+  {
+    "path": "005-gltf-pbr/images/camera-1-modes.png",
+    "sha256": "e6e684bf3cd44f63860b94dd577b98fee94f82f3a6296782cd9ab7a57233280c"
+  },
+  {
+    "path": "005-gltf-pbr/index.html",
+    "sha256": "390b8423e4653d112a0dfb3cf07d4ee4e7a159775fd6ab81d0c46aca3254650b"
+  },
+  {
+    "path": "005-gltf-pbr/runs/asset-manifest.json",
+    "sha256": "b7f01adf4a9b425755147e625c699b93c73f3b3b736bbe5ec00ce9955c2da6c5"
+  },
+  {
+    "path": "005-gltf-pbr/runs/asset-source-lock.json",
+    "sha256": "f536b652c58733ce7569a716fbc99a80a87d1bfbc29e561784c24cac39916fc1"
+  },
+  {
+    "path": "005-gltf-pbr/runs/image-differences.json",
+    "sha256": "6c546aa430775e166106d72fa337715d6e3977c2b9e455549fc265cfe949befb"
+  },
+  {
+    "path": "005-gltf-pbr/runs/metadata.json",
+    "sha256": "e6a91e2ffb7fe9f70d26aeaf5d113ba61fd3368ecf9ba94f8c6c8812e4e0b348"
+  },
+  {
+    "path": "005-gltf-pbr/runs/native-pooled.csv",
+    "sha256": "9d5916933b1722ce1b63644f4b1c30498c6bd1a6274124a3a49aa2e0333064bb"
+  },
+  {
+    "path": "005-gltf-pbr/runs/native-summary.csv",
+    "sha256": "e383641864994a1fcd4f2c20ce0effaa30cd1d79923a208e242ddb5357f59e79"
+  },
+  {
+    "path": "005-gltf-pbr/runs/native-walltime.csv",
+    "sha256": "5bdd514536367c6c315c4cd55782caca80eb21adeb8c93e5952055009f5f600e"
+  },
+  {
+    "path": "005-gltf-pbr/runs/source-snapshot.json",
+    "sha256": "15b632927a7f843c977c5b88d7822936893e4ac02fe53a170fbc41acc9c36033"
+  },
+  {
+    "path": "005-gltf-pbr/runs/verification.json",
+    "sha256": "18ae753df9897d4af976e5fb4653256f153ddfcc27934ba34b68c84b82a9ef63"
+  },
+  {
+    "path": "demo/SHA256SUMS",
+    "sha256": "611ab95c309911213ab1595c726d177c288b029409c99ed46bc1b515c25681d4"
+  },
+  {
+    "path": "demo/app.js",
+    "sha256": "4362385d7d851c9921c60c5bccc84e8fc05f5bf8b806bcf48b05ca46752c1610"
+  },
+  {
+    "path": "demo/assets/flighthelmet/CREDITS.md",
+    "sha256": "e07ba5c6aa6564d3293f702cc32d3f6fc376ce0713c5da3b744752efd0520825"
+  },
+  {
+    "path": "demo/assets/flighthelmet/FlightHelmet512.glb",
+    "sha256": "e45247aaa51e168e80d65d1fc1d71538500f963ea30e868a5f7cef902e0ecbaf"
+  },
+  {
+    "path": "demo/assets/flighthelmet/README.md",
+    "sha256": "37b575920579abb94ce3bd5e654d1616555873e2ea61fb657199b3e4f75c64c5"
+  },
+  {
+    "path": "demo/assets/flighthelmet/manifest.json",
+    "sha256": "b7f01adf4a9b425755147e625c699b93c73f3b3b736bbe5ec00ce9955c2da6c5"
+  },
+  {
+    "path": "demo/build-info.json",
+    "sha256": "ee192bc9a6ce1299308777ef3939331db99b0b188caf4a9d744f1b2d7592dbab"
+  },
+  {
+    "path": "demo/index.html",
+    "sha256": "9d493c4517e4faf53de1e1239a0cfb814f2eba16eaf964e238ccc6df854ead1a"
+  },
+  {
+    "path": "demo/metrics.mjs",
+    "sha256": "c18df666b89cc3314df872751719a7b48ecee362f01acf22c74bbf8e830a250d"
+  },
+  {
+    "path": "demo/pbr.mjs",
+    "sha256": "2387f9061d39fd8178c3b98b07379bf23a0d49a47ce3f6842e4c525fe878b650"
+  },
+  {
+    "path": "demo/pkg/rendering_web.js",
+    "sha256": "ef6f96ba1f14029f8dbad3bc5f34ec708df15286bdc0e883013549b937321a0c"
+  },
+  {
+    "path": "demo/pkg/rendering_web_bg.wasm",
+    "sha256": "a0bd9d2442efdee5dc3fddbc525dfde0c3fcb04d9268dd8e33568af9ad812093"
+  },
+  {
+    "path": "demo/shaders/color.wgsl",
+    "sha256": "8ac34c590ef4311396efaffbf42d9e7ffb8cde999f7ee9f9e3683bf137f778a1"
+  },
+  {
+    "path": "demo/shaders/courtyard-heavy.wgsl",
+    "sha256": "a3591d4511f12356b0bdfc0fe6b18f23855418e926112240331766dd7c8dcb83"
+  },
+  {
+    "path": "demo/shaders/courtyard.wgsl",
+    "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+  },
+  {
+    "path": "demo/shaders/flighthelmet.wgsl",
+    "sha256": "a379dbd6f4f910c2befa722415f8cd1270a1066bd6fe1dc211cb5c9a3fec2560"
+  },
+  {
+    "path": "demo/shaders/instancing.wgsl",
+    "sha256": "494c8f053f431852c7c47ed5651f4467b241d5639aa3bb3b9db617ff63372e5e"
+  },
+  {
+    "path": "demo/shaders/sphere.wgsl",
+    "sha256": "b8789695c998397a7ccfa44115accf9a2c43c9329532ade28a8ed288360953cd"
+  },
+  {
+    "path": "demo/shaders/upsample.wgsl",
+    "sha256": "e953495cf8b8979389febc2c0c8f50fa26636aa75ee86fb08d15a1610dc92669"
+  },
+  {
+    "path": "demo/state.mjs",
+    "sha256": "5e3aa9a3bd42647616b099efcfe2fed500b74fdf6bf43c7036e2de5d298c574d"
+  },
+  {
+    "path": "demo/styles.css",
+    "sha256": "49bf9893fab3444827bf5c4d4dc1daaf38ac053492df9a13cac7b0093a06056c"
+  },
+  {
     "path": "index.html",
-    "sha256": "2c5cb7e992e2d5fd6aeb04a384b56322dff4c45c00fbf73bd97d846e8f72a667"
+    "sha256": "ebb70cb342a82aa36757eccaa2706d6cb373267d016ca0b73cdb877bae0b5260"
   },
   {
     "path": "style.css",
