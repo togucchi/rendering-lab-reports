@@ -1800,12 +1800,1392 @@
     "sha256": "27058c3b09fcdc8a4edc0ac57503708f14554e5a7261fabe029254aec3fd04b2"
   },
   {
+    "path": "008-culling-lod/images/comparison-frame-00.png",
+    "sha256": "f69cf818bae6a1ac8f949cc98474f38a8d9b88514c7fbc6e65a589a8d4cc2f67"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-08.png",
+    "sha256": "090344f8c520c1aefc45759403500875a398b106784ef22de3a38c6fd0574f1d"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-16.png",
+    "sha256": "ffe7f90b1a49302a51799a4cebf41f13ce78668e89f4c8db295c3edb0b21f01b"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-32.png",
+    "sha256": "05dd202eef2b9fb6c855309ebc944791a43e418f8512dc3759a88232c679a609"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-40.png",
+    "sha256": "d1121620d8aed8237743de7fc5056bf1340d4fd1282aa261831828e18f03ba4e"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-48.png",
+    "sha256": "2953e6bfebe84c7de4909e5873e0715e6271e97b684e559d00c5079ef6f1f3a3"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-64.png",
+    "sha256": "c9385dd78ce9aaa9e6c289842d8212ed6cfc89cea10e69db62da743e4bb7974c"
+  },
+  {
+    "path": "008-culling-lod/images/comparison-frame-66.png",
+    "sha256": "1d2019e76e66c2e36fd7017ba6eda37cd5f9a68a20d0888b7715b577ed7cda86"
+  },
+  {
+    "path": "008-culling-lod/images/frame-00-mode-0.png",
+    "sha256": "7c1a0823210382eebb8e0d54e397ed1388f9bfd0b4e142f8bc4b71a9ba80aa30"
+  },
+  {
+    "path": "008-culling-lod/images/frame-00-mode-1.png",
+    "sha256": "7c1a0823210382eebb8e0d54e397ed1388f9bfd0b4e142f8bc4b71a9ba80aa30"
+  },
+  {
+    "path": "008-culling-lod/images/frame-00-mode-2.png",
+    "sha256": "a0a8451deb489c580ef2cbf9d04236eb3c4f509f4822066144595f97811962ac"
+  },
+  {
+    "path": "008-culling-lod/images/frame-00-mode-3.png",
+    "sha256": "a0a8451deb489c580ef2cbf9d04236eb3c4f509f4822066144595f97811962ac"
+  },
+  {
+    "path": "008-culling-lod/images/frame-01-mode-0.png",
+    "sha256": "07ebcb70355a90e0bfb96734a13404772d41bd504562255a6031af67dd11e051"
+  },
+  {
+    "path": "008-culling-lod/images/frame-01-mode-1.png",
+    "sha256": "07ebcb70355a90e0bfb96734a13404772d41bd504562255a6031af67dd11e051"
+  },
+  {
+    "path": "008-culling-lod/images/frame-01-mode-2.png",
+    "sha256": "8051dee61ee39adb0b246afdae4418b0977f7ebcb29aaf7ee0852b56d72a8891"
+  },
+  {
+    "path": "008-culling-lod/images/frame-01-mode-3.png",
+    "sha256": "8051dee61ee39adb0b246afdae4418b0977f7ebcb29aaf7ee0852b56d72a8891"
+  },
+  {
+    "path": "008-culling-lod/images/frame-02-mode-0.png",
+    "sha256": "4e9eefa3dd23897c5d9ab9482d53b05cdc88fc96483fa8fcac0dbd77ff35febf"
+  },
+  {
+    "path": "008-culling-lod/images/frame-02-mode-1.png",
+    "sha256": "4e9eefa3dd23897c5d9ab9482d53b05cdc88fc96483fa8fcac0dbd77ff35febf"
+  },
+  {
+    "path": "008-culling-lod/images/frame-02-mode-2.png",
+    "sha256": "9509c8926e4798d0b24dc4f7a232eba7385eaadd135b33e30ec60abcad8aa62c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-02-mode-3.png",
+    "sha256": "9509c8926e4798d0b24dc4f7a232eba7385eaadd135b33e30ec60abcad8aa62c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-03-mode-0.png",
+    "sha256": "0fe495cf58b606fd131638f2f8727097304fdd591f3a928261411746221f8749"
+  },
+  {
+    "path": "008-culling-lod/images/frame-03-mode-1.png",
+    "sha256": "0fe495cf58b606fd131638f2f8727097304fdd591f3a928261411746221f8749"
+  },
+  {
+    "path": "008-culling-lod/images/frame-03-mode-2.png",
+    "sha256": "47a8f38726bf104451eb274dc365e16eb960aaec5003eb73359d6bff66933475"
+  },
+  {
+    "path": "008-culling-lod/images/frame-03-mode-3.png",
+    "sha256": "47a8f38726bf104451eb274dc365e16eb960aaec5003eb73359d6bff66933475"
+  },
+  {
+    "path": "008-culling-lod/images/frame-04-mode-0.png",
+    "sha256": "a25c42d108e3683bd8eac20127c2830585b511ef4ade30c1375469161e6286c1"
+  },
+  {
+    "path": "008-culling-lod/images/frame-04-mode-1.png",
+    "sha256": "a25c42d108e3683bd8eac20127c2830585b511ef4ade30c1375469161e6286c1"
+  },
+  {
+    "path": "008-culling-lod/images/frame-04-mode-2.png",
+    "sha256": "27c6ab807b920aea4a512293190a829040d26b182365c14060721d5ee8fb1bf8"
+  },
+  {
+    "path": "008-culling-lod/images/frame-04-mode-3.png",
+    "sha256": "27c6ab807b920aea4a512293190a829040d26b182365c14060721d5ee8fb1bf8"
+  },
+  {
+    "path": "008-culling-lod/images/frame-05-mode-0.png",
+    "sha256": "a8ca65d3d34691a52f93e47e574f9f2653b114098ef50f9d0d52866b4004ab8a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-05-mode-1.png",
+    "sha256": "a8ca65d3d34691a52f93e47e574f9f2653b114098ef50f9d0d52866b4004ab8a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-05-mode-2.png",
+    "sha256": "5356bd090c13d9135de63dc56681347228f9cc10b2ddd203387832bf1fde23d2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-05-mode-3.png",
+    "sha256": "5356bd090c13d9135de63dc56681347228f9cc10b2ddd203387832bf1fde23d2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-06-mode-0.png",
+    "sha256": "2dcb90b9bb567e489730ed40fb7ba074435cbc7b27e3713f0d568178c1f12547"
+  },
+  {
+    "path": "008-culling-lod/images/frame-06-mode-1.png",
+    "sha256": "2dcb90b9bb567e489730ed40fb7ba074435cbc7b27e3713f0d568178c1f12547"
+  },
+  {
+    "path": "008-culling-lod/images/frame-06-mode-2.png",
+    "sha256": "b56149cded1f806343bfa3a6590844df41947fb37aa3436eca489a41b0e5a592"
+  },
+  {
+    "path": "008-culling-lod/images/frame-06-mode-3.png",
+    "sha256": "b56149cded1f806343bfa3a6590844df41947fb37aa3436eca489a41b0e5a592"
+  },
+  {
+    "path": "008-culling-lod/images/frame-07-mode-0.png",
+    "sha256": "1108306457bb27dd8e9df5527114b06777f952370c1095caa1e39a6fe4b09270"
+  },
+  {
+    "path": "008-culling-lod/images/frame-07-mode-1.png",
+    "sha256": "1108306457bb27dd8e9df5527114b06777f952370c1095caa1e39a6fe4b09270"
+  },
+  {
+    "path": "008-culling-lod/images/frame-07-mode-2.png",
+    "sha256": "ede4e66d2979ded8152a1511137b211505ef56d1baf89b51246240e101a56381"
+  },
+  {
+    "path": "008-culling-lod/images/frame-07-mode-3.png",
+    "sha256": "ede4e66d2979ded8152a1511137b211505ef56d1baf89b51246240e101a56381"
+  },
+  {
+    "path": "008-culling-lod/images/frame-08-mode-0.png",
+    "sha256": "8b32f646c96e88e4faad831f14905521795d306cb022709062c9f600e8f9290a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-08-mode-1.png",
+    "sha256": "8b32f646c96e88e4faad831f14905521795d306cb022709062c9f600e8f9290a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-08-mode-2.png",
+    "sha256": "0c814ec1cc807216f5b340dfea5f0f2b0b1c86150e308ec38cfa95ed35cdf74c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-08-mode-3.png",
+    "sha256": "0c814ec1cc807216f5b340dfea5f0f2b0b1c86150e308ec38cfa95ed35cdf74c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-09-mode-0.png",
+    "sha256": "8e7da2558799ff7ae08cba5e40587253190eccfe366e2988072a5af9f587a83c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-09-mode-1.png",
+    "sha256": "8e7da2558799ff7ae08cba5e40587253190eccfe366e2988072a5af9f587a83c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-09-mode-2.png",
+    "sha256": "085f5441697925c0e282ea90a0324371553a4bed745b1d9acca69814ea4aecc2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-09-mode-3.png",
+    "sha256": "085f5441697925c0e282ea90a0324371553a4bed745b1d9acca69814ea4aecc2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-10-mode-0.png",
+    "sha256": "abb3402a8e3c9011266dd7231d1a0ea44c6f3d60ae7b1fe67bd84ee23e8a9b49"
+  },
+  {
+    "path": "008-culling-lod/images/frame-10-mode-1.png",
+    "sha256": "abb3402a8e3c9011266dd7231d1a0ea44c6f3d60ae7b1fe67bd84ee23e8a9b49"
+  },
+  {
+    "path": "008-culling-lod/images/frame-10-mode-2.png",
+    "sha256": "7c9b784f3cc29cbfa5bf2ff75b687bf31200e41cafaec1e5ef24ad812a15c50a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-10-mode-3.png",
+    "sha256": "7c9b784f3cc29cbfa5bf2ff75b687bf31200e41cafaec1e5ef24ad812a15c50a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-11-mode-0.png",
+    "sha256": "083161d52cce19acdd014f013f617524c45a092d8b4fe198a3939365e9c5cbe5"
+  },
+  {
+    "path": "008-culling-lod/images/frame-11-mode-1.png",
+    "sha256": "083161d52cce19acdd014f013f617524c45a092d8b4fe198a3939365e9c5cbe5"
+  },
+  {
+    "path": "008-culling-lod/images/frame-11-mode-2.png",
+    "sha256": "03c4ece09e9e7a449aea33ea30e9df827987acee3a559d7c74913bab815707f2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-11-mode-3.png",
+    "sha256": "03c4ece09e9e7a449aea33ea30e9df827987acee3a559d7c74913bab815707f2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-12-mode-0.png",
+    "sha256": "93f741858afee3c23589f06b531d2443439de0df4d2a12f92560c7e8360a9c3e"
+  },
+  {
+    "path": "008-culling-lod/images/frame-12-mode-1.png",
+    "sha256": "93f741858afee3c23589f06b531d2443439de0df4d2a12f92560c7e8360a9c3e"
+  },
+  {
+    "path": "008-culling-lod/images/frame-12-mode-2.png",
+    "sha256": "5c3215ce5c40d3840700e7a0f98a2e10d4faf3fc8163ada3bc19468ae574a344"
+  },
+  {
+    "path": "008-culling-lod/images/frame-12-mode-3.png",
+    "sha256": "5c3215ce5c40d3840700e7a0f98a2e10d4faf3fc8163ada3bc19468ae574a344"
+  },
+  {
+    "path": "008-culling-lod/images/frame-13-mode-0.png",
+    "sha256": "b1364a61fe10214043c41889b147ca7c65bc7a2cd36fb3aa606d202304dc76f4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-13-mode-1.png",
+    "sha256": "b1364a61fe10214043c41889b147ca7c65bc7a2cd36fb3aa606d202304dc76f4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-13-mode-2.png",
+    "sha256": "700c9c0436564385b1cf29e28a336f702fafa5ea7e101eef320108474caca19e"
+  },
+  {
+    "path": "008-culling-lod/images/frame-13-mode-3.png",
+    "sha256": "700c9c0436564385b1cf29e28a336f702fafa5ea7e101eef320108474caca19e"
+  },
+  {
+    "path": "008-culling-lod/images/frame-14-mode-0.png",
+    "sha256": "47a06e0f92b17493ac077c1224e4c948241fa87bf503b96d6b0b19f5c044e9ac"
+  },
+  {
+    "path": "008-culling-lod/images/frame-14-mode-1.png",
+    "sha256": "47a06e0f92b17493ac077c1224e4c948241fa87bf503b96d6b0b19f5c044e9ac"
+  },
+  {
+    "path": "008-culling-lod/images/frame-14-mode-2.png",
+    "sha256": "0c54c28a134c40a934fb09e141dc10b5d17b2ab7ed67a28d04860a32274e836c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-14-mode-3.png",
+    "sha256": "0c54c28a134c40a934fb09e141dc10b5d17b2ab7ed67a28d04860a32274e836c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-15-mode-0.png",
+    "sha256": "51141743354be2ace504259c0ed1c83eec99891d4e1ec9c0961f782b13edfcb6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-15-mode-1.png",
+    "sha256": "51141743354be2ace504259c0ed1c83eec99891d4e1ec9c0961f782b13edfcb6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-15-mode-2.png",
+    "sha256": "b195110f968648ecfd4be480820fa57246c7dddef5a589818a1bd07be01598d9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-15-mode-3.png",
+    "sha256": "b195110f968648ecfd4be480820fa57246c7dddef5a589818a1bd07be01598d9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-16-mode-0.png",
+    "sha256": "983f45af40535869dcd497d548c2853ed205b320cf8865b59fa230159bd41412"
+  },
+  {
+    "path": "008-culling-lod/images/frame-16-mode-1.png",
+    "sha256": "983f45af40535869dcd497d548c2853ed205b320cf8865b59fa230159bd41412"
+  },
+  {
+    "path": "008-culling-lod/images/frame-16-mode-2.png",
+    "sha256": "6373369276dfd00c6d328f83bccbdcbe63c83d39ae65dcf9c903604ec0599db6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-16-mode-3.png",
+    "sha256": "6373369276dfd00c6d328f83bccbdcbe63c83d39ae65dcf9c903604ec0599db6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-17-mode-0.png",
+    "sha256": "7fce5a0f35b1a464dcb167cf5d72113f88c6e63f08a3ba7728264508458f4580"
+  },
+  {
+    "path": "008-culling-lod/images/frame-17-mode-1.png",
+    "sha256": "7fce5a0f35b1a464dcb167cf5d72113f88c6e63f08a3ba7728264508458f4580"
+  },
+  {
+    "path": "008-culling-lod/images/frame-17-mode-2.png",
+    "sha256": "4c17950a3f24768f9962320a9d814bd439633c128f3493babe5f496f1df931ed"
+  },
+  {
+    "path": "008-culling-lod/images/frame-17-mode-3.png",
+    "sha256": "4c17950a3f24768f9962320a9d814bd439633c128f3493babe5f496f1df931ed"
+  },
+  {
+    "path": "008-culling-lod/images/frame-18-mode-0.png",
+    "sha256": "211ca7c04af32dc7a55fbf3b0161b318070bb2f4a61e6e596879eb4cb080298f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-18-mode-1.png",
+    "sha256": "211ca7c04af32dc7a55fbf3b0161b318070bb2f4a61e6e596879eb4cb080298f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-18-mode-2.png",
+    "sha256": "1aa0af0c342488c01ca668db82bb2dbed6d6664d8959b462c7f64047f9061275"
+  },
+  {
+    "path": "008-culling-lod/images/frame-18-mode-3.png",
+    "sha256": "1aa0af0c342488c01ca668db82bb2dbed6d6664d8959b462c7f64047f9061275"
+  },
+  {
+    "path": "008-culling-lod/images/frame-19-mode-0.png",
+    "sha256": "2783890fbee54c0a7a346549fe5788f5b359d56c706901bc55e0218310ad28ba"
+  },
+  {
+    "path": "008-culling-lod/images/frame-19-mode-1.png",
+    "sha256": "2783890fbee54c0a7a346549fe5788f5b359d56c706901bc55e0218310ad28ba"
+  },
+  {
+    "path": "008-culling-lod/images/frame-19-mode-2.png",
+    "sha256": "023f4e28b1d6f4bdcca10c6c0cf259de821de63cea473e81d39996a0c6b6e76a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-19-mode-3.png",
+    "sha256": "023f4e28b1d6f4bdcca10c6c0cf259de821de63cea473e81d39996a0c6b6e76a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-20-mode-0.png",
+    "sha256": "72d6cf1910d3d3edf796ea48d06b4daf1bc98dc178cdbc50d291f50d59e8d71c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-20-mode-1.png",
+    "sha256": "72d6cf1910d3d3edf796ea48d06b4daf1bc98dc178cdbc50d291f50d59e8d71c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-20-mode-2.png",
+    "sha256": "e5240dcd1446600dbbd1021f07480406ec1188b7b475d837be3ae947e8ac4552"
+  },
+  {
+    "path": "008-culling-lod/images/frame-20-mode-3.png",
+    "sha256": "e5240dcd1446600dbbd1021f07480406ec1188b7b475d837be3ae947e8ac4552"
+  },
+  {
+    "path": "008-culling-lod/images/frame-21-mode-0.png",
+    "sha256": "8a7c2d300d4748899ffdd57d5c64e1ef743f60ce74dec49bf4e538c26547b405"
+  },
+  {
+    "path": "008-culling-lod/images/frame-21-mode-1.png",
+    "sha256": "8a7c2d300d4748899ffdd57d5c64e1ef743f60ce74dec49bf4e538c26547b405"
+  },
+  {
+    "path": "008-culling-lod/images/frame-21-mode-2.png",
+    "sha256": "88a866e3e758b46e03921ced1e24cb9a7ce19f9ae43ab3cd27f1350a88e1d253"
+  },
+  {
+    "path": "008-culling-lod/images/frame-21-mode-3.png",
+    "sha256": "88a866e3e758b46e03921ced1e24cb9a7ce19f9ae43ab3cd27f1350a88e1d253"
+  },
+  {
+    "path": "008-culling-lod/images/frame-22-mode-0.png",
+    "sha256": "7c4f3e23583fd6124e0166ff2216462fedf360f6a4ecd8ed2c1c717dbeec5ea4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-22-mode-1.png",
+    "sha256": "7c4f3e23583fd6124e0166ff2216462fedf360f6a4ecd8ed2c1c717dbeec5ea4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-22-mode-2.png",
+    "sha256": "7f5f2e42437e1a6b5dbab649cb768cd0ca161e3f04dd27e7aabc3424cd6bb697"
+  },
+  {
+    "path": "008-culling-lod/images/frame-22-mode-3.png",
+    "sha256": "7f5f2e42437e1a6b5dbab649cb768cd0ca161e3f04dd27e7aabc3424cd6bb697"
+  },
+  {
+    "path": "008-culling-lod/images/frame-23-mode-0.png",
+    "sha256": "95fe522add47558b900e14573eeef6c32954d5ee7abfe5447d4a1bcd63f4f768"
+  },
+  {
+    "path": "008-culling-lod/images/frame-23-mode-1.png",
+    "sha256": "95fe522add47558b900e14573eeef6c32954d5ee7abfe5447d4a1bcd63f4f768"
+  },
+  {
+    "path": "008-culling-lod/images/frame-23-mode-2.png",
+    "sha256": "a2ec05c5395037706922edf572c4a8a86aeb430c6901fbbe96cab4722a2614a9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-23-mode-3.png",
+    "sha256": "a2ec05c5395037706922edf572c4a8a86aeb430c6901fbbe96cab4722a2614a9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-24-mode-0.png",
+    "sha256": "7eda17277a491169e7ac7f60f4d2a5942324f263bf4faa0373ac7d970e9287c0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-24-mode-1.png",
+    "sha256": "7eda17277a491169e7ac7f60f4d2a5942324f263bf4faa0373ac7d970e9287c0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-24-mode-2.png",
+    "sha256": "844782d77932b06eb9e34d3351f5a5fafe647da8378020f629c8ed2a38db1d38"
+  },
+  {
+    "path": "008-culling-lod/images/frame-24-mode-3.png",
+    "sha256": "844782d77932b06eb9e34d3351f5a5fafe647da8378020f629c8ed2a38db1d38"
+  },
+  {
+    "path": "008-culling-lod/images/frame-25-mode-0.png",
+    "sha256": "3de94fc7cba440277b584785d459f73ac3c287d18a229d18746463be6a7dd37a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-25-mode-1.png",
+    "sha256": "3de94fc7cba440277b584785d459f73ac3c287d18a229d18746463be6a7dd37a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-25-mode-2.png",
+    "sha256": "2d02e7a547b976b94119efa6f08b247e0003870f0e0147eca3aaad2b63950454"
+  },
+  {
+    "path": "008-culling-lod/images/frame-25-mode-3.png",
+    "sha256": "2d02e7a547b976b94119efa6f08b247e0003870f0e0147eca3aaad2b63950454"
+  },
+  {
+    "path": "008-culling-lod/images/frame-26-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-26-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-26-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-26-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-27-mode-0.png",
+    "sha256": "9d52d47ba9690a758a297646aee32c77aaef4851066a6dcec38ce865cb7212e0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-27-mode-1.png",
+    "sha256": "9d52d47ba9690a758a297646aee32c77aaef4851066a6dcec38ce865cb7212e0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-27-mode-2.png",
+    "sha256": "fd3770dcdbc593efe096699b3a836986f5ff276ae3aaeb5b3abffe7b4d8b7733"
+  },
+  {
+    "path": "008-culling-lod/images/frame-27-mode-3.png",
+    "sha256": "fd3770dcdbc593efe096699b3a836986f5ff276ae3aaeb5b3abffe7b4d8b7733"
+  },
+  {
+    "path": "008-culling-lod/images/frame-28-mode-0.png",
+    "sha256": "f35f286e47e67589529b8389184519a3b418ec0cbf08ef04c09f6d41711033fe"
+  },
+  {
+    "path": "008-culling-lod/images/frame-28-mode-1.png",
+    "sha256": "f35f286e47e67589529b8389184519a3b418ec0cbf08ef04c09f6d41711033fe"
+  },
+  {
+    "path": "008-culling-lod/images/frame-28-mode-2.png",
+    "sha256": "d7d4de66cdf1e121c2aa1423967c43ba68187a7c6a2405abc0d1343745d36f31"
+  },
+  {
+    "path": "008-culling-lod/images/frame-28-mode-3.png",
+    "sha256": "d7d4de66cdf1e121c2aa1423967c43ba68187a7c6a2405abc0d1343745d36f31"
+  },
+  {
+    "path": "008-culling-lod/images/frame-29-mode-0.png",
+    "sha256": "2513659e64a291382f71953a136abb22bb22510d5daceb95f419def5951cc996"
+  },
+  {
+    "path": "008-culling-lod/images/frame-29-mode-1.png",
+    "sha256": "2513659e64a291382f71953a136abb22bb22510d5daceb95f419def5951cc996"
+  },
+  {
+    "path": "008-culling-lod/images/frame-29-mode-2.png",
+    "sha256": "0ca135adec12a8c66cf7c8e2ecde0cf104506e7fa1bfb7d439d036b16d0ee8af"
+  },
+  {
+    "path": "008-culling-lod/images/frame-29-mode-3.png",
+    "sha256": "0ca135adec12a8c66cf7c8e2ecde0cf104506e7fa1bfb7d439d036b16d0ee8af"
+  },
+  {
+    "path": "008-culling-lod/images/frame-30-mode-0.png",
+    "sha256": "b40f67bf237deb5a2c8d4449c02479cd3eb31b4c864be661e35eb511a283a339"
+  },
+  {
+    "path": "008-culling-lod/images/frame-30-mode-1.png",
+    "sha256": "b40f67bf237deb5a2c8d4449c02479cd3eb31b4c864be661e35eb511a283a339"
+  },
+  {
+    "path": "008-culling-lod/images/frame-30-mode-2.png",
+    "sha256": "70a8e63b8a44007bca13a04f6a454c1c8f30091d8c356d77c69e93223c7ce260"
+  },
+  {
+    "path": "008-culling-lod/images/frame-30-mode-3.png",
+    "sha256": "70a8e63b8a44007bca13a04f6a454c1c8f30091d8c356d77c69e93223c7ce260"
+  },
+  {
+    "path": "008-culling-lod/images/frame-31-mode-0.png",
+    "sha256": "3b49cede0c96aa50e05a23687ec5430ab12196f933d380278d54123d1e25f6d4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-31-mode-1.png",
+    "sha256": "3b49cede0c96aa50e05a23687ec5430ab12196f933d380278d54123d1e25f6d4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-31-mode-2.png",
+    "sha256": "81499a4d7f16cbe9122306f4fabdd155abce92ca66beb39afa298dbcfee09b98"
+  },
+  {
+    "path": "008-culling-lod/images/frame-31-mode-3.png",
+    "sha256": "81499a4d7f16cbe9122306f4fabdd155abce92ca66beb39afa298dbcfee09b98"
+  },
+  {
+    "path": "008-culling-lod/images/frame-32-mode-0.png",
+    "sha256": "c703560fddbcfdef9a885dcc6ef09a20d376465c7812012fddd769e90faace10"
+  },
+  {
+    "path": "008-culling-lod/images/frame-32-mode-1.png",
+    "sha256": "c703560fddbcfdef9a885dcc6ef09a20d376465c7812012fddd769e90faace10"
+  },
+  {
+    "path": "008-culling-lod/images/frame-32-mode-2.png",
+    "sha256": "65366e7c2729f2bfe9d0be57ef36cacd58dac80b207bdfa467a29bc14bc3f614"
+  },
+  {
+    "path": "008-culling-lod/images/frame-32-mode-3.png",
+    "sha256": "65366e7c2729f2bfe9d0be57ef36cacd58dac80b207bdfa467a29bc14bc3f614"
+  },
+  {
+    "path": "008-culling-lod/images/frame-33-mode-0.png",
+    "sha256": "65207c735837aead3a31fa519efb28f63558fd05687467addbead487cce81b07"
+  },
+  {
+    "path": "008-culling-lod/images/frame-33-mode-1.png",
+    "sha256": "65207c735837aead3a31fa519efb28f63558fd05687467addbead487cce81b07"
+  },
+  {
+    "path": "008-culling-lod/images/frame-33-mode-2.png",
+    "sha256": "5d0eeec94b980ceaab235e58d99f640c12f350bb2c7070882ff6009dab912757"
+  },
+  {
+    "path": "008-culling-lod/images/frame-33-mode-3.png",
+    "sha256": "5d0eeec94b980ceaab235e58d99f640c12f350bb2c7070882ff6009dab912757"
+  },
+  {
+    "path": "008-culling-lod/images/frame-34-mode-0.png",
+    "sha256": "5ca1bacede0927f4802dc284b8182c5ffd35800069e41b11acc03a1e695c86f3"
+  },
+  {
+    "path": "008-culling-lod/images/frame-34-mode-1.png",
+    "sha256": "5ca1bacede0927f4802dc284b8182c5ffd35800069e41b11acc03a1e695c86f3"
+  },
+  {
+    "path": "008-culling-lod/images/frame-34-mode-2.png",
+    "sha256": "623f2b0b647540f82ce340753861d25810f6bd3615d5c5a6eac59abbcf703fb9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-34-mode-3.png",
+    "sha256": "623f2b0b647540f82ce340753861d25810f6bd3615d5c5a6eac59abbcf703fb9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-35-mode-0.png",
+    "sha256": "9d61378914ebd553eaa05bdddbd6cbe6495a4cdf177069cb3582e4a44dcbdda6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-35-mode-1.png",
+    "sha256": "9d61378914ebd553eaa05bdddbd6cbe6495a4cdf177069cb3582e4a44dcbdda6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-35-mode-2.png",
+    "sha256": "5f53fd4c476eecc67a17fa99c42fe9f8985561a52336629014c632e954053295"
+  },
+  {
+    "path": "008-culling-lod/images/frame-35-mode-3.png",
+    "sha256": "5f53fd4c476eecc67a17fa99c42fe9f8985561a52336629014c632e954053295"
+  },
+  {
+    "path": "008-culling-lod/images/frame-36-mode-0.png",
+    "sha256": "a391b735d0b3a35ee7031fbb3d781816976caaec4177145797c565fb6db70e0c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-36-mode-1.png",
+    "sha256": "a391b735d0b3a35ee7031fbb3d781816976caaec4177145797c565fb6db70e0c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-36-mode-2.png",
+    "sha256": "9c54a1038d87d5176dffc41c065ad5ce70d3df5ded9c3de46452044ff695f97d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-36-mode-3.png",
+    "sha256": "9c54a1038d87d5176dffc41c065ad5ce70d3df5ded9c3de46452044ff695f97d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-37-mode-0.png",
+    "sha256": "5dc5bac7e43dc111e751d89a96d7cd6d8f130e888bbfb485d88e026d4b3ccfd2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-37-mode-1.png",
+    "sha256": "5dc5bac7e43dc111e751d89a96d7cd6d8f130e888bbfb485d88e026d4b3ccfd2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-37-mode-2.png",
+    "sha256": "6668720dcf71cdaced363b46569b29dab9d0f068fb942275495f2d736126bd7f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-37-mode-3.png",
+    "sha256": "6668720dcf71cdaced363b46569b29dab9d0f068fb942275495f2d736126bd7f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-38-mode-0.png",
+    "sha256": "e24101d597febbedf2a2d633494383d09060c6519e9dd91d23f5de866446085b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-38-mode-1.png",
+    "sha256": "e24101d597febbedf2a2d633494383d09060c6519e9dd91d23f5de866446085b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-38-mode-2.png",
+    "sha256": "d653097855aa074e96c1c70dbdc876d94fcc107210eaf39c9b470466112c5519"
+  },
+  {
+    "path": "008-culling-lod/images/frame-38-mode-3.png",
+    "sha256": "d653097855aa074e96c1c70dbdc876d94fcc107210eaf39c9b470466112c5519"
+  },
+  {
+    "path": "008-culling-lod/images/frame-39-mode-0.png",
+    "sha256": "0236d7dbdf6a8c3cfee7bc50361d7a447b5cbeddd3598d36009c585f5600cf76"
+  },
+  {
+    "path": "008-culling-lod/images/frame-39-mode-1.png",
+    "sha256": "0236d7dbdf6a8c3cfee7bc50361d7a447b5cbeddd3598d36009c585f5600cf76"
+  },
+  {
+    "path": "008-culling-lod/images/frame-39-mode-2.png",
+    "sha256": "83fb5573f5b420cb58b1b7e12e179f84085904d1066bfbfdf5307b956e53277d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-39-mode-3.png",
+    "sha256": "83fb5573f5b420cb58b1b7e12e179f84085904d1066bfbfdf5307b956e53277d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-40-mode-0.png",
+    "sha256": "ba5feed34a70026b05d2c6201fd3abb3aefae6cc6511ca9ece6d34410528ff53"
+  },
+  {
+    "path": "008-culling-lod/images/frame-40-mode-1.png",
+    "sha256": "ba5feed34a70026b05d2c6201fd3abb3aefae6cc6511ca9ece6d34410528ff53"
+  },
+  {
+    "path": "008-culling-lod/images/frame-40-mode-2.png",
+    "sha256": "024b6befdc0d502724e62daf59f0fe5be2fcb3166b115dd4eed026976cd633fb"
+  },
+  {
+    "path": "008-culling-lod/images/frame-40-mode-3.png",
+    "sha256": "024b6befdc0d502724e62daf59f0fe5be2fcb3166b115dd4eed026976cd633fb"
+  },
+  {
+    "path": "008-culling-lod/images/frame-41-mode-0.png",
+    "sha256": "0236d7dbdf6a8c3cfee7bc50361d7a447b5cbeddd3598d36009c585f5600cf76"
+  },
+  {
+    "path": "008-culling-lod/images/frame-41-mode-1.png",
+    "sha256": "0236d7dbdf6a8c3cfee7bc50361d7a447b5cbeddd3598d36009c585f5600cf76"
+  },
+  {
+    "path": "008-culling-lod/images/frame-41-mode-2.png",
+    "sha256": "83fb5573f5b420cb58b1b7e12e179f84085904d1066bfbfdf5307b956e53277d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-41-mode-3.png",
+    "sha256": "83fb5573f5b420cb58b1b7e12e179f84085904d1066bfbfdf5307b956e53277d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-42-mode-0.png",
+    "sha256": "e24101d597febbedf2a2d633494383d09060c6519e9dd91d23f5de866446085b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-42-mode-1.png",
+    "sha256": "e24101d597febbedf2a2d633494383d09060c6519e9dd91d23f5de866446085b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-42-mode-2.png",
+    "sha256": "d653097855aa074e96c1c70dbdc876d94fcc107210eaf39c9b470466112c5519"
+  },
+  {
+    "path": "008-culling-lod/images/frame-42-mode-3.png",
+    "sha256": "d653097855aa074e96c1c70dbdc876d94fcc107210eaf39c9b470466112c5519"
+  },
+  {
+    "path": "008-culling-lod/images/frame-43-mode-0.png",
+    "sha256": "5dc5bac7e43dc111e751d89a96d7cd6d8f130e888bbfb485d88e026d4b3ccfd2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-43-mode-1.png",
+    "sha256": "5dc5bac7e43dc111e751d89a96d7cd6d8f130e888bbfb485d88e026d4b3ccfd2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-43-mode-2.png",
+    "sha256": "6668720dcf71cdaced363b46569b29dab9d0f068fb942275495f2d736126bd7f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-43-mode-3.png",
+    "sha256": "6668720dcf71cdaced363b46569b29dab9d0f068fb942275495f2d736126bd7f"
+  },
+  {
+    "path": "008-culling-lod/images/frame-44-mode-0.png",
+    "sha256": "a391b735d0b3a35ee7031fbb3d781816976caaec4177145797c565fb6db70e0c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-44-mode-1.png",
+    "sha256": "a391b735d0b3a35ee7031fbb3d781816976caaec4177145797c565fb6db70e0c"
+  },
+  {
+    "path": "008-culling-lod/images/frame-44-mode-2.png",
+    "sha256": "9c54a1038d87d5176dffc41c065ad5ce70d3df5ded9c3de46452044ff695f97d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-44-mode-3.png",
+    "sha256": "9c54a1038d87d5176dffc41c065ad5ce70d3df5ded9c3de46452044ff695f97d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-45-mode-0.png",
+    "sha256": "9d61378914ebd553eaa05bdddbd6cbe6495a4cdf177069cb3582e4a44dcbdda6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-45-mode-1.png",
+    "sha256": "9d61378914ebd553eaa05bdddbd6cbe6495a4cdf177069cb3582e4a44dcbdda6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-45-mode-2.png",
+    "sha256": "5f53fd4c476eecc67a17fa99c42fe9f8985561a52336629014c632e954053295"
+  },
+  {
+    "path": "008-culling-lod/images/frame-45-mode-3.png",
+    "sha256": "5f53fd4c476eecc67a17fa99c42fe9f8985561a52336629014c632e954053295"
+  },
+  {
+    "path": "008-culling-lod/images/frame-46-mode-0.png",
+    "sha256": "5ca1bacede0927f4802dc284b8182c5ffd35800069e41b11acc03a1e695c86f3"
+  },
+  {
+    "path": "008-culling-lod/images/frame-46-mode-1.png",
+    "sha256": "5ca1bacede0927f4802dc284b8182c5ffd35800069e41b11acc03a1e695c86f3"
+  },
+  {
+    "path": "008-culling-lod/images/frame-46-mode-2.png",
+    "sha256": "623f2b0b647540f82ce340753861d25810f6bd3615d5c5a6eac59abbcf703fb9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-46-mode-3.png",
+    "sha256": "623f2b0b647540f82ce340753861d25810f6bd3615d5c5a6eac59abbcf703fb9"
+  },
+  {
+    "path": "008-culling-lod/images/frame-47-mode-0.png",
+    "sha256": "65207c735837aead3a31fa519efb28f63558fd05687467addbead487cce81b07"
+  },
+  {
+    "path": "008-culling-lod/images/frame-47-mode-1.png",
+    "sha256": "65207c735837aead3a31fa519efb28f63558fd05687467addbead487cce81b07"
+  },
+  {
+    "path": "008-culling-lod/images/frame-47-mode-2.png",
+    "sha256": "5d0eeec94b980ceaab235e58d99f640c12f350bb2c7070882ff6009dab912757"
+  },
+  {
+    "path": "008-culling-lod/images/frame-47-mode-3.png",
+    "sha256": "5d0eeec94b980ceaab235e58d99f640c12f350bb2c7070882ff6009dab912757"
+  },
+  {
+    "path": "008-culling-lod/images/frame-48-mode-0.png",
+    "sha256": "c703560fddbcfdef9a885dcc6ef09a20d376465c7812012fddd769e90faace10"
+  },
+  {
+    "path": "008-culling-lod/images/frame-48-mode-1.png",
+    "sha256": "c703560fddbcfdef9a885dcc6ef09a20d376465c7812012fddd769e90faace10"
+  },
+  {
+    "path": "008-culling-lod/images/frame-48-mode-2.png",
+    "sha256": "65366e7c2729f2bfe9d0be57ef36cacd58dac80b207bdfa467a29bc14bc3f614"
+  },
+  {
+    "path": "008-culling-lod/images/frame-48-mode-3.png",
+    "sha256": "65366e7c2729f2bfe9d0be57ef36cacd58dac80b207bdfa467a29bc14bc3f614"
+  },
+  {
+    "path": "008-culling-lod/images/frame-49-mode-0.png",
+    "sha256": "3b49cede0c96aa50e05a23687ec5430ab12196f933d380278d54123d1e25f6d4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-49-mode-1.png",
+    "sha256": "3b49cede0c96aa50e05a23687ec5430ab12196f933d380278d54123d1e25f6d4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-49-mode-2.png",
+    "sha256": "81499a4d7f16cbe9122306f4fabdd155abce92ca66beb39afa298dbcfee09b98"
+  },
+  {
+    "path": "008-culling-lod/images/frame-49-mode-3.png",
+    "sha256": "81499a4d7f16cbe9122306f4fabdd155abce92ca66beb39afa298dbcfee09b98"
+  },
+  {
+    "path": "008-culling-lod/images/frame-50-mode-0.png",
+    "sha256": "b40f67bf237deb5a2c8d4449c02479cd3eb31b4c864be661e35eb511a283a339"
+  },
+  {
+    "path": "008-culling-lod/images/frame-50-mode-1.png",
+    "sha256": "b40f67bf237deb5a2c8d4449c02479cd3eb31b4c864be661e35eb511a283a339"
+  },
+  {
+    "path": "008-culling-lod/images/frame-50-mode-2.png",
+    "sha256": "70a8e63b8a44007bca13a04f6a454c1c8f30091d8c356d77c69e93223c7ce260"
+  },
+  {
+    "path": "008-culling-lod/images/frame-50-mode-3.png",
+    "sha256": "70a8e63b8a44007bca13a04f6a454c1c8f30091d8c356d77c69e93223c7ce260"
+  },
+  {
+    "path": "008-culling-lod/images/frame-51-mode-0.png",
+    "sha256": "94d7bf226c6c43680eeb938beafa734225c36028bb8d40d74a97dfcaad9c98a2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-51-mode-1.png",
+    "sha256": "94d7bf226c6c43680eeb938beafa734225c36028bb8d40d74a97dfcaad9c98a2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-51-mode-2.png",
+    "sha256": "0ca135adec12a8c66cf7c8e2ecde0cf104506e7fa1bfb7d439d036b16d0ee8af"
+  },
+  {
+    "path": "008-culling-lod/images/frame-51-mode-3.png",
+    "sha256": "0ca135adec12a8c66cf7c8e2ecde0cf104506e7fa1bfb7d439d036b16d0ee8af"
+  },
+  {
+    "path": "008-culling-lod/images/frame-52-mode-0.png",
+    "sha256": "f35f286e47e67589529b8389184519a3b418ec0cbf08ef04c09f6d41711033fe"
+  },
+  {
+    "path": "008-culling-lod/images/frame-52-mode-1.png",
+    "sha256": "f35f286e47e67589529b8389184519a3b418ec0cbf08ef04c09f6d41711033fe"
+  },
+  {
+    "path": "008-culling-lod/images/frame-52-mode-2.png",
+    "sha256": "d7d4de66cdf1e121c2aa1423967c43ba68187a7c6a2405abc0d1343745d36f31"
+  },
+  {
+    "path": "008-culling-lod/images/frame-52-mode-3.png",
+    "sha256": "d7d4de66cdf1e121c2aa1423967c43ba68187a7c6a2405abc0d1343745d36f31"
+  },
+  {
+    "path": "008-culling-lod/images/frame-53-mode-0.png",
+    "sha256": "9d52d47ba9690a758a297646aee32c77aaef4851066a6dcec38ce865cb7212e0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-53-mode-1.png",
+    "sha256": "9d52d47ba9690a758a297646aee32c77aaef4851066a6dcec38ce865cb7212e0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-53-mode-2.png",
+    "sha256": "fd3770dcdbc593efe096699b3a836986f5ff276ae3aaeb5b3abffe7b4d8b7733"
+  },
+  {
+    "path": "008-culling-lod/images/frame-53-mode-3.png",
+    "sha256": "fd3770dcdbc593efe096699b3a836986f5ff276ae3aaeb5b3abffe7b4d8b7733"
+  },
+  {
+    "path": "008-culling-lod/images/frame-54-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-54-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-54-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-54-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-55-mode-0.png",
+    "sha256": "3de94fc7cba440277b584785d459f73ac3c287d18a229d18746463be6a7dd37a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-55-mode-1.png",
+    "sha256": "3de94fc7cba440277b584785d459f73ac3c287d18a229d18746463be6a7dd37a"
+  },
+  {
+    "path": "008-culling-lod/images/frame-55-mode-2.png",
+    "sha256": "2d02e7a547b976b94119efa6f08b247e0003870f0e0147eca3aaad2b63950454"
+  },
+  {
+    "path": "008-culling-lod/images/frame-55-mode-3.png",
+    "sha256": "2d02e7a547b976b94119efa6f08b247e0003870f0e0147eca3aaad2b63950454"
+  },
+  {
+    "path": "008-culling-lod/images/frame-56-mode-0.png",
+    "sha256": "7eda17277a491169e7ac7f60f4d2a5942324f263bf4faa0373ac7d970e9287c0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-56-mode-1.png",
+    "sha256": "7eda17277a491169e7ac7f60f4d2a5942324f263bf4faa0373ac7d970e9287c0"
+  },
+  {
+    "path": "008-culling-lod/images/frame-56-mode-2.png",
+    "sha256": "844782d77932b06eb9e34d3351f5a5fafe647da8378020f629c8ed2a38db1d38"
+  },
+  {
+    "path": "008-culling-lod/images/frame-56-mode-3.png",
+    "sha256": "844782d77932b06eb9e34d3351f5a5fafe647da8378020f629c8ed2a38db1d38"
+  },
+  {
+    "path": "008-culling-lod/images/frame-57-mode-0.png",
+    "sha256": "0becb179de7c78de314e0197397683409c25f50f650d387a8ddf5b96243f3352"
+  },
+  {
+    "path": "008-culling-lod/images/frame-57-mode-1.png",
+    "sha256": "0becb179de7c78de314e0197397683409c25f50f650d387a8ddf5b96243f3352"
+  },
+  {
+    "path": "008-culling-lod/images/frame-57-mode-2.png",
+    "sha256": "aa84b5d9f167f12db70d3b4216ce13c776765477340486bc0b1f99ff17b7e9de"
+  },
+  {
+    "path": "008-culling-lod/images/frame-57-mode-3.png",
+    "sha256": "aa84b5d9f167f12db70d3b4216ce13c776765477340486bc0b1f99ff17b7e9de"
+  },
+  {
+    "path": "008-culling-lod/images/frame-58-mode-0.png",
+    "sha256": "9baed3859e388d47cd64de3355d026113f75cac1146a0ce3af104448be9d91fc"
+  },
+  {
+    "path": "008-culling-lod/images/frame-58-mode-1.png",
+    "sha256": "9baed3859e388d47cd64de3355d026113f75cac1146a0ce3af104448be9d91fc"
+  },
+  {
+    "path": "008-culling-lod/images/frame-58-mode-2.png",
+    "sha256": "b42f5df2ce95f0c3e76f6083cb789cb1f2c9f61b561bd08488309e75becc0a40"
+  },
+  {
+    "path": "008-culling-lod/images/frame-58-mode-3.png",
+    "sha256": "b42f5df2ce95f0c3e76f6083cb789cb1f2c9f61b561bd08488309e75becc0a40"
+  },
+  {
+    "path": "008-culling-lod/images/frame-59-mode-0.png",
+    "sha256": "a1c97511bb270c3af84a08fcacc955f1b646985e5cc46e36a9997dd57794104d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-59-mode-1.png",
+    "sha256": "a1c97511bb270c3af84a08fcacc955f1b646985e5cc46e36a9997dd57794104d"
+  },
+  {
+    "path": "008-culling-lod/images/frame-59-mode-2.png",
+    "sha256": "bd25fcc25950e68c6e3b3582a7e64bba513505bcc36f73022300df6b4a862c35"
+  },
+  {
+    "path": "008-culling-lod/images/frame-59-mode-3.png",
+    "sha256": "bd25fcc25950e68c6e3b3582a7e64bba513505bcc36f73022300df6b4a862c35"
+  },
+  {
+    "path": "008-culling-lod/images/frame-60-mode-0.png",
+    "sha256": "20e65f856f122f4b436c09dd24a8c5f241cf46edbdb6c9f5008a0048aa5825a4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-60-mode-1.png",
+    "sha256": "20e65f856f122f4b436c09dd24a8c5f241cf46edbdb6c9f5008a0048aa5825a4"
+  },
+  {
+    "path": "008-culling-lod/images/frame-60-mode-2.png",
+    "sha256": "de7549e793a88a8f767b4891160cc28961d49ceba71dd0adc8bb4965a011115b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-60-mode-3.png",
+    "sha256": "de7549e793a88a8f767b4891160cc28961d49ceba71dd0adc8bb4965a011115b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-61-mode-0.png",
+    "sha256": "8d021ee820e4c2d6d4d0b8c73062d4d6046eae53f712f69af74efa7befbe1694"
+  },
+  {
+    "path": "008-culling-lod/images/frame-61-mode-1.png",
+    "sha256": "8d021ee820e4c2d6d4d0b8c73062d4d6046eae53f712f69af74efa7befbe1694"
+  },
+  {
+    "path": "008-culling-lod/images/frame-61-mode-2.png",
+    "sha256": "3d47b9810cdfa04b21420591061e3de18acaf7a54a773caa224269ef9023c9f2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-61-mode-3.png",
+    "sha256": "3d47b9810cdfa04b21420591061e3de18acaf7a54a773caa224269ef9023c9f2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-62-mode-0.png",
+    "sha256": "73e1c95144a15bd327f3aa862a3c19c9f9d38d2f66212ba969107273556192d2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-62-mode-1.png",
+    "sha256": "73e1c95144a15bd327f3aa862a3c19c9f9d38d2f66212ba969107273556192d2"
+  },
+  {
+    "path": "008-culling-lod/images/frame-62-mode-2.png",
+    "sha256": "cb6b685cfd73242a42a52e0a7a5708198d3de9af849f48e02b24220556aaad62"
+  },
+  {
+    "path": "008-culling-lod/images/frame-62-mode-3.png",
+    "sha256": "cb6b685cfd73242a42a52e0a7a5708198d3de9af849f48e02b24220556aaad62"
+  },
+  {
+    "path": "008-culling-lod/images/frame-63-mode-0.png",
+    "sha256": "3917e5d499032b0c27bc501c1ba82013457fe91ba97b549db1d9086e53444963"
+  },
+  {
+    "path": "008-culling-lod/images/frame-63-mode-1.png",
+    "sha256": "3917e5d499032b0c27bc501c1ba82013457fe91ba97b549db1d9086e53444963"
+  },
+  {
+    "path": "008-culling-lod/images/frame-63-mode-2.png",
+    "sha256": "836872a27275c0a9ab87af9c1f80701dec6e7278dd48964623c4af2c93814442"
+  },
+  {
+    "path": "008-culling-lod/images/frame-63-mode-3.png",
+    "sha256": "836872a27275c0a9ab87af9c1f80701dec6e7278dd48964623c4af2c93814442"
+  },
+  {
+    "path": "008-culling-lod/images/frame-64-mode-0.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-64-mode-1.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-64-mode-2.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-64-mode-3.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-65-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-65-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-65-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-65-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-66-mode-0.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-66-mode-1.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-66-mode-2.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-66-mode-3.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-67-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-67-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-67-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-67-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-68-mode-0.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-68-mode-1.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-68-mode-2.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-68-mode-3.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-69-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-69-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-69-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-69-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-70-mode-0.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-70-mode-1.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-70-mode-2.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-70-mode-3.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-71-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-71-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-71-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-71-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-72-mode-0.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-72-mode-1.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-72-mode-2.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-72-mode-3.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-73-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-73-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-73-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-73-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-74-mode-0.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-74-mode-1.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-74-mode-2.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-74-mode-3.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-75-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-75-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-75-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-75-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-76-mode-0.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-76-mode-1.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-76-mode-2.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-76-mode-3.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-77-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-77-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-77-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-77-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-78-mode-0.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-78-mode-1.png",
+    "sha256": "030d5e68dd90411f8d1f951502ef93d4ef862ebd087acafcbdceb65eccd82f08"
+  },
+  {
+    "path": "008-culling-lod/images/frame-78-mode-2.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-78-mode-3.png",
+    "sha256": "6706b2eb31856199692cbb3de54e2ffd5110712666f2800fd34187329619add7"
+  },
+  {
+    "path": "008-culling-lod/images/frame-79-mode-0.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-79-mode-1.png",
+    "sha256": "5314e8a4118ca4930c355555dc0301543de748eb62aafd46fee080d943afa848"
+  },
+  {
+    "path": "008-culling-lod/images/frame-79-mode-2.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-79-mode-3.png",
+    "sha256": "90009c568b7887a4b8cc41c79715a35fbb51059623331cd12bf28f7970fae899"
+  },
+  {
+    "path": "008-culling-lod/images/frame-80-mode-0.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-80-mode-1.png",
+    "sha256": "3866cc9a0febc5c944c81ea37465c77df2aee2baa70462e6dc4926ded22ed2f6"
+  },
+  {
+    "path": "008-culling-lod/images/frame-80-mode-2.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/frame-80-mode-3.png",
+    "sha256": "9f132b38293ec2246ee2336ccb9dade32a82ef6fb9b423373459f6e8689cd38b"
+  },
+  {
+    "path": "008-culling-lod/images/independent-slots.png",
+    "sha256": "d1844b2ecd1d1cd4249cfa2c0e4923e6d58cc70d8ab7810e6f67da760ac255fc"
+  },
+  {
+    "path": "008-culling-lod/images/threshold-crossings.png",
+    "sha256": "0a0a788abf324d7beda32c721ae3476cbe9dcd612ba52341c8fe42f3fde9e327"
+  },
+  {
+    "path": "008-culling-lod/index.html",
+    "sha256": "201df81b3859a487ba2c7de7ffd4b346082da8d60d21faeaed0b96c3ef0cc2c5"
+  },
+  {
+    "path": "008-culling-lod/runs/camera-path.csv",
+    "sha256": "d797d3268b7bc7a6ee97067c6a3e79e7fc0831e563c5d72063e5ed2c5f36ed32"
+  },
+  {
+    "path": "008-culling-lod/runs/image-differences.json",
+    "sha256": "443869f5432a5bd00b5df0be1e9bb85abca860eafae8cbcb206d510c351db907"
+  },
+  {
+    "path": "008-culling-lod/runs/image-inventory.json",
+    "sha256": "ef156bfde73a33814b912f712c219a13afe4e5bef7077040974109c24f29e54b"
+  },
+  {
+    "path": "008-culling-lod/runs/metadata.json",
+    "sha256": "5f690ab295ee4704f138c458e87ba943c783591142c276833478d767b5f03870"
+  },
+  {
+    "path": "008-culling-lod/runs/native-summary.csv",
+    "sha256": "8e1e573cae437bf4d1aeee36e46fc3e1a8d4344e8365f60de49e781f10c4dffb"
+  },
+  {
+    "path": "008-culling-lod/runs/native-walltime.csv",
+    "sha256": "a6d7b49fe840a0f01ac97fcec6b266935be1cb224a0090b3e896590db89f611c"
+  },
+  {
+    "path": "008-culling-lod/runs/objects.json",
+    "sha256": "eeea5e0e1daf915bf339ca2c7520ed07471bdf9abe914a49868d133b9168a23d"
+  },
+  {
+    "path": "008-culling-lod/runs/path-counts.csv",
+    "sha256": "ddbae64b123e798abdda34350760cd8053def1b6b8684916c47be1c4c529874c"
+  },
+  {
+    "path": "008-culling-lod/runs/source-snapshot.json",
+    "sha256": "f324428d07d4e2a3258fc24f6cd38b9f9e8d47224d2fef13558020a5c5ce5b5c"
+  },
+  {
+    "path": "008-culling-lod/runs/verification.json",
+    "sha256": "de3f807823b69584ddba9a9d6049d70b9ffba8436a09a7aed5075d17533306d8"
+  },
+  {
     "path": "demo/SHA256SUMS",
-    "sha256": "cc25dc87e39e2ca42b1d0ee3a075da3195d90a9fe951f251ba93bc05df8ad6ae"
+    "sha256": "88001e3f7b80b0ca0bf3d0ceabfe980e558e94e2f059fd6227974f4065e5a745"
   },
   {
     "path": "demo/app.js",
-    "sha256": "81401674979b966a3bd40ce92d65ea218feedd3b3cc7b0940fd6e7b6228f22f4"
+    "sha256": "529a89134e49af5e804c577c01e48be4efe3441a54004b8c8d7a3aa33c02693e"
   },
   {
     "path": "demo/assets/flighthelmet/CREDITS.md",
@@ -1825,15 +3205,19 @@
   },
   {
     "path": "demo/build-info.json",
-    "sha256": "b4ded337d94a687a1102aa17c7150d07ad140674f96f9667f2b87d307caa0100"
+    "sha256": "0df170efd7ee653e22649e7d4f09f641a84c7407389e82a14db21103fa894201"
+  },
+  {
+    "path": "demo/culling.mjs",
+    "sha256": "9eeb6c23b268923ebeb73391624a7841fac22d917b15dca9b6da0452bd725583"
   },
   {
     "path": "demo/index.html",
-    "sha256": "d1243da49e952b9074f084b9bc48bc13197b74e8cfd084ecd774dd4eab181035"
+    "sha256": "803433b0f00f83fbecec1eaae6b4dbda70341a24cf5cc61c08911cfefc7c7a3e"
   },
   {
     "path": "demo/metrics.mjs",
-    "sha256": "c18df666b89cc3314df872751719a7b48ecee362f01acf22c74bbf8e830a250d"
+    "sha256": "5a437e9cb1912f9c35dfd93321d06cd63d9161dc312c425a81dda0d309f67e4e"
   },
   {
     "path": "demo/pbr.mjs",
@@ -1841,11 +3225,11 @@
   },
   {
     "path": "demo/pkg/rendering_web.js",
-    "sha256": "7eaad01831b15518a76d4be99ee620970280149f7e7bec77fa4981afaa3525ab"
+    "sha256": "3b4cc2daf5945478b2b727d2ef487a4f7d8b3be3eb5667dc7b294535ef8832d6"
   },
   {
     "path": "demo/pkg/rendering_web_bg.wasm",
-    "sha256": "a0443b0d4e080bd00954481cdad29ea090188c6c86663f390bc9790558fe3f51"
+    "sha256": "ba4b53a9c89632b506967c0f664c5d9d227218a9df62c7c6f947b767fc41aac6"
   },
   {
     "path": "demo/shaders/color.wgsl",
@@ -1858,6 +3242,10 @@
   {
     "path": "demo/shaders/courtyard.wgsl",
     "sha256": "b50f8355f3d55f59ffb259d476c8ea9c19d0d613cfbd95b45cb4c4ca6c634568"
+  },
+  {
+    "path": "demo/shaders/culling.wgsl",
+    "sha256": "32ece86b605be203d7771827d786f4678b145e6f273643216707072a3a5ae72c"
   },
   {
     "path": "demo/shaders/flighthelmet.wgsl",
@@ -1893,7 +3281,7 @@
   },
   {
     "path": "demo/state.mjs",
-    "sha256": "698be121babec09c1be0c3b55d4bb6759cf6b2b66d948b27b73eddef8f75bf05"
+    "sha256": "8a9f47008182841cea363bc21b3724bab55bf192a6ff3140a8ddfb971dbc9dd7"
   },
   {
     "path": "demo/styles.css",
@@ -1901,7 +3289,7 @@
   },
   {
     "path": "index.html",
-    "sha256": "a8996263358c1f4ccbf2c92167b1a7fcb31927c2fbce3e103e1c23aa5e17f40c"
+    "sha256": "60381571afdab8ef47af7f19f707498e1ebe94f6121b0fe98d7b1be50166ef04"
   },
   {
     "path": "style.css",
